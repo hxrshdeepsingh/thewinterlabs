@@ -9,7 +9,7 @@ interface Props {
   }
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage() {
   const payload = await getPayload({ config })
 
   const { docs } = await payload.find({
