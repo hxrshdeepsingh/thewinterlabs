@@ -9,7 +9,8 @@ interface Props {
   }
 }
 
-export default async function BlogPostPage() {
+// ✅ Accept `params` directly in the function
+export default async function BlogPostPage({ params }: Props) {
   const payload = await getPayload({ config })
 
   const { docs } = await payload.find({
@@ -25,23 +26,25 @@ export default async function BlogPostPage() {
 
   const post = docs[0]
   const image = post.featuredImage
-  console.log()
+
   return (
     <>
-      <h1>id : {post.id}</h1>
-      <h2>Title : {post.title}</h2>
-      <h2>Slug : {post.slug}</h2>
-      <h2>updatedAt : {post.updatedAt}</h2>
-      <h2>createdAt : {post.createdAt}</h2>
-      <h2>Content : {post.content.root.children[0].children[0].text}</h2>
+      <h1>ID: {post.id}</h1>
+      <h2>Title: {post.title}</h2>
+      <h2>Slug: {post.slug}</h2>
+      <h2>Updated At: {post.updatedAt}</h2>
+      <h2>Created At: {post.createdAt}</h2>
+      <h2>Content: {post.content?.root?.children?.[0]?.children?.[0]?.text}</h2>
 
-      <Image
-        src={`http://localhost:3000${image.url}`}
-        alt={image.alt || post.title}
-        width={500}
-        height={300}
-        className="rounded-md mt-4"
-      />
+      {image?.url && (
+        <Image
+          src={`http://localhost:3000${image.url}`}
+          alt={image.alt || post.title}
+          width={500}
+          height={300}
+          className="rounded-md mt-4"
+        />
+      )}
     </>
   )
 }
