@@ -3,14 +3,12 @@ import config from '@/payload.config'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
-interface Props {
-  params: {
-    slug: string
-  }
-}
-
-// ✅ Accept `params` directly in the function
-export default async function BlogPostPage({ params }: Props) {
+// ✅ No need for custom `Props` interface, just destructure `params`
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const payload = await getPayload({ config })
 
   const { docs } = await payload.find({
@@ -28,23 +26,23 @@ export default async function BlogPostPage({ params }: Props) {
   const image = post.featuredImage
 
   return (
-    <>
-      <h1>ID: {post.id}</h1>
-      <h2>Title: {post.title}</h2>
-      <h2>Slug: {post.slug}</h2>
-      <h2>Updated At: {post.updatedAt}</h2>
-      <h2>Created At: {post.createdAt}</h2>
-      <h2>Content: {post.content?.root?.children?.[0]?.children?.[0]?.text}</h2>
+    <article className="p-4">
+      <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
+      <p className="text-sm text-gray-500 mb-4">Slug: {post.slug}</p>
+
+      {post.content?.root?.children?.[0]?.children?.[0]?.text && (
+        <p className="mb-4">{post.content.root.children[0].children[0].text}</p>
+      )}
 
       {image?.url && (
         <Image
           src={`http://localhost:3000${image.url}`}
           alt={image.alt || post.title}
-          width={500}
-          height={300}
-          className="rounded-md mt-4"
+          width={800}
+          height={400}
+          className="rounded-md"
         />
       )}
-    </>
+    </article>
   )
 }
