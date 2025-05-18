@@ -1,14 +1,15 @@
 'use client'
-
-import HeroSectionOne from '@/components/hero-section-demo-1'
 import { HeroSection } from '@/components/hero-section-1'
+import { Footerdemo } from '@/components/ui/footer-section'
+import Testimonials from '@/components/testimonials'
+import FeatureStepsDemo from '@/components/feature-step'
 export default function page() {
   return (
     <>
       <HeroSection />
-
-      <HeroSectionOne />
-      <div className="bg-red-700">page</div>
+      <Testimonials />
+      <FeatureStepsDemo />
+      <Footerdemo />
     </>
   )
 }
