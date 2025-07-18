@@ -16,7 +16,7 @@ export interface Gallery4Item {
 export interface Gallery4Props {
   title?: string
   description?: string
-  items: Gallery4Item[]
+  items?: Gallery4Item[]
 }
 
 const data = [
@@ -104,7 +104,7 @@ const Gallery = ({
 
   return (
     <section className="py-32">
-      <div className="container max-w-custom mx-auto w-full mx-auto">
+      <div className="container max-w-custom mx-auto w-full">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">{title}</h2>
@@ -191,4 +191,4 @@ const Gallery = ({
   )
 }
 
-export { Gallery }
+export default Gallery

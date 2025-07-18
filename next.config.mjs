@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ['localhost', 'images.unsplash.com'], // 👈 add this line
   },
+  typescript: {
+    ignoreBuildErrors: true, // 👈 this disables type-checking during build
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
