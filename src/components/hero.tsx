@@ -25,7 +25,7 @@ const transitionVariants = {
   },
 }
 
-export function HeroSection() {
+export function Hero() {
   return (
     <>
       <HeroHeader />
@@ -66,9 +66,7 @@ export function HeroSection() {
                 },
               }}
               className="absolute inset-0 -z-20"
-            >
-
-            </AnimatedGroup>
+            ></AnimatedGroup>
             <div
               aria-hidden
               className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
@@ -295,8 +293,9 @@ const HeroHeader = () => {
       <nav data-state={menuState && 'active'} className="fixed z-20 w-full px-2 group">
         <div
           className={cn(
-            'mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12',
-            isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5',
+            'mx-auto mt-2 max-w-custom px-6 transition-all duration-300 lg:px-12',
+            isScrolled &&
+              'bg-background/50 max-w-custom rounded-2xl border backdrop-blur-lg lg:px-5',
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">

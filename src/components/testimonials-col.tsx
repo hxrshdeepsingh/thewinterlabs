@@ -28,6 +28,7 @@ export const TestimonialsColumn = (props: {
         }}
         className="flex flex-col gap-6 pb-6 bg-background"
       >
+        <div className="max-w-custom"></div>
         {Array.from({ length: 2 }).map((_, index) => (
           <React.Fragment key={index}>
             {props.testimonials.map(({ text, image, name, role }, i) => (

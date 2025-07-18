@@ -1,6 +1,6 @@
 'use client'
 
-import { TestimonialsColumn } from './testimonials-columns-1'
+import { TestimonialsColumn } from './testimonials-col'
 import { motion } from 'motion/react'
 
 const testimonials = [
