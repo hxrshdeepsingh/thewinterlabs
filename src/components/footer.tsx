@@ -88,7 +88,7 @@ const Footer = ({
                 </a>
                 <p className="text-xl font-semibold">{logo.title}</p>
               </div>
-              <p className="mt-4 font-bold">{tagline}</p>
+              {/* <p className="mt-4 font-bold">{tagline}</p> */}
             </div>
             {menuItems.map((section, sectionIdx) => (
               <div key={sectionIdx}>

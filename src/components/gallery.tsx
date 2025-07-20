@@ -104,7 +104,7 @@ const Gallery = ({
 
   return (
     <section className="py-32">
-      <div className="container max-w-custom mx-auto w-full">
+      <div className="container max-w-custom mx-auto">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">{title}</h2>
@@ -136,7 +136,7 @@ const Gallery = ({
           </div>
         </div>
       </div>
-      <div className="container-xl w-full">
+      <div className="container-xl max-w-custom mx-auto">
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -147,9 +147,9 @@ const Gallery = ({
             },
           }}
         >
-          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+          <CarouselContent className="ml-0 gap-5">
             {items.map((item) => (
-              <CarouselItem key={item.id} className="max-w-[320px] pl-[20px] lg:max-w-[360px]">
+              <CarouselItem key={item.id} className="max-w-[320px] lg:max-w-[360px] p-0">
                 <a href={item.href} className="group ">
                   <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-[32px] md:aspect-[5/4] lg:aspect-[16/9] border-2">
                     <img

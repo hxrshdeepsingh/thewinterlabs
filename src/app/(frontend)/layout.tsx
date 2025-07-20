@@ -2,6 +2,7 @@ import './styles.css'
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Cta from '@/components/CallToAction'
 import ClientWrapper from '@/components/ClientWrapper'
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           <main>
             <Header />
             {children}
+            <Cta />
             <Footer />
           </main>
         </ClientWrapper>
