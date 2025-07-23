@@ -1,15 +1,13 @@
 import React from 'react'
-import { headers as getHeaders } from 'next/headers.js'
+import { headers } from 'next/headers'
 import { getPayload } from 'payload'
-import config from '@/payload.config'
-import { Projects } from '@/components/Projects'
-
+// import config from '@/payload-config'
+import config from '../../../payload.config'
+import { Projects } from '../../../components/Projects'
 
 export default async function Project() {
-  const headers = await getHeaders()
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
-  const { user } = await payload.auth({ headers })
+  const payload = await getPayload({ config })
+  const user = await payload.auth({ headers: headers() })
 
   return (
     <div className="home">
