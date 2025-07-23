@@ -14,7 +14,7 @@ export default function Header() {
 }
 
 const menuItems = [
-  { name: 'Features', href: '#link' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Solution', href: '#link' },
   { name: 'Pricing', href: '#link' },
   { name: 'About', href: '#link' },

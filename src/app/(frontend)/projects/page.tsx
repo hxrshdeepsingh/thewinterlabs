@@ -2,8 +2,9 @@ import React from 'react'
 import { headers as getHeaders } from 'next/headers.js'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
+import { Projects } from '@/components/Projects'
 
-export default async function HomePage() {
+export default async function Project() {
   const headers = await getHeaders()
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
@@ -11,20 +12,9 @@ export default async function HomePage() {
 
   return (
     <div className="home">
-      <div className="content">
-        {!user && <h1>Welcome to your new project.</h1>}
-        {user && <h1>Welcome back, {user.email}</h1>}
-        <div className="links">
-          <a
-            className="admin"
-            href={payloadConfig.routes.admin}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Go to admin panel
-          </a>
+        <div className='max-w-custom mx-auto'>
+      <Projects/>
         </div>
-      </div>
     </div>
   )
 }
