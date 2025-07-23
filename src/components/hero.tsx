@@ -25,7 +25,7 @@ const transitionVariants = {
   },
 }
 
-export function Hero() {
+export default function Hero() {
   return (
     <>
       <HeroHeader />
