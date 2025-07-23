@@ -12,9 +12,9 @@ export default async function Project() {
 
   return (
     <div className="home">
-        <div className='max-w-custom mx-auto'>
-      <Projects/>
-        </div>
+      <div className="max-w-custom mx-auto">
+        <Projects />
+      </div>
     </div>
   )
 }

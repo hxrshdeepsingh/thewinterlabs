@@ -23,21 +23,24 @@ export default function SinglePage({ params }: Props) {
         “Question every past decision and rebuild from first principles, with a laser focus on
         product excellence and customer experience.” This bold vision outlined on the company’s blog
         by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
-        At its core, this vision recognized that achieving excellence requires exceptional tools.        “Question every past decision and rebuild from first principles, with a laser focus on
-        product excellence and customer experience.” This bold vision outlined on the company’s blog
-        by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
-        At its core, this vision recognized that achieving excellence requires exceptional tools.        “Question every past decision and rebuild from first principles, with a laser focus on
-        product excellence and customer experience.” This bold vision outlined on the company’s blog
-        by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
-        At its core, this vision recognized that achieving excellence requires exceptional tools.        “Question every past decision and rebuild from first principles, with a laser focus on
+        At its core, this vision recognized that achieving excellence requires exceptional tools.
+        “Question every past decision and rebuild from first principles, with a laser focus on
         product excellence and customer experience.” This bold vision outlined on the company’s blog
         by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
         At its core, this vision recognized that achieving excellence requires exceptional tools.
-
-                “Question every past decision and rebuild from first principles, with a laser focus on
+        “Question every past decision and rebuild from first principles, with a laser focus on
         product excellence and customer experience.” This bold vision outlined on the company’s blog
         by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
-        At its core, this vision recognized that achieving excellence requires exceptional tools.        “Question every past decision and rebuild from first principles, with a laser focus on
+        At its core, this vision recognized that achieving excellence requires exceptional tools.
+        “Question every past decision and rebuild from first principles, with a laser focus on
+        product excellence and customer experience.” This bold vision outlined on the company’s blog
+        by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
+        At its core, this vision recognized that achieving excellence requires exceptional tools.
+        “Question every past decision and rebuild from first principles, with a laser focus on
+        product excellence and customer experience.” This bold vision outlined on the company’s blog
+        by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
+        At its core, this vision recognized that achieving excellence requires exceptional tools.
+        “Question every past decision and rebuild from first principles, with a laser focus on
         product excellence and customer experience.” This bold vision outlined on the company’s blog
         by CEO Pedro Franceschi set the stage for Brex's ambitious transformation dubbed “Brex 3.0.”
         At its core, this vision recognized that achieving excellence requires exceptional tools.
