@@ -4,6 +4,7 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 import { Projects } from '@/components/Projects'
 
+
 export default async function Project() {
   const headers = await getHeaders()
   const payloadConfig = await config
