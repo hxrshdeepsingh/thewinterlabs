@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { Banner1 } from './banner'
 
 export default function Header() {
   return (
@@ -98,7 +99,7 @@ const HeroHeader = () => {
                     <span>Login</span>
                   </Link>
                 </Button>
-                {/* <Button asChild size="sm" className={cn(isScrolled && 'lg:hidden')}>
+                <Button asChild size="sm" className={cn(isScrolled && 'lg:hidden')}>
                   <Link href="#">
                     <span>Sign Up</span>
                   </Link>
@@ -107,7 +108,7 @@ const HeroHeader = () => {
                   <Link href="#">
                     <span>Get Started</span>
                   </Link>
-                </Button> */}
+                </Button>
               </div>
             </div>
           </div>

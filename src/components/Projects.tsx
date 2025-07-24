@@ -1,21 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 
-interface Project {
-  id: string
-  title: string
-  description: string
-  image: string
-}
-
-interface ProjectsProps {
-  heading: string
-  description: string
-  linkUrl: string
-  linkText: string
-  features: Project[]
-}
-
 export const Projects = ({ heading, description, linkUrl, linkText, features }: ProjectsProps) => {
   const items = features
   return (
@@ -36,8 +21,8 @@ export const Projects = ({ heading, description, linkUrl, linkText, features }: 
 
           <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
             {items.map((item) => (
-              <div key={item.id} className="max-w-[320px] lg:max-w-[360px] p-0">
-                <a href={item.href} className="group ">
+              <div key={item.id} className="p-0">
+                <a href={`/projects/${item.slug}`} className="group ">
                   <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-[32px] md:aspect-[5/4] lg:aspect-[16/9] border-2">
                     <Image
                       src={item.image}
