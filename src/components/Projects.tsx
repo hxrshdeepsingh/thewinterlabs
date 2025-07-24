@@ -59,7 +59,7 @@ export const Projects = ({ heading, description, linkUrl, linkText, features }: 
                     </div>
                   </div>
                 </a>
-                </div>
+              </div>
             ))}
           </div>
         </div>
