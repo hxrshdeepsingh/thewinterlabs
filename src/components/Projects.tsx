@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 interface Project {
   id: string
@@ -8,49 +9,14 @@ interface Project {
 }
 
 interface ProjectsProps {
-  heading?: string
-  description?: string
-  linkUrl?: string
-  linkText?: string
-  features?: Project[]
+  heading: string
+  description: string
+  linkUrl: string
+  linkText: string
+  features: Project[]
 }
 
-export const Projects = ({
-  heading = 'Powerful Features',
-  description = 'Discover the powerful features that make our platform stand out from the rest. Built with the latest technology and designed for maximum productivity.',
-  linkUrl = 'https://www.shadcnblocks.com',
-  linkText = 'Book a demo',
-  features = [
-    {
-      id: 'feature-1',
-      title: 'Modern Design',
-      description:
-        'Clean and intuitive interface built with the latest design principles. Optimized for the best user experience.',
-      image: 'https://www.shadcnblocks.com/images/block/placeholder-1.svg',
-    },
-    {
-      id: 'feature-2',
-      title: 'Responsive Layout',
-      description:
-        'Fully responsive design that works seamlessly across all devices and screen sizes. Perfect for any platform.',
-      image: 'https://www.shadcnblocks.com/images/block/placeholder-2.svg',
-    },
-    {
-      id: 'feature-3',
-      title: 'Easy Integration',
-      description:
-        'Simple integration process with comprehensive documentation and dedicated support team.',
-      image: 'https://www.shadcnblocks.com/images/block/placeholder-3.svg',
-    },
-    {
-      id: 'feature-4',
-      title: 'Advanced Analytics',
-      description:
-        'Powerful analytics tools to help you understand your users and make data-driven decisions.',
-      image: 'https://www.shadcnblocks.com/images/block/placeholder-4.svg',
-    },
-  ],
-}: ProjectsProps) => {
+export const Projects = ({ heading, description, linkUrl, linkText, features }: ProjectsProps) => {
   return (
     <section className="py-32">
       <div className="container flex flex-col gap-16">
@@ -65,17 +31,21 @@ export const Projects = ({
             <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
+
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features.map((feature) => (
-            <div
+            <a
+              href={`/projects/${feature.slug}`}
               key={feature.id}
               className="flex flex-col overflow-clip rounded-xl border border-border"
             >
               <div>
-                <img
+                <Image
                   src={feature.image}
                   alt={feature.title}
                   className="aspect-[16/9] h-full w-full object-cover object-center"
+                  width={500}
+                  height={400}
                 />
               </div>
               <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
@@ -84,7 +54,7 @@ export const Projects = ({
                 </h3>
                 <p className="text-muted-foreground lg:text-lg">{feature.description}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

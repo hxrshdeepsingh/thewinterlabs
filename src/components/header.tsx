@@ -14,7 +14,7 @@ export default function Header() {
 }
 
 const menuItems = [
-  { name: 'Projects', href: '#projects' },
+  { name: 'Projects', href: '/projects' },
   { name: 'Solution', href: '#link' },
   { name: 'Pricing', href: '#link' },
   { name: 'About', href: '#link' },
@@ -98,7 +98,7 @@ const HeroHeader = () => {
                     <span>Login</span>
                   </Link>
                 </Button>
-                <Button asChild size="sm" className={cn(isScrolled && 'lg:hidden')}>
+                {/* <Button asChild size="sm" className={cn(isScrolled && 'lg:hidden')}>
                   <Link href="#">
                     <span>Sign Up</span>
                   </Link>
@@ -107,7 +107,7 @@ const HeroHeader = () => {
                   <Link href="#">
                     <span>Get Started</span>
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
