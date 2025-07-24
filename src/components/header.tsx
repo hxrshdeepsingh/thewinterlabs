@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Banner1 } from './banner'
 
 export default function Header() {
   return (

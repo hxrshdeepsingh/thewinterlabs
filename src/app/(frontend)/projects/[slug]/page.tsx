@@ -1,25 +1,5 @@
 import Image from 'next/image'
-import RenderEditor from '../../../../components/RenderEditor'
-
-interface Props {
-  params: { slug: string }
-}
-
-interface Project {
-  title: string
-  featuredImage?: { url: string }
-  content?: any
-  clientName?: string
-  projectName?: string
-  projectDate?: string
-  projectDuration?: string
-  projectURL?: string
-  location?: string
-  testimonial?: string
-  servicesProvided?: { service: string }[]
-  technologiesUsed?: { technology: string }[]
-  projectGallery?: { image: { url: string }; caption?: string }[]
-}
+import RenderEditor from '@/components/RenderEditor'
 
 export default async function SinglePage({ params }: Props) {
   const { slug } = params
