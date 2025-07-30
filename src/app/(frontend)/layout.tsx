@@ -6,8 +6,8 @@ import Cta from '@/components/CallToAction'
 import ClientWrapper from '@/components/ClientWrapper'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'thewinterlabs',
+  title: 'thewinterlabs',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -17,12 +17,12 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <ClientWrapper>
+          <Header />
           <main>
-            <Header />
             {children}
             <Cta />
-            <Footer />
           </main>
+          <Footer />
         </ClientWrapper>
       </body>
     </html>

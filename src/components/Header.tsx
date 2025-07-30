@@ -36,7 +36,7 @@ const HeroHeader = () => {
       <nav data-state={menuState && 'active'} className="fixed z-20 w-full px-2 group">
         <div
           className={cn(
-            'mx-auto mt-2 max-w-custom px-6 transition-all duration-300 lg:px-12',
+            'mx-auto mt-2 max-w-custom  transition-all duration-300',
             isScrolled &&
               'bg-background/50 max-w-custom rounded-2xl border backdrop-blur-lg lg:px-5',
           )}

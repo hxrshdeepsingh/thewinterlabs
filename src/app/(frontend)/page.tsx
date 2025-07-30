@@ -1,4 +1,3 @@
-
 import * as React from 'react'
 import Hero from '@/components/Hero'
 import Testimonials from '@/components/Testimonials'
@@ -11,7 +10,7 @@ export default function Page() {
       <Hero />
       <Gallery />
       <Testimonials />
-      <Faq/>
+      <Faq />
     </>
   )
 }

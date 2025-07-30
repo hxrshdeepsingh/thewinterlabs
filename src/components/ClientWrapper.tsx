@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 
 export default function ClientWrapper({ children }: { children: React.ReactNode }) {
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
     if (isDarkMode) {
