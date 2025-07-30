@@ -18,9 +18,9 @@ export default async function ProjectsPage() {
       <section className="max-w-custom mx-auto pt-28">
         <div className="container flex flex-col gap-12">
           <div className="lg:max-w-sm">
-            <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">Our Projects</h2>
+            <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">{`Our Projects`}</h2>
             <p className="mb-8 text-muted-foreground lg:text-lg">
-              Take a look at some of the work we've done for amazing clients.
+              {`Take a look at some of the work we've done for amazing clients.`}
             </p>
             <a
               href="/contact"
