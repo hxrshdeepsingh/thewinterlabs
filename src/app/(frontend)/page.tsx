@@ -1,16 +1,15 @@
-import * as React from 'react'
-import Hero from '@/components/Hero'
-import Testimonials from '@/components/Testimonials'
-import Gallery from '@/components/Gallery'
-import Faq from '@/components/Faq'
+import About from "@/components/about";
+import Experience from "@/components/experience";
+import Hero from "@/components/hero";
+import Projects from "@/components/projects";
 
-export default function Page() {
+export default function Home() {
   return (
-    <>
+    <div className="space-y-10 sm:space-y-16">
       <Hero />
-      <Gallery />
-      <Testimonials />
-      <Faq />
-    </>
-  )
+      <About />
+      <Experience />
+      <Projects />
+    </div>
+  );
 }

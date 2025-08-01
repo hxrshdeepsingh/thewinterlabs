@@ -1,29 +1,27 @@
 import './styles.css'
-import React from 'react'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Cta from '@/components/CallToAction'
-import ClientWrapper from '@/components/ClientWrapper'
+import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
+import Navbar from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import { Cta } from '@/components/cta'
 
-export const metadata = {
-  description: 'thewinterlabs',
-  title: 'thewinterlabs',
+const geistSans = Geist({
+  subsets: ['latin'],
+})
+export const metadata: Metadata = {
+  title: 'Thewinterlabs',
+  description: 'An company that focus on quality not quantity.',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
-
   return (
     <html lang="en">
-      <body>
-        <ClientWrapper>
-          <Header />
-          <main>
-            {children}
-            <Cta />
-          </main>
-          <Footer />
-        </ClientWrapper>
+      <body className={`${geistSans.className} antialiased`}>
+        <Navbar />
+        <main>{children}</main>
+        <Cta />
+        <Footer />
       </body>
     </html>
   )

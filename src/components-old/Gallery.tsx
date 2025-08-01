@@ -2,8 +2,8 @@
 
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import { Button } from '@/components-old/ui/button'
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components-old/ui/carousel'
 
 export interface Gallery4Item {
   id: string

@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components-old/ui/badge'
 
 export interface FaqItem {
   question: string

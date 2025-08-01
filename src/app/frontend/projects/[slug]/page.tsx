@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import RenderEditor from '@/components/RenderEditor'
+import RenderEditor from '@/components-old/RenderEditor'
 
 export default async function SinglePage({ params }: Props) {
   const { slug } = params
