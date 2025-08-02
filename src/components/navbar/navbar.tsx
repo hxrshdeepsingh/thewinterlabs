@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { GithubLogo, XLogo } from "../icons";
-import { Logo } from "./logo";
-import { NavMenu } from "./nav-menu";
-import { NavigationSheet } from "./navigation-sheet";
+import { Button } from '@/components/ui/button'
+import { GithubLogo, XLogo } from '../icons'
+import { Logo } from './logo'
+import { NavMenu } from './nav-menu'
+import { NavigationSheet } from './navigation-sheet'
 
 const Navbar = () => {
   return (
@@ -21,11 +21,7 @@ const Navbar = () => {
           >
             <XLogo />
           </Button>
-          <Button
-            variant="outline"
-            className="rounded-full shadow-none"
-            size="icon"
-          >
+          <Button variant="outline" className="rounded-full shadow-none" size="icon">
             <GithubLogo className="h-5! w-5!" />
           </Button>
 
@@ -36,7 +32,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

@@ -1,198 +1,14 @@
-// 'use client'
-
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { ExternalLink } from 'lucide-react'
-import Image from 'next/image'
-import { GithubLogo } from '@/components/icons'
-import { fetchData } from '@/lib/fetchData'
-
-interface ProjectCardProps {
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-  liveUrl?: string
-  githubUrl?: string
-}
-
-const ProjectCard = ({
-  title,
-  description,
-  image,
-  technologies,
-  liveUrl,
-  githubUrl,
-}: ProjectCardProps) => {
-
-  return (
-    <div className="group relative flex flex-col overflow-hidden rounded-xl border border-accent transition-all hover:border-primary/50">
-      {/* Project Image */}
-      <div className="relative h-64 overflow-hidden bg-accent">
-        <Image
-          src={image}
-          alt={title}
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          fill
-        />
-      </div>
-
-      {/* Content */}
-      <div className="flex-1 flex flex-col p-6">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-muted-foreground mb-4">{description}</p>
-
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {technologies.map((tech) => (
-            <Badge key={tech} variant="secondary" className="rounded-full">
-              {tech}
-            </Badge>
-          ))}
-        </div>
-
-        {/* Actions */}
-        <div className="flex gap-3 mt-auto">
-          {liveUrl && (
-            <Button variant="default" className="rounded-full" asChild>
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-1 h-4 w-4" />
-                Live Demo
-              </a>
-            </Button>
-          )}
-          {githubUrl && (
-            <Button variant="outline" className="rounded-full shadow-none" asChild>
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <GithubLogo className="mr-1 h-4 w-4" />
-                View Code
-              </a>
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
+import ProjectCard from '@/components/project-card'
+import { getPayloadClient } from '../../../lib/fetchData'
 
 export default async function Projects() {
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.',
-      image: '/placeholder.svg',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Prisma', 'PostgreSQL'],
-      liveUrl: 'https://ecommerce-demo.com',
-      githubUrl: 'https://github.com/username/ecommerce',
-    },
-    {
-      title: 'AI Task Manager',
-      description:
-        'Smart task management app that uses AI to categorize, prioritize, and suggest optimal task scheduling.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Python', 'TensorFlow', 'FastAPI', 'MongoDB'],
-      liveUrl: 'https://ai-taskmanager.com',
-      githubUrl: 'https://github.com/username/ai-taskmanager',
-    },
-    {
-      title: 'Real-time Chat Application',
-      description:
-        'Feature-rich chat application with real-time messaging, file sharing, and video calls.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Socket.io', 'WebRTC', 'Node.js', 'Redis'],
-      liveUrl: 'https://chatapp-demo.com',
-      githubUrl: 'https://github.com/username/chat-app',
-    },
-    {
-      title: 'AI Image Generator',
-      description: 'An AI image generator that uses a model to generate images based on a prompt.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn UI'],
-      liveUrl: 'https://ai-image-generator.com',
-      githubUrl: 'https://github.com/username/ai-image-generator',
-    },
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.',
-      image: '/placeholder.svg',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Prisma', 'PostgreSQL'],
-      liveUrl: 'https://ecommerce-demo.com',
-      githubUrl: 'https://github.com/username/ecommerce',
-    },
-    {
-      title: 'AI Task Manager',
-      description:
-        'Smart task management app that uses AI to categorize, prioritize, and suggest optimal task scheduling.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Python', 'TensorFlow', 'FastAPI', 'MongoDB'],
-      liveUrl: 'https://ai-taskmanager.com',
-      githubUrl: 'https://github.com/username/ai-taskmanager',
-    },
-    {
-      title: 'Real-time Chat Application',
-      description:
-        'Feature-rich chat application with real-time messaging, file sharing, and video calls.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Socket.io', 'WebRTC', 'Node.js', 'Redis'],
-      liveUrl: 'https://chatapp-demo.com',
-      githubUrl: 'https://github.com/username/chat-app',
-    },
-    {
-      title: 'AI Image Generator',
-      description: 'An AI image generator that uses a model to generate images based on a prompt.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn UI'],
-      liveUrl: 'https://ai-image-generator.com',
-      githubUrl: 'https://github.com/username/ai-image-generator',
-    },
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.',
-      image: '/placeholder.svg',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Prisma', 'PostgreSQL'],
-      liveUrl: 'https://ecommerce-demo.com',
-      githubUrl: 'https://github.com/username/ecommerce',
-    },
-    {
-      title: 'AI Task Manager',
-      description:
-        'Smart task management app that uses AI to categorize, prioritize, and suggest optimal task scheduling.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Python', 'TensorFlow', 'FastAPI', 'MongoDB'],
-      liveUrl: 'https://ai-taskmanager.com',
-      githubUrl: 'https://github.com/username/ai-taskmanager',
-    },
-    {
-      title: 'Real-time Chat Application',
-      description:
-        'Feature-rich chat application with real-time messaging, file sharing, and video calls.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Socket.io', 'WebRTC', 'Node.js', 'Redis'],
-      liveUrl: 'https://chatapp-demo.com',
-      githubUrl: 'https://github.com/username/chat-app',
-    },
-    {
-      title: 'AI Image Generator',
-      description: 'An AI image generator that uses a model to generate images based on a prompt.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn UI'],
-      liveUrl: 'https://ai-image-generator.com',
-      githubUrl: 'https://github.com/username/ai-image-generator',
-    },
-  ]
+  const payload = await getPayloadClient()
 
-  const data = await fetchData('/api/projects')
-  // const projectsData = data.docs.map((p) => ({
-  //   id: p.id,
-  //   title: p.title,
-  //   description: p.content?.root?.children?.[0]?.children?.[0]?.text || '',
-  //   image: `${process.env.NEXT_PUBLIC_API_URL}${p.featuredImage?.url || ''}`,
-  //   slug: p.slug,
-  // }))
-
+  const posts = await payload.find({
+    collection: 'posts',
+  })
+  console.log(posts)
   return (
     <section id="projects" className="relative pt-32 px-6">
       <div className="max-w-screen-lg mx-auto">
@@ -207,9 +23,14 @@ export default async function Projects() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
+          <ProjectCard
+            title="My Project"
+            description="This is a cool project."
+            image="/project.jpg"
+            technologies={['React', 'Next.js', 'Tailwind']}
+            liveUrl="https://example.com"
+            githubUrl="https://github.com/user/project"
+          />
         </div>
       </div>
     </section>

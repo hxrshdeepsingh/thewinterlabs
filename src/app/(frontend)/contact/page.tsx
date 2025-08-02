@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react'
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 
 interface Contact2Props {
-  title?: string;
-  description?: string;
-  phone?: string;
-  email?: string;
-  web?: { label: string; url: string };
+  title?: string
+  description?: string
+  phone?: string
+  email?: string
+  web?: { label: string; url: string }
 }
 
 export default function Contact({
-  title = "Contact Us",
-  description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
-  phone = "(123) 34567890",
-  email = "email@example.com",
-  web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
+  title = 'Contact Us',
+  description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
+  phone = '(123) 34567890',
+  email = 'email@example.com',
+  web = { label: 'shadcnblocks.com', url: 'https://shadcnblocks.com' },
 }: Contact2Props) {
   return (
     <section className="pt-32">
@@ -46,12 +46,7 @@ export default function Contact({
                 </li>
                 <li>
                   <span className="font-bold">Web: </span>
-                  <a
-                    href={web.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
+                  <a href={web.url} target="_blank" rel="noopener noreferrer" className="underline">
                     {web.label}
                   </a>
                 </li>
@@ -86,5 +81,5 @@ export default function Contact({
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,17 +1,8 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import { GithubLogo } from "./icons";
-
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-}
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
+import { GithubLogo } from './icons'
 
 const ProjectCard = ({
   title,
@@ -58,11 +49,7 @@ const ProjectCard = ({
             </Button>
           )}
           {githubUrl && (
-            <Button
-              variant="outline"
-              className="rounded-full shadow-none"
-              asChild
-            >
+            <Button variant="outline" className="rounded-full shadow-none" asChild>
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                 <GithubLogo className="mr-1 h-4 w-4" />
                 View Code
@@ -72,48 +59,47 @@ const ProjectCard = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: 'E-Commerce Platform',
       description:
-        "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-      image: "/placeholder.svg",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/username/ecommerce",
+        'A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.',
+      image: '/placeholder.svg',
+      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Prisma', 'PostgreSQL'],
+      liveUrl: 'https://ecommerce-demo.com',
+      githubUrl: 'https://github.com/username/ecommerce',
     },
     {
-      title: "AI Task Manager",
+      title: 'AI Task Manager',
       description:
-        "Smart task management app that uses AI to categorize, prioritize, and suggest optimal task scheduling.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Python", "TensorFlow", "FastAPI", "MongoDB"],
-      liveUrl: "https://ai-taskmanager.com",
-      githubUrl: "https://github.com/username/ai-taskmanager",
+        'Smart task management app that uses AI to categorize, prioritize, and suggest optimal task scheduling.',
+      image: '/placeholder.svg',
+      technologies: ['React', 'Python', 'TensorFlow', 'FastAPI', 'MongoDB'],
+      liveUrl: 'https://ai-taskmanager.com',
+      githubUrl: 'https://github.com/username/ai-taskmanager',
     },
     {
-      title: "Real-time Chat Application",
+      title: 'Real-time Chat Application',
       description:
-        "Feature-rich chat application with real-time messaging, file sharing, and video calls.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Socket.io", "WebRTC", "Node.js", "Redis"],
-      liveUrl: "https://chatapp-demo.com",
-      githubUrl: "https://github.com/username/chat-app",
+        'Feature-rich chat application with real-time messaging, file sharing, and video calls.',
+      image: '/placeholder.svg',
+      technologies: ['React', 'Socket.io', 'WebRTC', 'Node.js', 'Redis'],
+      liveUrl: 'https://chatapp-demo.com',
+      githubUrl: 'https://github.com/username/chat-app',
     },
     {
-      title: "AI Image Generator",
-      description:
-        "An AI image generator that uses a model to generate images based on a prompt.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Next.js", "Tailwind CSS", "Shadcn UI"],
-      liveUrl: "https://ai-image-generator.com",
-      githubUrl: "https://github.com/username/ai-image-generator",
+      title: 'AI Image Generator',
+      description: 'An AI image generator that uses a model to generate images based on a prompt.',
+      image: '/placeholder.svg',
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn UI'],
+      liveUrl: 'https://ai-image-generator.com',
+      githubUrl: 'https://github.com/username/ai-image-generator',
     },
-  ];
+  ]
 
   return (
     <section id="projects" className="relative py-20 px-6">
@@ -122,9 +108,7 @@ const Projects = () => {
           <Badge variant="secondary" className="mb-4">
             Projects
           </Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Featured Work
-          </h2>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Featured Work</h2>
           <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
             Showcasing some of my best projects and technical achievements
           </p>
@@ -137,7 +121,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

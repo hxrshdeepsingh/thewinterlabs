@@ -1,10 +1,10 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Download } from "lucide-react";
-import Image from "next/image";
-import { HTMLAttributes } from "react";
-import { GithubLogo } from "./icons";
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Download } from 'lucide-react'
+import Image from 'next/image'
+import { HTMLAttributes } from 'react'
+import { GithubLogo } from './icons'
 
 const About = () => {
   return (
@@ -23,12 +23,10 @@ const About = () => {
               Passionate about creating impactful web experiences
             </h2>
             <p className="text-muted-foreground mb-6 text-justify">
-              With over 5 years of experience in full-stack development, I
-              specialize in building scalable web applications using modern
-              technologies. My expertise includes React, Node.js, and cloud
-              architecture. I&apos;m passionate about creating elegant solutions
-              to complex problems and sharing knowledge with the developer
-              community.
+              With over 5 years of experience in full-stack development, I specialize in building
+              scalable web applications using modern technologies. My expertise includes React,
+              Node.js, and cloud architecture. I&apos;m passionate about creating elegant solutions
+              to complex problems and sharing knowledge with the developer community.
             </p>
             <div className="flex flex-wrap gap-4 justify-start">
               <Button className="rounded-full">
@@ -44,17 +42,14 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-const ProfileImage = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("mt-10 w-48 h-48 md:w-64 md:h-64", className)} {...props}>
+const ProfileImage = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn('mt-10 w-48 h-48 md:w-64 md:h-64', className)} {...props}>
     <div className="relative w-full h-full rounded-2xl overflow-hidden bg-accent">
       <Image src="/placeholder.svg" alt="" className="object-cover" fill />
     </div>
   </div>
-);
-export default About;
+)
+export default About
