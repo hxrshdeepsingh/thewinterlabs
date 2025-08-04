@@ -1,10 +1,9 @@
 import { Badge } from '@/components/ui/badge'
 import ProjectCard from '@/components/project-card'
-import { getPayload } from 'payload'
-import config from '../../../payload.config'
+import { getPayloadClient } from '@/lib/payloadClient'
 
 export default async function Projects() {
-  const payload = await getPayload({ config })
+  const payload = await getPayloadClient()
   const data = await payload.find({
     collection: 'projects',
   })

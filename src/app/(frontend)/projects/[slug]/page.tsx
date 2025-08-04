@@ -1,11 +1,10 @@
 import Image from 'next/image'
 import RenderEditor from '@/components/renderEditor'
-import { getPayload } from 'payload'
-import config from '../../../../payload.config'
+import { getPayloadClient } from '@/lib/payloadClient'
 
 export default async function SinglePage({ params }: Props) {
   const { slug } = params
-  const payload = await getPayload({ config })
+  const payload = await getPayloadClient()
   const res = await payload.find({
     collection: 'projects',
     slug: slug,
