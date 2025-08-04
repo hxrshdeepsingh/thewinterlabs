@@ -50,7 +50,7 @@ export default function ProjectCard({
         <div className="flex gap-3 mt-auto">
           {liveUrl && (
             <Button variant="default" className="rounded-full" asChild>
-              <Link href={`/projects/${liveUrl}`} target="_blank" rel="noopener noreferrer">
+              <Link href={`/projects/${liveUrl}`}>
                 <ExternalLink className="mr-1 h-4 w-4" />
                 Learn More
               </Link>

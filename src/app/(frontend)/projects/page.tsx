@@ -1,9 +1,13 @@
 import { Badge } from '@/components/ui/badge'
 import ProjectCard from '@/components/project-card'
-import { fetchData } from '@/lib/fetchData'
+import { getPayload } from 'payload'
+import config from '../../../payload.config'
 
 export default async function Projects() {
-  const data = await fetchData('/api/projects')
+  const payload = await getPayload({ config })
+  const data = await payload.find({
+    collection: 'projects',
+  })
 
   const projectsData = data.docs.map((p) => ({
     id: p.id,

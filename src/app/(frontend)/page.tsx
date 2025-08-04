@@ -1,15 +1,17 @@
-import About from '@/components/about'
-import Experience from '@/components/experience'
+import { Features } from '@/components/features'
 import Hero from '@/components/hero'
+import { AboutFeatures } from '@/components/about-features'
 import Projects from '@/components/projects'
+import Testimonials from '@/components/testimonials'
 
 export default function Home() {
   return (
     <div className="space-y-10 sm:space-y-16">
       <Hero />
-      <About />
-      <Experience />
+      <AboutFeatures />
+      <Features />
       <Projects />
+      <Testimonials />
     </div>
   )
 }
