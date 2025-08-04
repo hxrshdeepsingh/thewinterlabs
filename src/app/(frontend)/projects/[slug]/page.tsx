@@ -1,20 +1,16 @@
 import Image from 'next/image'
 import RenderEditor from '@/components/renderEditor'
+import { getPayload } from 'payload'
+import config from '../../../../payload.config'
 
 export default async function SinglePage({ params }: Props) {
   const { slug } = params
-
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/projects?where[slug][equals]=${slug}`,
-    {
-      cache: 'no-store',
-    },
-  )
-
-  const json = await res.json()
-  const project: Project = json.docs[0]
-
-  if (!project) return <div>Project not found.</div>
+  const payload = await getPayload({ config })
+  const res = await payload.find({
+    collection: 'projects',
+    slug: slug,
+  })
+  const project = res.docs[0]
 
   return (
     <div className="bg-[#f9f9f9] text-black min-h-screen px-6 pt-[150px] pb-20">
