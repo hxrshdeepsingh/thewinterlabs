@@ -4,6 +4,7 @@ import { Geist } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { Cta } from '@/components/cta'
+import { Analytics } from '@vercel/analytics/next'
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -22,6 +23,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <main>{children}</main>
         <Cta />
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
