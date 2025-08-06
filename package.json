@@ -15,6 +15,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@next/third-parties": "^15.4.6",
     "@payloadcms/db-vercel-postgres": "^3.49.1",
     "@payloadcms/next": "^3.49.1",
     "@payloadcms/payload-cloud": "^3.49.1",
