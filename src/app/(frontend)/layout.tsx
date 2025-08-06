@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { Cta } from '@/components/cta'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-5SX583CH0G" />
+      <SpeedInsights/>
     </html>
   )
 }
