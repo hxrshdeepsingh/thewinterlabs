@@ -3,8 +3,10 @@ import Hero from '@/components/hero'
 import { AboutFeatures } from '@/components/about-features'
 import Projects from '@/components/projects'
 import Testimonials from '@/components/testimonials'
+import { getPageSEO } from '@/lib/getPageSeo'
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <div className="space-y-10 sm:space-y-16">
       <Hero />
@@ -14,4 +16,8 @@ export default function Home() {
       <Testimonials />
     </div>
   )
+}
+
+export async function generateMetadata() {
+  return await getPageSEO(1);
 }
