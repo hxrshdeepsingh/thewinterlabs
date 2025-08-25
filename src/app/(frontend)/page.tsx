@@ -19,5 +19,5 @@ export default async function Home() {
 }
 
 export async function generateMetadata() {
-  return await getPageSEO(1);
+  return await getPageSEO(1, 'pages');
 }

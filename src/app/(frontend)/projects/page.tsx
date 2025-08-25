@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import ProjectCard from '@/components/project-card'
 import { getPayloadClient } from '@/lib/payloadClient'
+import { getPageSEO } from '@/lib/getPageSeo'
 
 export default async function Projects() {
   const payload = await getPayloadClient()
@@ -48,4 +49,8 @@ export default async function Projects() {
       </div>
     </section>
   )
+}
+
+export async function generateMetadata() {
+  return await getPageSEO(4, 'pages');
 }

@@ -1,15 +1,48 @@
+// app/projects/[slug]/page.tsx
 import Image from 'next/image'
 import RenderEditor from '@/components/renderEditor'
 import { getPayloadClient } from '@/lib/payloadClient'
 
-export default async function SinglePage({ params }: Props) {
+// Dynamic metadata for SEO
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { slug } = params
   const payload = await getPayloadClient()
+
   const res = await payload.find({
     collection: 'projects',
-    slug: slug,
+    where: { slug: { equals: slug } },
+    limit: 1,
   })
+
   const project = res.docs[0]
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+      description: 'This project does not exist.',
+    }
+  }
+
+  return {
+    title: project.meta.title || project.title,
+    description: project.meta.description || project.description || '',
+  }
+}
+
+// Single Project Page
+export default async function SinglePage({ params }: { params: { slug: string } }) {
+  const { slug } = params
+  const payload = await getPayloadClient()
+
+  const res = await payload.find({
+    collection: 'projects',
+    where: { slug: { equals: slug } },
+    limit: 1,
+  })
+
+  const project = res.docs[0]
+
+  if (!project) return <p className="text-center mt-20">Project not found</p>
 
   return (
     <div className="bg-[#f9f9f9] text-black min-h-screen px-6 pt-[150px] pb-20">
@@ -100,29 +133,6 @@ export default async function SinglePage({ params }: Props) {
             <p className="italic text-gray-700">“{project.testimonial}”</p>
           </div>
         )}
-
-        {/* Project Gallery */}
-        {/* {project.projectGallery?.length > 0 && (
-          <div className="mb-16">
-            <h2 className="text-2xl font-semibold mb-6 text-center">Project Gallery</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {project.projectGallery.map((item, i) => (
-                <div key={i} className="overflow-hidden rounded-xl shadow">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL}${item.image.url}`}
-                    alt={item.caption || `Gallery image ${i + 1}`}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                  {item.caption && (
-                    <p className="text-sm text-center py-2 bg-gray-100">{item.caption}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )} */}
 
         {/* Project Content */}
         {project.content && (

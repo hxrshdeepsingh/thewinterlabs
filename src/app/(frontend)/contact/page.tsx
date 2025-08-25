@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { getPageSEO } from '@/lib/getPageSeo'
 
 interface Contact2Props {
   title?: string
@@ -82,4 +83,9 @@ export default function Contact({
       </div>
     </section>
   )
+}
+
+
+export async function generateMetadata() {
+  return await getPageSEO(3, 'pages');
 }
