@@ -15,14 +15,6 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-// export const metadata = {
-//   title: 'The Winter Labs',
-//   description: 'Engineering Next-Gen Digital Brilliance',
-//   icons: {
-//     icon: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1756124919/favicon_eck4bs.ico',
-//   },
-// }
-
 export const metadata: Metadata = {
   title: 'TheWinterLabs',
   description: 'Engineering Next-Gen Digital Brilliance',
