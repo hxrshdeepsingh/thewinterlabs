@@ -85,7 +85,6 @@ export default function Contact({
   )
 }
 
-
 export async function generateMetadata() {
-  return await getPageSEO(3, 'pages');
+  return await getPageSEO(3, 'pages')
 }

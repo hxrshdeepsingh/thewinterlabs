@@ -81,7 +81,7 @@ const AboutFeatures = ({
       <div className="max-w-screen-lg mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">{badge}</Badge>
-          <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">{heading}</h1>
+          <h2 className="max-w-2xl text-3xl font-semibold md:text-4xl">{heading}</h2>
           <p className="text-muted-foreground">{description}</p>
         </div>
         <Tabs defaultValue={tabs[0].value} className="mt-8">

@@ -1,6 +1,6 @@
 import { getPayloadClient } from './payloadClient'
 
-export async function getPageSEO(pageId: string, postType: string ) {
+export async function getPageSEO(pageId: string, postType: string) {
   const payload = await getPayloadClient()
 
   const data = await payload.findByID({

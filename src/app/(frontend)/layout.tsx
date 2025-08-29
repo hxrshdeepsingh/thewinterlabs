@@ -1,25 +1,56 @@
 import './styles.css'
 import type { Metadata } from 'next'
-import { Inter } from "next/font/google";
+import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { Cta } from '@/components/cta'
 import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import TopProgressBar from '@/components/ui/TopLoader'
 
 const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
-export const metadata = {
-  title: 'The Winter Labs',
+// export const metadata = {
+//   title: 'The Winter Labs',
+//   description: 'Engineering Next-Gen Digital Brilliance',
+//   icons: {
+//     icon: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1756124919/favicon_eck4bs.ico',
+//   },
+// }
+
+export const metadata: Metadata = {
+  title: 'TheWinterLabs',
   description: 'Engineering Next-Gen Digital Brilliance',
   icons: {
-    icon: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1756124919/favicon_eck4bs.ico',
+    icon: '/favicon.ico',
+    shortcut: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'TheWinterLabs',
+    description: 'Engineering Next-Gen Digital Brilliance',
+    url: 'https://thewinterlabs.in',
+    siteName: 'TheWinterLabs',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TheWinterLabs Preview',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TheWinterLabs',
+    description: 'Engineering Next-Gen Digital Brilliance',
+    images: ['/og-image.png'],
   },
 }
 
@@ -30,15 +61,13 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body className={`${inter.className} antialiased`}>
         <TopProgressBar />
         <Navbar />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <Cta />
         <Footer />
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-5SX583CH0G" />
-      <SpeedInsights/>
+      <SpeedInsights />
     </html>
   )
 }

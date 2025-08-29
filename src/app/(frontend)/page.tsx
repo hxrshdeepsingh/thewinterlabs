@@ -6,7 +6,6 @@ import Testimonials from '@/components/testimonials'
 import { getPageSEO } from '@/lib/getPageSeo'
 
 export default async function Home() {
-
   return (
     <div className="space-y-10 sm:space-y-16">
       <Hero />
@@ -19,5 +18,5 @@ export default async function Home() {
 }
 
 export async function generateMetadata() {
-  return await getPageSEO(1, 'pages');
+  return await getPageSEO(1, 'pages')
 }

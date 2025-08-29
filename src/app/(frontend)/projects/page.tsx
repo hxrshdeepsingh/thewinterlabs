@@ -52,5 +52,5 @@ export default async function Projects() {
 }
 
 export async function generateMetadata() {
-  return await getPageSEO(4, 'pages');
+  return await getPageSEO(4, 'pages')
 }

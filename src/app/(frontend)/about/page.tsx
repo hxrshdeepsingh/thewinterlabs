@@ -13,5 +13,5 @@ function page() {
 export default page
 
 export async function generateMetadata() {
-  return await getPageSEO(2, 'pages');
+  return await getPageSEO(2, 'pages')
 }
