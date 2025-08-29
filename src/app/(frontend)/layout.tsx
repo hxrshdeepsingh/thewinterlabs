@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
   },
+  themeColor: "#171717",
+  manifest: "/site.webmanifest",
   openGraph: {
     title: 'TheWinterLabs',
     description: 'Engineering Next-Gen Digital Brilliance',
