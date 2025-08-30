@@ -8,6 +8,8 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import TopProgressBar from '@/components/ui/TopLoader'
+import Script from "next/script";
+import { tawkScript } from "@/lib/tawk";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -60,6 +62,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <Cta />
         <Footer />
         <Analytics />
+        <Script
+          id="tawk-to"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: tawkScript }}
+        />
       </body>
       <GoogleAnalytics gaId="G-5SX583CH0G" />
       <SpeedInsights />
