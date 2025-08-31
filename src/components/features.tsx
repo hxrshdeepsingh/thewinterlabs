@@ -80,8 +80,7 @@ export function Features() {
                     Secure by default
                   </h2>
                   <p className="text-foreground">
-                    Provident fugit and vero voluptate. magnam magni doloribus dolores voluptates a
-                    sapiente nisi.
+                    {`From day one, we build with security in mind. Your data, users, and business are always protected.`}
                   </p>
                 </div>
               </CardContent>
@@ -166,10 +165,9 @@ export function Features() {
                   </svg>
                 </div>
                 <div className="relative z-10 mt-14 space-y-2 text-center">
-                  <h2 className="text-lg font-medium transition">Faster than light</h2>
+                  <h2 className="text-lg font-medium transition">Blazing Fast Performance</h2>
                   <p className="text-foreground">
-                    Provident fugit vero voluptate. magnam magni doloribus dolores voluptates
-                    inventore nisi.
+                    {`Speed matters. We create lightweight, optimized products that load instantly and scale effortlessly.`}
                   </p>
                 </div>
               </CardContent>
@@ -182,10 +180,10 @@ export function Features() {
                   </div>
                   <div className="space-y-2">
                     <h2 className="group-hover:text-secondary-950 text-lg font-medium text-zinc-800 transition dark:text-white">
-                      Faster than light
+                      {`Future-Ready Technology`}
                     </h2>
                     <p className="text-foreground">
-                      Provident fugit vero voluptate. Voluptates a sapiente inventore nisi.
+                      {`We use the latest frameworks and best practices so your product stays modern, flexible, and reliable.`}
                     </p>
                   </div>
                 </div>
@@ -245,10 +243,9 @@ export function Features() {
                     <Users className="m-auto size-6" strokeWidth={1} />
                   </div>
                   <div className="space-y-2">
-                    <h2 className="text-lg font-medium transition">Keep your loved ones safe</h2>
+                    <h2 className="text-lg font-medium transition">Human-Centered Design</h2>
                     <p className="text-foreground">
-                      Voluptate. magnam magni doloribus dolores voluptates a sapiente inventore
-                      nisi.
+                      {`We design with people in mind — intuitive, accessible, and crafted for engagement.`}
                     </p>
                   </div>
                 </div>

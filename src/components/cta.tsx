@@ -2,6 +2,7 @@
 import { ArrowRight, Check } from 'lucide-react'
 // import { Waves } from "./wave";
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 interface Cta4Props {
   title?: string
@@ -12,18 +13,20 @@ interface Cta4Props {
 }
 
 const defaultItems = [
-  'Easy Integration',
+  'Blazing Fast & Secure',
   '24/7 Support',
   'Customizable Design',
   'Scalable Performance',
   'Hundreds of Blocks',
+  'Global-Ready',
+  'Future-Ready Tech'
 ]
 
 export const Cta = ({
-  title = 'Call to Action',
-  description = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto illo praesentium nisi, accusantium quae.',
+  title = 'Let’s Build Something Extraordinary',
+  description = 'Partner with The Winter Labs to create powerful, scalable, and beautifully designed digital experiences tailored to your vision.',
   buttonText = 'Get Started',
-  buttonUrl = 'https://shadcnblocks.com',
+  buttonUrl = '/contact',
   items = defaultItems,
 }: Cta4Props) => {
   return (
@@ -36,9 +39,9 @@ export const Cta = ({
                 <h4 className="mb-1 text-2xl font-bold md:text-3xl">{title}</h4>
                 <p className="text-muted-foreground">{description}</p>
                 <Button className="mt-6" asChild>
-                  <a href={buttonUrl} target="_blank">
+                  <Link href={buttonUrl}>
                     {buttonText} <ArrowRight className="size-4" />
-                  </a>
+                  </Link>
                 </Button>
               </div>
               <div className="md:w-1/3">

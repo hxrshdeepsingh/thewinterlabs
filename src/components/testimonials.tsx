@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
 import { TestimonialsWrapper } from './ui/testimonial-wrapper'
+import { Badge } from '@/components/ui/badge'
 
 const testimonials = [
   {
@@ -74,11 +75,9 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
-          <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
-          </div>
+          <Badge variant="secondary" className="mb-2">Testimonials</Badge>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter">
             What our users say
           </h2>
           <p className="text-center mt-5 opacity-75">

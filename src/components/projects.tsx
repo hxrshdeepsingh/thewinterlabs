@@ -25,9 +25,9 @@ export default async function Projects() {
           <Badge variant="secondary" className="mb-4">
             Projects
           </Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Featured Work</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{`Featured Projects`}</h2>
           <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            Showcasing some of my best projects and technical achievements
+            {`Showcasing our most impactful projects and technical achievements.`}
           </p>
         </div>
 

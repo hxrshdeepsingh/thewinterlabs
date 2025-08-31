@@ -2,7 +2,7 @@ import AnimatedGridPattern from '@/components/ui/animated-grid-pattern'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CircleArrowDown, Zap } from 'lucide-react'
+import { CircleArrowRight, Zap } from 'lucide-react'
 
 const Hero = () => {
   return (
@@ -17,22 +17,19 @@ const Hero = () => {
         )}
       />
       <div className="relative z-[1] text-center max-w-screen-lg">
-        <Badge className="rounded-full border-none">
+        <Badge variant="secondary">
           <Zap className="fill-current" />
-          Fullstack Web Developer
+          {`Thewinterlabs`}
         </Badge>
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-          Building Scalable & Engaging Web Experiences
+          {`Building bold ideas into powerful digital experiences.`}
         </h1>
         <p className="mt-6 text-[17px] md:text-lg">
-          Hey there! I&apos;m a John Doe, a Full Stack Developer who loves building cool and
-          scalable web experiences. From crafting beautiful frontends to powering robust backends, I
-          bring ideas to life with clean code and great design. Let&apos;s create something amazing
-          together! 🚀
+          {`At The Winter Labs, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
           <Button size="lg" className="rounded-full text-base">
-            See What I Do <CircleArrowDown className="ml-2 !h-5.5 !w-5.5" />
+            See What We Do <CircleArrowRight className="ml-2 !h-5.5 !w-5.5" />
           </Button>
         </div>
       </div>

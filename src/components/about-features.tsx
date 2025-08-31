@@ -28,14 +28,14 @@ interface Feature108Props {
 }
 
 const AboutFeatures = ({
-  badge = 'shadcnblocks.com',
-  heading = 'A Collection of Components Built With Shadcn & Tailwind',
-  description = 'Join us to build flawless web solutions.',
+  badge = 'Benefits',
+  heading = 'Why work with us',
+  description = 'We combine clean code, thoughtful design, and modern technology to build web experiences that drive results and delight users.',
   tabs = [
     {
       value: 'tab-1',
       icon: <Zap className="h-auto w-4 shrink-0" />,
-      label: 'Boost Revenue',
+      label: 'Blazing Fast & Secure',
       content: {
         badge: 'Modern Tactics',
         title: 'Make your site a true standout.',
@@ -49,7 +49,7 @@ const AboutFeatures = ({
     {
       value: 'tab-2',
       icon: <Pointer className="h-auto w-4 shrink-0" />,
-      label: 'Higher Engagement',
+      label: 'Scalable Performance',
       content: {
         badge: 'Expert Features',
         title: 'Boost your site with top-tier design.',
@@ -63,7 +63,7 @@ const AboutFeatures = ({
     {
       value: 'tab-3',
       icon: <Layout className="h-auto w-4 shrink-0" />,
-      label: 'Stunning Layouts',
+      label: 'Customizable Design',
       content: {
         badge: 'Elite Solutions',
         title: 'Build an advanced web experience.',
@@ -77,11 +77,11 @@ const AboutFeatures = ({
   ],
 }: Feature108Props) => {
   return (
-    <section className="">
+    <section className="pb-32 m-0">
       <div className="max-w-screen-lg mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
-          <Badge variant="outline">{badge}</Badge>
-          <h2 className="max-w-2xl text-3xl font-semibold md:text-4xl">{heading}</h2>
+          <Badge variant="secondary">{badge}</Badge>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{heading}</h2>
           <p className="text-muted-foreground">{description}</p>
         </div>
         <Tabs defaultValue={tabs[0].value} className="mt-8">
