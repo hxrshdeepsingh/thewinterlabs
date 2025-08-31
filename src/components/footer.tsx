@@ -36,28 +36,29 @@ const Footer = ({
     {
       title: 'Company',
       links: [
-        { text: 'About', url: '#' },
-        { text: 'Team', url: '#' },
-        { text: 'Blog', url: '#' },
-        { text: 'Careers', url: '#' },
-        { text: 'Contact', url: '#' },
-        { text: 'Privacy', url: '#' },
+        { text: 'About', url: '/about' },
+        { text: 'Projects', url: '/projects' },
+        { text: 'Careers', url: '' },
+        { text: 'Contact', url: '/contact' },
+        { text: 'Privacy', url: '/privacy' },
       ],
     },
     {
-      title: 'Resources',
+      title: 'Technologies',
       links: [
-        { text: 'Help', url: '#' },
-        { text: 'Sales', url: '#' },
-        { text: 'Advertise', url: '#' },
+        { text: 'Ai', url: '#' },
+        { text: 'Springboot', url: '#' },
+        { text: 'Next Js', url: '#' },
+        { text: 'React Js', url: '#' },
+        { text: 'Wordpress', url: '#' }
       ],
     },
     {
       title: 'Social',
       links: [
-        { text: 'Twitter', url: '#' },
-        { text: 'Instagram', url: '#' },
-        { text: 'LinkedIn', url: '#' },
+        { text: 'Twitter', url: 'https://x.com/thewinterlabs' },
+        { text: 'Instagram', url: 'https://www.instagram.com/thewinterlabs/' },
+        { text: 'Trustpilot', url: 'https://www.trustpilot.com/review/thewinterlabs.in' },
       ],
     },
   ],
