@@ -13,6 +13,7 @@ import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import { Projects } from './collections/Projects'
+import { Services } from './collections/Services'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -23,7 +24,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Pages, Posts, Projects],
+  collections: [Users, Media, Pages, Posts, Projects, Services],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -38,7 +39,7 @@ export default buildConfig({
   plugins: [
     payloadCloudPlugin(),
     seoPlugin({
-      collections: ['projects', 'pages', 'posts'],
+      collections: ['projects', 'pages', 'posts', 'services'],
     }),
   ],
 })
