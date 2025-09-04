@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <>
       <CldImage
-        src="logo_rafrgn"
+        src="logopng_xczd0i"
         width="50"
         height="50"
         crop={{
