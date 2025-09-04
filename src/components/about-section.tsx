@@ -68,7 +68,8 @@ const defaultAchievements = [
 
 export const About = ({
   title = 'About Us',
-  description = 'Shadcnblocks is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age.',
+  description = `At The Winter Labs, we believe that great products aren’t just built — they’re engineered with vision, precision, and creativity.
+We take bold ideas and transform them into powerful digital experiences that inspire, engage, and endure.`,
   mainImage = {
     src: 'https://shadcnblocks.com/images/block/placeholder-1.svg',
     alt: 'placeholder',

@@ -17,9 +17,9 @@ interface Contact2Props {
 export default function Contact({
   title = 'Contact Us',
   description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
-  phone = '(123) 34567890',
-  email = 'email@example.com',
-  web = { label: 'shadcnblocks.com', url: 'https://shadcnblocks.com' },
+  phone = '+91 73571-94599',
+  email = 'thewinterlabs@gmail.com',
+  web = { label: 'thewinterlabs.in', url: 'https://thewinterlabs.in' },
 }: Contact2Props) {
   return (
     <section className="pt-32">
