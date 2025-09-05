@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CircleArrowRight, Zap } from 'lucide-react'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -28,9 +29,11 @@ const Hero = () => {
           {`At The Winter Labs, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
+          <Link href={'/projects'}>
           <Button size="lg" className="rounded-full text-base">
             See What We Do <CircleArrowRight className="ml-2 !h-5.5 !w-5.5" />
           </Button>
+          </Link>
         </div>
       </div>
     </div>

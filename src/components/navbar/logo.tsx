@@ -1,5 +1,6 @@
 'use client'
 import { CldImage } from 'next-cloudinary'
+import Link from 'next/link'
 
 export default function Logo() {
   return (
