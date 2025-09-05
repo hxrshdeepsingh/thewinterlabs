@@ -50,7 +50,7 @@ const Footer = ({
         { text: 'Springboot', url: '#' },
         { text: 'Next Js', url: '#' },
         { text: 'React Js', url: '#' },
-        { text: 'Wordpress', url: '#' }
+        { text: 'Wordpress', url: '#' },
       ],
     },
     {
@@ -71,12 +71,12 @@ const Footer = ({
   return (
     <section className="py-12 max-w-screen-lg m-auto">
       <div className="container">
-        <footer className='px-6 sm:px-4 md:p-0'>
+        <footer className="px-6 sm:px-4 md:p-0">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
             <div className="col-span-2 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
                 <Link href="/">
-                  <Logo/>
+                  <Logo />
                 </Link>
                 <p className="text-xl font-semibold">{logo.title}</p>
               </div>

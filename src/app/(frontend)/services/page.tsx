@@ -25,9 +25,7 @@ export default async function Services() {
           <Badge variant="secondary" className="mb-4">
             Services
           </Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Our Services
-          </h2>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Our Services</h2>
           <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
             Explore the services we offer to help your business grow
           </p>

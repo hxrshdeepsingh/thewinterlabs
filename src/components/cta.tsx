@@ -19,7 +19,7 @@ const defaultItems = [
   'Scalable Performance',
   'Hundreds of Blocks',
   'Global-Ready',
-  'Future-Ready Tech'
+  'Future-Ready Tech',
 ]
 
 export const Cta = ({

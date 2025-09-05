@@ -8,4 +8,4 @@ export const tawkScript = `
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
   })();
-`;
+`

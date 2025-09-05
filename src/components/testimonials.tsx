@@ -75,7 +75,9 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
-          <Badge variant="secondary" className="mb-2">Testimonials</Badge>
+          <Badge variant="secondary" className="mb-2">
+            Testimonials
+          </Badge>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter">
             What our users say

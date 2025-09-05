@@ -8,8 +8,8 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import TopProgressBar from '@/components/ui/TopLoader'
-import Script from "next/script";
-import { tawkScript } from "@/lib/tawk";
+import Script from 'next/script'
+import { tawkScript } from '@/lib/tawk'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
   },
-  themeColor: "#171717",
-  manifest: "/site.webmanifest",
+  themeColor: '#171717',
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'TheWinterLabs',
     description: 'Engineering Next-Gen Digital Brilliance',
@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
 }
-
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
