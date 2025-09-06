@@ -17,7 +17,6 @@ interface Contact2Props {
 export default function Contact({
   title = 'Contact Us',
   description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
-  phone = '',
   email = 'thewinterlabs@gmail.com',
   web = { label: 'thewinterlabs.in', url: 'https://thewinterlabs.in' },
 }: Contact2Props) {
@@ -35,10 +34,6 @@ export default function Contact({
                 Contact Details
               </h3>
               <ul className="ml-4 list-disc">
-                <li>
-                  <span className="font-bold">Phone: </span>
-                  {phone}
-                </li>
                 <li>
                   <span className="font-bold">Email: </span>
                   <a href={`mailto:${email}`} className="underline">

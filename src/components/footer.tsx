@@ -83,7 +83,7 @@ const Footer = ({
       <div className="container">
         <footer className="px-6 sm:px-4 md:p-0">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-            <div className="col-span-2 mb-8 lg:mb-0">
+            <div className="col-span-2 mb-8 lg:mb-0 flex flex-col justify-between">
               <div className="flex items-center gap-2 lg:justify-start">
                 <Link href="/">
                   <Logo />
