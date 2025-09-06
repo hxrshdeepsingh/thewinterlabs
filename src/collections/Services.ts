@@ -42,22 +42,6 @@ export const Services: CollectionConfig = {
       label: 'Featured URL',
     },
     {
-      name: 'gallery',
-      type: 'array',
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
-        },
-        {
-          name: 'caption',
-          type: 'text',
-        },
-      ],
-    },
-    {
       name: 'keyFeatures',
       type: 'array',
       fields: [
@@ -68,14 +52,10 @@ export const Services: CollectionConfig = {
       ],
     },
     {
-      name: 'technologiesUsed',
-      type: 'array',
-      fields: [
-        {
-          name: 'technology',
-          type: 'text',
-        },
-      ],
+      name: 'technologies',
+      type: 'relationship',
+      relationTo: 'technologies',
+      hasMany: true,
     },
     {
       name: 'deliverables',

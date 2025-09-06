@@ -61,30 +61,10 @@ export const Projects: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'projectGallery',
-      type: 'array',
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
-        },
-        {
-          name: 'caption',
-          type: 'text',
-        },
-      ],
-    },
-    {
-      name: 'technologiesUsed',
-      type: 'array',
-      fields: [
-        {
-          name: 'technology',
-          type: 'text',
-        },
-      ],
+      name: 'technologies',
+      type: 'relationship',
+      relationTo: 'technologies',
+      hasMany: true,
     },
     {
       name: 'testimonial',

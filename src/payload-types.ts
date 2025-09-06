@@ -73,6 +73,7 @@ export interface Config {
     pages: Page;
     projects: Project;
     services: Service;
+    technologies: Technology;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -85,6 +86,7 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
+    technologies: TechnologiesSelect<false> | TechnologiesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -251,19 +253,7 @@ export interface Project {
       }[]
     | null;
   projectURL?: string | null;
-  projectGallery?:
-    | {
-        image: number | Media;
-        caption?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  technologiesUsed?:
-    | {
-        technology?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  technologies?: (number | Technology)[] | null;
   testimonial?: string | null;
   location?: string | null;
   projectDuration?: string | null;
@@ -286,6 +276,18 @@ export interface Project {
     title?: string | null;
     description?: string | null;
   };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "technologies".
+ */
+export interface Technology {
+  id: number;
+  title: string;
+  slug: string;
+  logo?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -315,25 +317,13 @@ export interface Service {
   };
   icon: string;
   featureImage?: string | null;
-  gallery?:
-    | {
-        image: number | Media;
-        caption?: string | null;
-        id?: string | null;
-      }[]
-    | null;
   keyFeatures?:
     | {
         feature?: string | null;
         id?: string | null;
       }[]
     | null;
-  technologiesUsed?:
-    | {
-        technology?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  technologies?: (number | Technology)[] | null;
   deliverables?:
     | {
         item?: string | null;
@@ -385,6 +375,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'services';
         value: number | Service;
+      } | null)
+    | ({
+        relationTo: 'technologies';
+        value: number | Technology;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -528,19 +522,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         id?: T;
       };
   projectURL?: T;
-  projectGallery?:
-    | T
-    | {
-        image?: T;
-        caption?: T;
-        id?: T;
-      };
-  technologiesUsed?:
-    | T
-    | {
-        technology?: T;
-        id?: T;
-      };
+  technologies?: T;
   testimonial?: T;
   location?: T;
   projectDuration?: T;
@@ -565,25 +547,13 @@ export interface ServicesSelect<T extends boolean = true> {
   fullDescription?: T;
   icon?: T;
   featureImage?: T;
-  gallery?:
-    | T
-    | {
-        image?: T;
-        caption?: T;
-        id?: T;
-      };
   keyFeatures?:
     | T
     | {
         feature?: T;
         id?: T;
       };
-  technologiesUsed?:
-    | T
-    | {
-        technology?: T;
-        id?: T;
-      };
+  technologies?: T;
   deliverables?:
     | T
     | {
@@ -604,6 +574,17 @@ export interface ServicesSelect<T extends boolean = true> {
         title?: T;
         description?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "technologies_select".
+ */
+export interface TechnologiesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  logo?: T;
   updatedAt?: T;
   createdAt?: T;
 }

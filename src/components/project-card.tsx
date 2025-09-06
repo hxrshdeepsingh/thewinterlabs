@@ -38,13 +38,13 @@ export default function ProjectCard({
         <p className="text-muted-foreground mb-4">{description}</p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        {/* <div className="flex flex-wrap gap-2 mb-6">
           {technologiesUsed.map((tech, index) => (
             <Badge key={index} variant="secondary" className="rounded-full">
               {tech.technology}
             </Badge>
           ))}
-        </div>
+        </div> */}
 
         {/* Actions */}
         <div className="flex gap-3 mt-auto">
