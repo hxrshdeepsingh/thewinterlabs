@@ -73,7 +73,7 @@ const Footer = ({
     { text: 'Privacy Policy', url: '#' },
   ],
 }: Footer2Props) => {
-  const [isDarkMode, setIsDarkMode] = React.useState(true)
+  const [isDarkMode, setIsDarkMode] = React.useState(false)
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode)
