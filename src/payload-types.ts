@@ -238,7 +238,7 @@ export interface Project {
   id: number;
   title: string;
   slug: string;
-  featuredImage?: (number | null) | Media;
+  featuredImage?: string | null;
   published?: boolean | null;
   publishDate?: string | null;
   clientName?: string | null;
@@ -313,8 +313,8 @@ export interface Service {
     };
     [k: string]: unknown;
   };
-  icon: number | Media;
-  featureImage?: (number | null) | Media;
+  icon: string;
+  featureImage?: string | null;
   gallery?:
     | {
         image: number | Media;

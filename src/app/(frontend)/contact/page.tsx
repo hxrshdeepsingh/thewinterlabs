@@ -17,7 +17,7 @@ interface Contact2Props {
 export default function Contact({
   title = 'Contact Us',
   description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
-  phone = '+91 73571-94599',
+  phone = '',
   email = 'thewinterlabs@gmail.com',
   web = { label: 'thewinterlabs.in', url: 'https://thewinterlabs.in' },
 }: Contact2Props) {

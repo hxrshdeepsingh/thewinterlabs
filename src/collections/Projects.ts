@@ -22,8 +22,8 @@ export const Projects: CollectionConfig = {
     },
     {
       name: 'featuredImage',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
+      label: 'Featured Image'
     },
     {
       name: 'published',

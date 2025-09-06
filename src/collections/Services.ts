@@ -32,14 +32,14 @@ export const Services: CollectionConfig = {
     },
     {
       name: 'icon',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
+      label: 'Icon URL',
       required: true,
     },
     {
       name: 'featureImage',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
+      label: 'Featured URL',
     },
     {
       name: 'gallery',
