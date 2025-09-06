@@ -1,5 +1,5 @@
 // collections/Technologies.ts
-import type { CollectionConfig } from 'payload/types';
+import type { CollectionConfig } from 'payload/types'
 
 export const Technologies: CollectionConfig = {
   slug: 'technologies',
@@ -28,4 +28,4 @@ export const Technologies: CollectionConfig = {
       label: 'Logo Url',
     },
   ],
-};
+}

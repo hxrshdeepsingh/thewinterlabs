@@ -60,6 +60,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <main>{children}</main>
         <Cta />
         <Footer />
+        {/* <Footerdemo/> */}
         <Analytics />
         <Script
           id="tawk-to"

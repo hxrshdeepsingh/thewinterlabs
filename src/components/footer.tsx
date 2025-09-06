@@ -1,5 +1,10 @@
+'use client'
 import Logo from './navbar/logo'
 import Link from 'next/link'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
+import { Sun, Moon } from 'lucide-react'
+import * as React from 'react'
 
 interface MenuItem {
   title: string
@@ -68,6 +73,11 @@ const Footer = ({
     { text: 'Privacy Policy', url: '#' },
   ],
 }: Footer2Props) => {
+  const [isDarkMode, setIsDarkMode] = React.useState(true)
+
+  React.useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDarkMode)
+  }, [isDarkMode])
   return (
     <section className="py-12 max-w-screen-lg m-auto">
       <div className="container">
@@ -79,6 +89,14 @@ const Footer = ({
                   <Logo />
                 </Link>
                 <p className="text-xl font-semibold">{logo.title}</p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Sun className="h-4 w-4" />
+                <Switch id="dark-mode" checked={isDarkMode} onCheckedChange={setIsDarkMode} />
+                <Moon className="h-4 w-4" />
+                <Label htmlFor="dark-mode" className="sr-only">
+                  Toggle dark mode
+                </Label>
               </div>
             </div>
             {menuItems.map((section, sectionIdx) => (

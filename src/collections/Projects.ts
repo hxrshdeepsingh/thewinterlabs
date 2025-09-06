@@ -23,7 +23,7 @@ export const Projects: CollectionConfig = {
     {
       name: 'featuredImage',
       type: 'text',
-      label: 'Featured Image'
+      label: 'Featured Image',
     },
     {
       name: 'published',

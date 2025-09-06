@@ -13,7 +13,7 @@ export default function Logo() {
           type: 'auto',
           source: true,
         }}
-        style={{ padding: '10px' }}
+        style={{ padding: '0' }}
         alt="logo"
       />
     </>
