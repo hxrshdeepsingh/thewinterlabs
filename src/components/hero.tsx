@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CircleArrowRight, Zap } from 'lucide-react'
 import Link from 'next/link'
+import Gummies from './gummies'
 
 const Hero = () => {
   return (
@@ -22,8 +23,9 @@ const Hero = () => {
           <Zap className="fill-current" />
           {`Thewinterlabs`}
         </Badge>
+        <Gummies />
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-          {`Building bold ideas into powerful digital experiences.`}
+          {`Bold ideas. Powerful experiences.`}
         </h1>
         <p className="mt-6 text-[17px] md:text-lg">
           {`At The Winter Labs, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}

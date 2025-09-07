@@ -127,3 +127,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.center-spline {
+  height: 190px;
+}
+.center-spline canvas {
+  margin: auto;
+}
