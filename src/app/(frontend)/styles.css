@@ -133,4 +133,12 @@
 }
 .center-spline canvas {
   margin: auto;
+  width: 635px;
+  height: 250px;
+}
+@media (max-width: 768px) {
+  .center-spline canvas {
+    width: 300px !important;
+    height: 120px !important;
+  }
 }
