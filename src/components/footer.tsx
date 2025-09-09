@@ -43,7 +43,7 @@ const Footer = ({
       links: [
         { text: 'About', url: '/about' },
         { text: 'Projects', url: '/projects' },
-        { text: 'Careers', url: '' },
+        { text: 'Services', url: '/services' },
         { text: 'Contact', url: '/contact' },
         { text: 'Privacy', url: '/privacy' },
       ],
@@ -51,11 +51,11 @@ const Footer = ({
     {
       title: 'Technologies',
       links: [
-        { text: 'Ai', url: '#' },
-        { text: 'Springboot', url: '#' },
-        { text: 'Next Js', url: '#' },
-        { text: 'React Js', url: '#' },
-        { text: 'Wordpress', url: '#' },
+        { text: 'N8N', url: 'https://n8n.io/' },
+        { text: 'Springboot', url: 'https://spring.io/' },
+        { text: 'Next Js', url: 'https://nextjs.org/' },
+        { text: 'React Js', url: 'https://react.dev/' },
+        { text: 'Wordpress', url: 'https://wordpress.com/' },
       ],
     },
     {
