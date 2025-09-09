@@ -10,6 +10,17 @@
 }
 
 :root {
+  --blue-color: #0074df;
+  --blue-light-color: #f2f8fe;
+
+  --red-color: #f14f2d;
+  --red-light-color: #fff2f1;
+
+  --orange-color: #cc9032;
+  --orange-light-color: #fef4e0;
+}
+
+:root {
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

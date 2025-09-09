@@ -96,7 +96,7 @@ const AboutFeatures = ({
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
+          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-[var(--orange-light-color)] p-6 lg:p-16">
             {tabs.map((tab) => (
               <TabsContent
                 key={tab.value}

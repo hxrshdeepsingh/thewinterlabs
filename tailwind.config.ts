@@ -8,7 +8,22 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+     extend: {
+      colors: {
+        blue: {
+          DEFAULT: "var(--blue)",
+          light: "var(--blue-light)",
+        },
+        red: {
+          DEFAULT: "var(--red)",
+          light: "var(--red-light)",
+        },
+        orange: {
+          DEFAULT: "var(--orange)",
+          light: "var(--orange-light)",
+        },
+      },
+    },
   },
   plugins: [animate],
 }
