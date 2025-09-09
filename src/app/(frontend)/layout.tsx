@@ -10,6 +10,8 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import TopProgressBar from '@/components/ui/TopLoader'
 import Script from 'next/script'
 import { tawkScript } from '@/lib/tawk'
+import SmoothScrollProvider from '@/components/SmoothScrollProvider'
+import PageTransition from '@/components/PageTransition'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -55,17 +57,21 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <TopProgressBar />
-        <Navbar />
-        <main>{children}</main>
-        <Cta />
-        <Footer />
-        <Analytics />
-        <Script
-          id="tawk-to"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: tawkScript }}
-        />
+        <SmoothScrollProvider>
+          <PageTransition>
+            <TopProgressBar />
+            <Navbar />
+            <main>{children}</main>
+            <Cta />
+            <Footer />
+            <Analytics />
+            <Script
+              id="tawk-to"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{ __html: tawkScript }}
+            />
+          </PageTransition>
+        </SmoothScrollProvider>
       </body>
       <GoogleAnalytics gaId="G-5SX583CH0G" />
       <SpeedInsights />
