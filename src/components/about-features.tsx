@@ -42,7 +42,7 @@ const AboutFeatures = ({
         description:
           'Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.',
         buttonText: 'See Plans',
-        imageSrc: 'https://shadcnblocks.com/images/block/placeholder-dark-1.svg',
+        imageSrc: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1757539158/1_ra6qep.webp',
         imageAlt: 'placeholder',
       },
     },
@@ -56,7 +56,7 @@ const AboutFeatures = ({
         description:
           'Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.',
         buttonText: 'See Tools',
-        imageSrc: 'https://shadcnblocks.com/images/block/placeholder-dark-2.svg',
+        imageSrc: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1757539158/3_q29xix.webp',
         imageAlt: 'placeholder',
       },
     },
@@ -70,7 +70,7 @@ const AboutFeatures = ({
         description:
           'Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.',
         buttonText: 'See Options',
-        imageSrc: 'https://shadcnblocks.com/images/block/placeholder-dark-3.svg',
+        imageSrc: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1757539158/2_cduv94.webp',
         imageAlt: 'placeholder',
       },
     },
