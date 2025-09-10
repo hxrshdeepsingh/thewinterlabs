@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CircleArrowRight, Zap, ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
-import Gummies from './gummies'
+// import Gummies from './gummies'
 import { AnimatedShinyText } from './ui/animated-shiny-text'
 
 const Hero = () => {
@@ -32,7 +32,7 @@ const Hero = () => {
             </AnimatedShinyText>
           </div>
         </div>
-        <Gummies />
+        {/* <Gummies /> */}
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
           {`Bold ideas. Powerful experiences.`}
         </h1>
