@@ -12,6 +12,7 @@ import Script from 'next/script'
 import { tawkScript } from '@/lib/tawk'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import PageTransition from '@/components/PageTransition'
+import CookieThemeProvider from '@/components/ui/CookieThemeProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -72,6 +73,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             />
           </PageTransition>
         </SmoothScrollProvider>
+        <CookieThemeProvider />
       </body>
       <GoogleAnalytics gaId="G-5SX583CH0G" />
       <SpeedInsights />
