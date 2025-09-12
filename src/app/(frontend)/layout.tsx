@@ -13,7 +13,7 @@ import { tawkScript } from '@/lib/tawk'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import PageTransition from '@/components/PageTransition'
 import CookieProvider from '@/components/ui/CookieProvider'
-
+import { Navbar5 } from '@/components/navbar-5'
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -61,7 +61,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <SmoothScrollProvider>
           <PageTransition>
             <TopProgressBar />
-            <Navbar />
+            {/* <Navbar/> */}
+            <Navbar5 />
             <main>{children}</main>
             <Cta />
             <Footer />
