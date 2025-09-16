@@ -8,7 +8,7 @@ import { Highlighter } from './magicui/highlighter'
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 overflow-hidden">
+    <div className="relative min-h-[calc(100vh-8rem)] flex items-center justify-center px-6 pt-6 overflow-hidden">
       {/* <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}

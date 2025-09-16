@@ -6,33 +6,23 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { getPageSEO } from '@/lib/getPageSeo'
 
-interface Contact2Props {
-  title?: string
-  description?: string
-  phone?: string
-  email?: string
-  web?: { label: string; url: string }
-}
-
 export default function Contact({
   title = 'Contact Us',
   description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
   email = 'thewinterlabs@gmail.com',
   web = { label: 'thewinterlabs.in', url: 'https://thewinterlabs.in' },
-}: Contact2Props) {
+}) {
   return (
-    <section className="pt-32">
-      <div className="container">
-        <div className="mx-auto flex max-w-screen-lg flex-col justify-between gap-10 lg:flex-row lg:gap-20">
+    <section className="py-10 px-4">
+      <div className="container mx-auto max-w-screen-lg">
+        <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
+          <h1 className="text-5xl font-semibold">{title}</h1>
+          <p className="text-muted-foreground">{description}</p>
+        </div>
+
+        <div className="mx-auto flex w-full flex-col justify-between gap-10 lg:flex-row lg:gap-20">
           <div className="flex max-w-sm flex-col gap-10">
-            <div className="text-center lg:text-left">
-              <h1 className="mb-2 text-5xl font-semibold">{title}</h1>
-              <p className="text-muted-foreground">{description}</p>
-            </div>
             <div className="mx-auto w-fit lg:mx-0">
-              <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">
-                Contact Details
-              </h3>
               <ul className="ml-4 list-disc">
                 <li>
                   <span className="font-bold">Email: </span>

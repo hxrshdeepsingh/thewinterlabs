@@ -1,37 +1,5 @@
 import { Button } from '@/components/ui/button'
 
-interface About3Props {
-  title?: string
-  description?: string
-  mainImage?: {
-    src: string
-    alt: string
-  }
-  secondaryImage?: {
-    src: string
-    alt: string
-  }
-  breakout?: {
-    src: string
-    alt: string
-    title?: string
-    description?: string
-    buttonText?: string
-    buttonUrl?: string
-  }
-  companiesTitle?: string
-  companies?: Array<{
-    src: string
-    alt: string
-  }>
-  achievementsTitle?: string
-  achievementsDescription?: string
-  achievements?: Array<{
-    label: string
-    value: string
-  }>
-}
-
 const defaultCompanies = [
   {
     src: 'https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-1.svg',

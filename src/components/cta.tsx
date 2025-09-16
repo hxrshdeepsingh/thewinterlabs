@@ -30,7 +30,7 @@ export const Cta = ({
   items = defaultItems,
 }: Cta4Props) => {
   return (
-    <section className="py-32">
+    <section className="p-4">
       <div className="container relative max-w-screen-lg mx-auto">
         <div className="flex justify-center">
           <div className="max-w-5xl">

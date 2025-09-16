@@ -32,7 +32,8 @@ import menus from '@data/menus.json'
 
 export const Navbar5 = () => {
   return (
-    <section className="fixed z-10 top-6 inset-x-4">
+    // <section className="fixed z-10 top-6 inset-x-4">
+    <section className="p-4">
       <div className="container max-w-screen-lg m-auto">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -60,6 +61,7 @@ export const Navbar5 = () => {
                             >
                               <Link href={child.path}>
                                 <p className="mb-1 font-semibold text-foreground">{child.name}</p>
+                                <span className='text-sm text-muted-foreground'>{child.description}</span>
                               </Link>
                             </NavigationMenuLink>
                           ))}
