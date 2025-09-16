@@ -1,16 +1,15 @@
 import AnimatedGridPattern from '@/components/ui/animated-grid-pattern'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { CircleArrowRight, Zap, ArrowRightIcon } from 'lucide-react'
+import { CircleArrowRight, ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
-// import Gummies from './gummies'
 import { AnimatedShinyText } from './ui/animated-shiny-text'
+import { Highlighter } from './magicui/highlighter'
 
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 overflow-hidden">
-      <AnimatedGridPattern
+      {/* <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
         duration={3}
@@ -18,7 +17,7 @@ const Hero = () => {
           '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
           'inset-x-0 h-full skew-y-12',
         )}
-      />
+      /> */}
       <div className="relative z-[1] text-center max-w-screen-lg">
         <div className="z-10 flex items-center justify-center">
           <div
@@ -33,11 +32,12 @@ const Hero = () => {
           </div>
         </div>
         {/* <Gummies /> */}
-        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
+        <h1 className="mt-6 text-4xl sm:text-5xl md:text-[72px] font-semibold !leading-[1] tracking-tight">
           {`Bold ideas. Powerful experiences.`}
         </h1>
         <p className="mt-6 text-[17px] md:text-lg">
-          {`At The Winter Labs, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}
+          <Highlighter action="highlight" color="#fff4e1">{`At The Winter Labs`}</Highlighter>{' '}
+          {`, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
           <Link href={'/projects'}>

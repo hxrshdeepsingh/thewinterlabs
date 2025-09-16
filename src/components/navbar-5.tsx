@@ -35,6 +35,26 @@ export const Navbar5 = () => {
       href: '#',
     },
     {
+      title: 'Analytics',
+      description: 'Track your performance',
+      href: '#',
+    },
+    {
+      title: 'Analytics',
+      description: 'Track your performance',
+      href: '#',
+    },
+    {
+      title: 'Analytics',
+      description: 'Track your performance',
+      href: '#',
+    },
+    {
+      title: 'Analytics',
+      description: 'Track your performance',
+      href: '#',
+    },
+    {
       title: 'Settings',
       description: 'Configure your preferences',
       href: '#',
@@ -76,21 +96,19 @@ export const Navbar5 = () => {
                   <Link href="/projects">Projects</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              {/* <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/products">Offers</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem> */}
               <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href="/services">Services</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                   <Link href="/products">Products</Link>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <NavigationMenuLink asChild>
-                    <Link href="/services">Services</Link>
-                  </NavigationMenuLink>
+                  <Link href="/webtools">Our Tools</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[600px] grid-cols-2 p-3">

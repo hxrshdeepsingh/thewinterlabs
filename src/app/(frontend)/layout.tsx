@@ -1,20 +1,20 @@
 import './styles.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/navbar'
+import { Inter, DM_Sans, Geist } from 'next/font/google'
+// import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { Cta } from '@/components/cta'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import TopProgressBar from '@/components/ui/TopLoader'
-import Script from 'next/script'
-import { tawkScript } from '@/lib/tawk'
+// import Script from 'next/script'
+// import { tawkScript } from '@/lib/tawk'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import PageTransition from '@/components/PageTransition'
 import CookieProvider from '@/components/ui/CookieProvider'
 import { Navbar5 } from '@/components/navbar-5'
-const inter = Inter({
+const inter = Geist({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
@@ -67,11 +67,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             <Cta />
             <Footer />
             <Analytics />
-            <Script
+            {/* <Script
               id="tawk-to"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{ __html: tawkScript }}
-            />
+            /> */}
           </PageTransition>
         </SmoothScrollProvider>
         <CookieProvider />
