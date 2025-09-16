@@ -2,7 +2,7 @@ import { Badge } from '@/components/ui/badge'
 import ServiceCard from '@/components/service-card'
 import { getPayloadClient } from '@/lib/payloadClient'
 import { getPageSEO } from '@/lib/getPageSeo'
-
+export const dynamic = "force-dynamic"
 export default async function Services() {
   const payload = await getPayloadClient()
   const data = await payload.find({
