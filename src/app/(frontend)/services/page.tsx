@@ -48,6 +48,6 @@ export default async function Services() {
   )
 }
 
-// export async function generateMetadata() {
-//   return await getPageSEO(5, 'pages') // change ID if needed
-// }
+export async function generateMetadata() {
+  return await getPageSEO(5, 'pages') // change ID if needed
+}
