@@ -1,85 +1,20 @@
 'use client'
+import * as React from 'react'
 import Logo from './navbar/logo'
 import Link from 'next/link'
-import { Label } from '@/components/ui/label'
-import { Switch } from '@/components/ui/switch'
-import { Sun, Moon } from 'lucide-react'
-import * as React from 'react'
+// import ThemeToggle from './ui/themeToggle'
+import menus from '@/data/footer-menus.json'
 
-interface MenuItem {
-  title: string
-  links: {
-    text: string
-    url: string
-  }[]
-}
+const Footer = () => {
+  const { siteTitle, menuItems, copyright, bottomLinks } = menus
 
-interface Footer2Props {
-  logo?: {
-    url: string
-    src: string
-    alt: string
-    title: string
-  }
-  tagline?: string
-  menuItems?: MenuItem[]
-  copyright?: string
-  bottomLinks?: {
-    text: string
-    url: string
-  }[]
-}
-
-const Footer = ({
-  siteTitle = {
-    title: 'Thewinterlabs',
-  },
-  menuItems = [
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', url: '/about' },
-        { text: 'Projects', url: '/projects' },
-        { text: 'Services', url: '/services' },
-        { text: 'Contact', url: '/contact' },
-        { text: 'Privacy', url: '/privacy' },
-      ],
-    },
-    {
-      title: 'Technologies',
-      links: [
-        { text: 'N8N', url: 'https://n8n.io/' },
-        { text: 'Springboot', url: 'https://spring.io/' },
-        { text: 'Next Js', url: 'https://nextjs.org/' },
-        { text: 'React Js', url: 'https://react.dev/' },
-        { text: 'Wordpress', url: 'https://wordpress.com/' },
-      ],
-    },
-    {
-      title: 'Social',
-      links: [
-        { text: 'Twitter', url: 'https://x.com/thewinterlabs' },
-        { text: 'Instagram', url: 'https://www.instagram.com/thewinterlabs/' },
-        { text: 'Trustpilot', url: 'https://www.trustpilot.com/review/thewinterlabs.in' },
-      ],
-    },
-  ],
-  copyright = '© 2025 Thewinterlabs Copyright. All rights reserved.',
-  bottomLinks = [
-    { text: 'Terms and Conditions', url: '#' },
-    { text: 'Privacy Policy', url: '#' },
-  ],
-}: Footer2Props) => {
-  const [isDarkMode, setIsDarkMode] = React.useState(false)
-
-  React.useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDarkMode)
-  }, [isDarkMode])
   return (
-    <section className="py-12 max-w-screen-lg m-auto">
+    <section className="py-12 max-w-screen-lg mx-auto">
       <div className="container">
-        <footer className="px-6 sm:px-4 md:p-0">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
+        <footer className="px-6 sm:px-4 md:p-2">
+          {/* Top Section */}
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
+            {/* Logo */}
             <div className="col-span-2 mb-8 lg:mb-0 flex flex-col justify-between">
               <div className="flex items-center gap-2 lg:justify-start">
                 <Link href="/">
@@ -87,37 +22,36 @@ const Footer = ({
                 </Link>
                 <p className="text-xl font-semibold">{siteTitle.title}</p>
               </div>
-              <div className="flex items-center space-x-2">
-                <Sun className="h-4 w-4" />
-                <Switch id="dark-mode" checked={isDarkMode} onCheckedChange={setIsDarkMode} />
-                <Moon className="h-4 w-4" />
-                <Label htmlFor="dark-mode" className="sr-only">
-                  Toggle dark mode
-                </Label>
-              </div>
             </div>
-            {menuItems.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
+
+            {/* Menu Sections */}
+            {menuItems.map((section, idx) => (
+              <div key={idx}>
                 <h3 className="mb-4 font-bold">{section.title}</h3>
                 <ul className="space-y-4 text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
                     <li key={linkIdx} className="font-medium hover:text-primary">
-                      <a href={link.url}>{link.text}</a>
+                      <Link href={link.url}>{link.text}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-          <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
+
+          {/* Bottom Section */}
+          <div className="mt-12 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
             <p>{copyright}</p>
-            <ul className="flex gap-4">
-              {bottomLinks.map((link, linkIdx) => (
-                <li key={linkIdx} className="underline hover:text-primary">
-                  <a href={link.url}>{link.text}</a>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              <ul className="flex gap-4">
+                {bottomLinks.map((link, linkIdx) => (
+                  <li key={linkIdx} className="underline hover:text-primary">
+                    <a href={link.url}>{link.text}</a>
+                  </li>
+                ))}
+              </ul>
+              {/* <ThemeToggle /> */}
+            </div>
           </div>
         </footer>
       </div>

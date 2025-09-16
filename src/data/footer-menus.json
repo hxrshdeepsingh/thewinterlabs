@@ -1,0 +1,46 @@
+{
+  "siteTitle": {
+    "title": "Thewinterlabs"
+  },
+  "menuItems": [
+    {
+      "title": "Company",
+      "links": [
+        { "text": "About", "url": "/about" },
+        { "text": "Projects", "url": "/projects" },
+        { "text": "Services", "url": "/services" },
+        { "text": "Contact", "url": "/contact" }
+      ]
+    },
+    {
+      "title": "Technologies",
+      "links": [
+        { "text": "N8N", "url": "https://n8n.io/" },
+        { "text": "Springboot", "url": "https://spring.io/" },
+        { "text": "Next Js", "url": "https://nextjs.org/" },
+        { "text": "React Js", "url": "https://react.dev/" },
+        { "text": "Wordpress", "url": "https://wordpress.com/" }
+      ]
+    },
+    {
+      "title": "Tools",
+      "links": [
+        { "text": "Dns Checker", "url": "/webtools/dns" },
+        { "text": "IP Checker", "url": "/webtools/ip-checker" }
+      ]
+    },
+    {
+      "title": "Services",
+      "links": [
+        { "text": "Web development", "url": "#" },
+        { "text": "App development", "url": "#" },
+        { "text": "Ai integration", "url": "#" }
+      ]
+    }
+  ],
+  "copyright": "© 2025 Thewinterlabs Copyright. All rights reserved.",
+  "bottomLinks": [
+    { "text": "Terms and Conditions", "url": "#" },
+    { "text": "Privacy Policy", "url": "#" }
+  ]
+}
