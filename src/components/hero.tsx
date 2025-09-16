@@ -1,23 +1,28 @@
-import AnimatedGridPattern from '@/components/ui/animated-grid-pattern'
+'use client'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CircleArrowRight, ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import { AnimatedShinyText } from './ui/animated-shiny-text'
 import { Highlighter } from './magicui/highlighter'
+import Prism from './prism'
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[calc(100vh-8rem)] flex items-center justify-center px-6 pt-6 overflow-hidden">
-      {/* <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
-        className={cn(
-          '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
-          'inset-x-0 h-full skew-y-12',
-        )}
-      /> */}
+    <div className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 pt-6 overflow-hidden">
+      <div style={{ width: '100%', height: '100vh', position: 'absolute' }}>
+        <Prism
+          animationType="rotate"
+          timeScale={0.5}
+          height={3.5}
+          baseWidth={3.5}
+          scale={2.6}
+          hueShift={0}
+          colorFrequency={1}
+          noise={0.5}
+          glow={1}
+        />
+      </div>
       <div className="relative z-[1] text-center max-w-screen-lg">
         <div className="z-10 flex items-center justify-center">
           <div
