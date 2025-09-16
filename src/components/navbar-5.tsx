@@ -61,7 +61,9 @@ export const Navbar5 = () => {
                             >
                               <Link href={child.path}>
                                 <p className="mb-1 font-semibold text-foreground">{child.name}</p>
-                                <span className='text-sm text-muted-foreground'>{child.description}</span>
+                                <span className="text-sm text-muted-foreground">
+                                  {child.description}
+                                </span>
                               </Link>
                             </NavigationMenuLink>
                           ))}

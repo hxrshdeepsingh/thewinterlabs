@@ -19,7 +19,7 @@ export default async function Services() {
   }))
 
   return (
-    <section id="services" className="relative pt-32 px-6">
+    <section id="services" className="relative py-10 px-6">
       <div className="max-w-screen-lg mx-auto">
         <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4">
