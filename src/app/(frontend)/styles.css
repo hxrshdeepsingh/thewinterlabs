@@ -213,3 +213,6 @@
     height: 120px !important;
   }
 }
+[data-slot='sheet-content'] button svg {
+  @apply w-6 h-6;
+}
