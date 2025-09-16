@@ -21,8 +21,10 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import Link from 'next/link'
 import Logo from './navbar/logo'
-import Image from 'next/image'
+import menus from '@data/menus.json'
+
 export const Navbar5 = () => {
+  console.log(menus)
   const features = [
     {
       title: 'Dashboard',
@@ -84,60 +86,49 @@ export const Navbar5 = () => {
             <Logo />
             <span className="text-lg font-semibold tracking-tighter">Thewinterlabs</span>
           </Link>
+
+          {/* Menu items */}
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/about">About</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/projects">Projects</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/services">Services</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              {/* <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/products">Products</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem> */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <Link href="/webtools">Our Tools</Link>
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-2 p-3">
-                    {features.map((feature, index) => (
-                      <NavigationMenuLink
-                        asChild
-                        key={index}
-                        className="rounded-md p-3 transition-colors hover:bg-muted/70"
-                      >
-                        <Link href={feature.href}>
-                          <p className="mb-1 font-semibold text-foreground">{feature.title}</p>
-                          <p className="text-sm text-muted-foreground">{feature.description}</p>
-                        </Link>
-                      </NavigationMenuLink>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/contact">Contact</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {menus.map((menu) => (
+                <NavigationMenuItem key={menu.id}>
+                  {menu.children ? (
+                    <>
+                      <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
+                        {menu.name}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <div className="grid w-[600px] grid-cols-2 p-3">
+                          {menu.children.map((child) => (
+                            <NavigationMenuLink
+                              asChild
+                              key={child.id}
+                              className="rounded-md p-3 transition-colors hover:bg-muted/70"
+                            >
+                              <Link href={child.path}>
+                                <p className="mb-1 font-semibold text-foreground">{child.name}</p>
+                              </Link>
+                            </NavigationMenuLink>
+                          ))}
+                        </div>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                      <Link href={menu.path}>{menu.name}</Link>
+                    </NavigationMenuLink>
+                  )}
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
+
+          {/* Buttons */}
           <div className="hidden items-center gap-4 lg:flex">
-            {/* <Button variant="outline">Sign in</Button> */}
             <Button>Contact us</Button>
           </div>
+
+          {/* Mobile menu */}
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="outline" size="icon">

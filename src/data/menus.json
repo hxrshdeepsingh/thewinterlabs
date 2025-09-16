@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "About",
+    "path": "/about"
+  },
+  {
+    "id": 2,
+    "name": "Projects",
+    "path": "/projects"
+  },
+  {
+    "id": 3,
+    "name": "Services",
+    "path": "/services"
+  },
+  {
+    "id": 4,
+    "name": "Our Tools",
+    "path": "/our-tools",
+    "children": [
+      {
+        "id": 41,
+        "name": "DNS Checker",
+        "path": "/webtools/dns"
+      },
+      {
+        "id": 42,
+        "name": "IP Checker",
+        "path": "/webtools/ip-checker"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Contact",
+    "path": "/contact"
+  }
+]

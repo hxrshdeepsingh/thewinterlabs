@@ -11,7 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-// import { Skiper19 } from "@/components/Skiper19"
+
 export default function DnsPage() {
   const [domain, setDomain] = useState('')
   const [records, setRecords] = useState<any[]>([])
