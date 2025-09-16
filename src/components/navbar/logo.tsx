@@ -1,12 +1,9 @@
 'use client'
-import { CldImage } from 'next-cloudinary'
-import Link from 'next/link'
-
 export default function Logo() {
   return (
     <>
       <svg
-        width="AUTO"
+        width="40"
         height="20"
         viewBox="0 0 139 64"
         fill="none"

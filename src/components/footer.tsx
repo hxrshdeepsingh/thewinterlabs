@@ -31,11 +31,8 @@ interface Footer2Props {
 }
 
 const Footer = ({
-  logo = {
-    src: 'https://www.shadcnblocks.com/images/block/block-1.svg',
-    alt: 'blocks for shadcn/ui',
+  siteTitle = {
     title: 'Thewinterlabs',
-    url: 'https://www.shadcnblocks.com',
   },
   menuItems = [
     {
@@ -88,7 +85,7 @@ const Footer = ({
                 <Link href="/">
                   <Logo />
                 </Link>
-                <p className="text-xl font-semibold">{logo.title}</p>
+                <p className="text-xl font-semibold">{siteTitle.title}</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Sun className="h-4 w-4" />
