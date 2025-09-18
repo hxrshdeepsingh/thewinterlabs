@@ -5,13 +5,14 @@ import { CircleArrowRight, ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import { AnimatedShinyText } from './ui/animated-shiny-text'
 import { Highlighter } from './magicui/highlighter'
-import Prism from './prism'
+import { SparklesText } from './ui/sparkles-text'
+// import Prism from './prism'
 
 const Hero = () => {
   return (
     <div className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 pt-6 overflow-hidden">
       <div style={{ width: '100%', height: '100vh', position: 'absolute' }}>
-        <Prism
+        {/* <Prism
           animationType="rotate"
           timeScale={0.5}
           height={3.5}
@@ -21,7 +22,7 @@ const Hero = () => {
           colorFrequency={1}
           noise={0.5}
           glow={1}
-        />
+        /> */}
       </div>
       <div className="relative z-[1] text-center max-w-screen-lg">
         <div className="z-10 flex items-center justify-center">
@@ -37,9 +38,11 @@ const Hero = () => {
           </div>
         </div>
         {/* <Gummies /> */}
-        <h1 className="mt-6 text-4xl sm:text-5xl md:text-[72px] font-semibold !leading-[1] tracking-tight">
-          {`Bold ideas. Powerful experiences.`}
-        </h1>
+        <SparklesText>
+          <h1 className="mt-6 text-4xl sm:text-5xl md:text-[72px] font-semibold !leading-[1] tracking-tight">
+            {`Bold ideas. Powerful experiences.`}
+          </h1>
+        </SparklesText>
         <p className="mt-6 text-[17px] md:text-lg">
           <Highlighter action="highlight" color="#fff4e1">{`At The Winter Labs`}</Highlighter>{' '}
           {`, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}

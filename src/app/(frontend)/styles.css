@@ -224,3 +224,8 @@
 [data-slot='sheet-content'] button svg {
   @apply w-6 h-6;
 }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

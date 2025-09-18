@@ -1,15 +1,13 @@
 import './styles.css'
 import type { Metadata } from 'next'
-import { Inter, DM_Sans, Geist } from 'next/font/google'
-// import Navbar from '@/components/navbar'
+import { Geist } from 'next/font/google'
+import { SmoothCursor } from '@/components/ui/smooth-cursor'
 import { Footer } from '@/components/footer'
 import { Cta } from '@/components/cta'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import TopProgressBar from '@/components/ui/TopLoader'
-// import Script from 'next/script'
-// import { tawkScript } from '@/lib/tawk'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import PageTransition from '@/components/PageTransition'
 import CookieProvider from '@/components/ui/CookieProvider'
@@ -59,9 +57,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <SmoothScrollProvider>
+          {/* <SmoothCursor /> */}
           <PageTransition>
             <TopProgressBar />
-            {/* <Navbar/> */}
             <Navbar5 />
             <main>{children}</main>
             <Cta />

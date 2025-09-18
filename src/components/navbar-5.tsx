@@ -29,6 +29,7 @@ import {
 import Link from 'next/link'
 import Logo from './navbar/logo'
 import menus from '@data/menus.json'
+import { AnimatedThemeToggler } from './ui/animated-theme-toggler'
 
 export const Navbar5 = () => {
   return (
@@ -82,6 +83,7 @@ export const Navbar5 = () => {
 
           {/* Buttons */}
           <div className="hidden items-center gap-4 lg:flex">
+            <AnimatedThemeToggler />
             <Button>Contact us</Button>
           </div>
 
@@ -103,9 +105,7 @@ export const Navbar5 = () => {
                 <SheetClose
                   asChild
                   className="w-12 h-12 p-3 text-2xl bg-gray-200 rounded-full hover:bg-gray-300"
-                >
-                  ddd
-                </SheetClose>
+                ></SheetClose>
               </SheetHeader>
               <div className="flex flex-col p-4">
                 <div className="flex flex-col gap-6">
