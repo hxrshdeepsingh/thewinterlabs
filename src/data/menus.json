@@ -5,11 +5,6 @@
     "path": "/about"
   },
   {
-    "id": 2,
-    "name": "Projects",
-    "path": "/projects"
-  },
-  {
     "id": 3,
     "name": "Services",
     "path": "/services"
@@ -24,12 +19,6 @@
         "name": "DNS Checker",
         "path": "/webtools/dns",
         "description": "Check DNS records for any domain"
-      },
-      {
-        "id": 42,
-        "name": "IP Checker",
-        "path": "/webtools/ip-checker",
-        "description": "Check the IP address of any domain"
       }
     ]
   },

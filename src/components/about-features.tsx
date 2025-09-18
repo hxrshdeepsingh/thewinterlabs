@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
-const AboutFeatures = ({  
+const AboutFeatures = ({
   badge = 'Benefits',
   heading = 'Why work with us',
   description = 'We combine clean code, thoughtful design, and modern technology to build web experiences that drive results and delight users.',
@@ -91,7 +91,13 @@ const AboutFeatures = ({
                     {tab.content.buttonText}
                   </Button>
                 </div>
-                <img src={tab.content.imageSrc} width={500} height={500} alt={tab.content.imageAlt} className="rounded-xl" />
+                <img
+                  src={tab.content.imageSrc}
+                  width={500}
+                  height={500}
+                  alt={tab.content.imageAlt}
+                  className="rounded-xl"
+                />
               </TabsContent>
             ))}
           </div>
