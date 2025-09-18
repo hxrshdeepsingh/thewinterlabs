@@ -2,14 +2,19 @@ import { Badge } from '@/components/ui/badge'
 import ServiceCard from '@/components/service-card'
 import { getPayloadClient } from '@/lib/payloadClient'
 import { getPageSEO } from '@/lib/getPageSeo'
-export const dynamic = 'force-dynamic'
-export default async function Services() {
+import { Suspense, cache } from 'react'
+import Image from 'next/image'
+
+// export const revalidate = 86400
+export const revalidate = 86400
+
+const getServices = cache(async () => {
   const payload = await getPayloadClient()
   const data = await payload.find({
     collection: 'services',
   })
 
-  const servicesData = data.docs.map((s) => ({
+  return data.docs.map((s) => ({
     id: s.id,
     title: s.title,
     description: s.shortDescription,
@@ -17,7 +22,39 @@ export default async function Services() {
     slug: s.slug,
     technologiesUsed: s.technologiesUsed || [],
   }))
+})
 
+async function ServicesList() {
+  const servicesData = await getServices()
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {servicesData.map((service) => (
+        <ServiceCard
+          key={service.id}
+          title={service.title}
+          description={service.description}
+          iconUrl={
+            service.icon ? (
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={64}
+                height={64}
+                className="mx-auto"
+              />
+            ) : null
+          }
+          slug={service.slug}
+          technologiesUsed={service.technologiesUsed}
+        />
+      ))}
+    </div>
+  )
+}
+
+// 🔹 main page with streaming
+export default function Services() {
   return (
     <section id="services" className="relative py-10 px-6">
       <div className="max-w-screen-lg mx-auto">
@@ -31,18 +68,23 @@ export default async function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesData.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              iconUrl={service.icon}
-              slug={service.slug}
-              technologiesUsed={service.technologiesUsed}
-            />
-          ))}
-        </div>
+        {/* Suspense for streaming */}
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 animate-pulse">
+              {[...Array(4)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-[50vh] rounded-xl bg-muted flex items-center justify-center"
+                >
+                  Loading...
+                </div>
+              ))}
+            </div>
+          }
+        >
+          <ServicesList />
+        </Suspense>
       </div>
     </section>
   )
