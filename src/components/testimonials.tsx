@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { TestimonialsWrapper } from './ui/testimonial-wrapper'
 import { Badge } from '@/components/ui/badge'
 

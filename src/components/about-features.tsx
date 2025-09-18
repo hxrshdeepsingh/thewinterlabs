@@ -3,31 +3,9 @@ import { Layout, Pointer, Zap } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
-interface TabContent {
-  badge: string
-  title: string
-  description: string
-  buttonText: string
-  imageSrc: string
-  imageAlt: string
-}
-
-interface Tab {
-  value: string
-  icon: React.ReactNode
-  label: string
-  content: TabContent
-}
-
-interface Feature108Props {
-  badge?: string
-  heading?: string
-  description?: string
-  tabs?: Tab[]
-}
-
-const AboutFeatures = ({
+const AboutFeatures = ({  
   badge = 'Benefits',
   heading = 'Why work with us',
   description = 'We combine clean code, thoughtful design, and modern technology to build web experiences that drive results and delight users.',
@@ -113,7 +91,7 @@ const AboutFeatures = ({
                     {tab.content.buttonText}
                   </Button>
                 </div>
-                <img src={tab.content.imageSrc} alt={tab.content.imageAlt} className="rounded-xl" />
+                <img src={tab.content.imageSrc} width={500} height={500} alt={tab.content.imageAlt} className="rounded-xl" />
               </TabsContent>
             ))}
           </div>
