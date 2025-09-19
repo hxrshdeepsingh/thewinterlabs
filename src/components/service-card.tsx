@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface ServiceCardProps {
   title: string
@@ -33,12 +34,12 @@ export default function ServiceCard({
         </div>
       )}
 
-      <a
+      <Link
         href={`/services/${slug}`}
         className="inline-block mt-4 text-blue-600 font-medium hover:underline"
       >
         Learn More →
-      </a>
+      </Link>
     </div>
   )
 }

@@ -1,156 +1,195 @@
+import React from 'react'
 import Image from 'next/image'
-import RenderEditor from '@/components/renderEditor'
+import { cache } from 'react'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
+import { Clock, CheckCircle, ExternalLink, Zap, Target, Users } from 'lucide-react'
 import { getPayloadClient } from '@/lib/payloadClient'
+import RenderEditor from '@/components/renderEditor'
 
-// Dynamic metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export const revalidate = 86400
+
+const getService = cache(async (slug: string) => {
   const payload = await getPayloadClient()
-
   const res = await payload.find({
     collection: 'services',
     where: { slug: { equals: slug } },
     limit: 1,
   })
+  return res.docs[0] || null
+})
 
-  const service = res.docs[0]
+// ✅ Metadata must await params
+export async function generateMetadata(props: { params: { slug: string } }) {
+  const { params } = await props
+  const service = await getService(params.slug)
 
-  if (!service) {
-    return {
-      title: 'Service Not Found',
-      description: 'This service does not exist.',
-    }
-  }
+  if (!service) return { title: 'Service Not Found', description: 'This service does not exist.' }
 
-  return {
-    title: service.title,
-    description: service.shortDescription || '',
-  }
+  return { title: service.title, description: service.shortDescription || '' }
 }
 
-// Single Service Page
-export default async function SingleService({ params }: { params: { slug: string } }) {
-  const { slug } = params
-  const payload = await getPayloadClient()
+interface SingleServiceProps {
+  params: { slug: string }
+}
 
-  const res = await payload.find({
-    collection: 'services',
-    where: { slug: { equals: slug } },
-    limit: 1,
-  })
+export default async function SingleService(props: SingleServiceProps) {
+  const { params } = props
+  const service = await getService(params.slug)
 
-  const service = res.docs[0]
-
-  if (!service) return <p className="text-center mt-20">Service not found</p>
+  if (!service)
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-muted-foreground text-lg">Service not found</p>
+      </div>
+    )
 
   return (
-    <div className="bg-[#f9f9f9] text-black min-h-screen px-6 pt-[150px] pb-20">
-      <div className="max-w-4xl mx-auto">
-        {/* Title */}
-        <h1 className="text-5xl font-bold leading-tight tracking-tight text-center mb-12">
-          {service.title}
-        </h1>
+    <div className="min-h-screen mx-auto max-w-screen-lg">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden mt-4">
+        <div className="relative max-w-6xl mx-auto px-4 py-16 text-center">
+          {service.icon?.url && (
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center border border-border/50">
+                <Image
+                  src={service.icon.url}
+                  alt={service.title}
+                  width={48}
+                  height={48}
+                  className="w-12 h-12"
+                />
+              </div>
+            </div>
+          )}
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">{service.title}</h1>
+          {service.shortDescription && (
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{service.shortDescription}</p>
+          )}
+        </div>
+      </div>
 
-        {/* Icon / Feature Image */}
-        {service.icon?.url && (
-          <div className="mb-8 flex justify-center">
+      {/* Feature Image */}
+      {service.featureImage && (
+        <div className="max-w-6xl mx-auto px-6 mb-20">
+          <div className="relative overflow-hidden rounded-3xl border border-border/50 shadow-2xl">
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}${service.icon.url}`}
-              alt={service.title}
-              width={80}
-              height={80}
-            />
-          </div>
-        )}
-
-        {service.featureImage?.url && (
-          <div className="mb-16 overflow-hidden rounded-3xl shadow-xl">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}${service.featureImage.url}`}
+              src={service.featureImage}
               alt={service.title}
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
+              priority
             />
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Short Description */}
-        <p className="text-lg text-muted-foreground mb-8">{service.shortDescription}</p>
+      {/* Content Grid */}
+      <div className="max-w-6xl mx-auto px-4 pb-20 grid lg:grid-cols-3 gap-12">
+        {/* Main Content */}
+        <div className="lg:col-span-2 space-y-16">
+          {/* Key Features */}
+          {service.keyFeatures?.length > 0 && (
+            <section>
+              <div className="flex items-center gap-3 mb-8">
+                <Zap className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl font-bold text-foreground">What We Deliver</h2>
+              </div>
+              <div className="grid gap-4">
+                {service.keyFeatures.map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground font-medium">{feature.feature}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
-        {/* Key Features */}
-        {service.keyFeatures?.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">What We Offer</h2>
-            <ul className="list-disc list-inside space-y-2">
-              {service.keyFeatures.map((f, i) => (
-                <li key={i}>{f.feature}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {/* Deliverables */}
+          {service.deliverables?.length > 0 && (
+            <section>
+              <div className="flex items-center gap-3 mb-8">
+                <Target className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl font-bold text-foreground">Project Deliverables</h2>
+              </div>
+              <div className="space-y-3">
+                {service.deliverables.map((d, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/30 transition-colors">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="text-foreground">{d.item}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
-        {/* Technologies Used */}
-        {service.technologiesUsed?.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Technologies Used</h2>
-            <ul className="flex flex-wrap gap-3">
-              {service.technologiesUsed.map((tech, i) => (
-                <li key={i} className="bg-gray-200 px-4 py-2 rounded-full text-sm">
-                  {tech.technology}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {/* Case Studies */}
+          {service.caseStudies?.length > 0 && (
+            <section>
+              <div className="flex items-center gap-3 mb-8">
+                <Users className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl font-bold text-foreground">Success Stories</h2>
+              </div>
+              <div className="grid gap-4">
+                {service.caseStudies.map((c, idx) => (
+                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300 border-border/50">
+                    <CardContent className="p-6">
+                      <a
+                        href={c.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between group-hover:text-primary transition-colors"
+                      >
+                        <span className="font-medium text-foreground">{c.title}</span>
+                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          )}
 
-        {/* Deliverables */}
-        {service.deliverables?.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Deliverables</h2>
-            <ul className="list-disc list-inside space-y-2">
-              {service.deliverables.map((d, i) => (
-                <li key={i}>{d.item}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {/* Full Description */}
+          {service.fullDescription && (
+            <section>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Detailed Overview</h2>
+              <div className="prose prose-lg max-w-none">
+                <RenderEditor content={service.fullDescription} />
+              </div>
+            </section>
+          )}
+        </div>
 
-        {/* Estimated Timeline */}
-        {service.estimatedTimeline && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-2">Estimated Timeline</h2>
-            <p>{service.estimatedTimeline}</p>
-          </div>
-        )}
+        {/* Sidebar */}
+        <div className="space-y-8">
+          {service.estimatedTimeline && (
+            <Card className="border-border/50">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Clock className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold text-foreground">Timeline</h3>
+                </div>
+                <p className="text-muted-foreground">{service.estimatedTimeline}</p>
+              </CardContent>
+            </Card>
+          )}
 
-        {/* Case Studies */}
-        {service.caseStudies?.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Related Case Studies</h2>
-            <ul className="list-disc list-inside space-y-2">
-              {service.caseStudies.map((c, i) => (
-                <li key={i}>
-                  <a
-                    href={c.link}
-                    target="_blank"
-                    className="text-blue-600 underline hover:text-blue-800"
-                  >
-                    {c.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Full Description */}
-        {service.fullDescription && (
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-semibold mb-4">Service Description</h2>
-            <RenderEditor content={service.fullDescription} />
-          </div>
-        )}
+          {service.technologiesUsed?.length > 0 && (
+            <Card className="border-border/50">
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-foreground mb-4">Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {service.technologiesUsed.map((tech, idx) => (
+                    <Badge key={idx} variant="secondary" className="text-xs">{tech.technology}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </div>
       </div>
     </div>
   )

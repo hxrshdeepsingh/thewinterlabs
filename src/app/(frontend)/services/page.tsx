@@ -1,11 +1,10 @@
+import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
-import ServiceCard from '@/components/service-card'
 import { getPayloadClient } from '@/lib/payloadClient'
 import { getPageSEO } from '@/lib/getPageSeo'
 import { Suspense, cache } from 'react'
-import Image from 'next/image'
+import ServiceCard from '@/components/service-card'
 
-// export const revalidate = 86400
 export const revalidate = 86400
 
 const getServices = cache(async () => {
