@@ -3,9 +3,10 @@ import { Badge } from '@/components/ui/badge'
 import { getPayloadClient } from '@/lib/payloadClient'
 import { getPageSEO } from '@/lib/getPageSeo'
 import { Suspense, cache } from 'react'
-import ServiceCard from '@/components/service-card'
+// import ServiceCard from '@/components/service-card'
+import { ServiceCard } from '@/components/card'
 
-export const revalidate = 86400
+export const revalidate = 60
 
 const getServices = cache(async () => {
   const payload = await getPayloadClient()
@@ -17,7 +18,8 @@ const getServices = cache(async () => {
     id: s.id,
     title: s.title,
     description: s.shortDescription,
-    icon: s.icon ? `${process.env.NEXT_PUBLIC_API_URL}${s.icon.url}` : '',
+    icon: s.icon,
+    featureImage: s.featureImage,
     slug: s.slug,
     technologiesUsed: s.technologiesUsed || [],
   }))
@@ -33,17 +35,8 @@ async function ServicesList() {
           key={service.id}
           title={service.title}
           description={service.description}
-          iconUrl={
-            service.icon ? (
-              <Image
-                src={service.icon}
-                alt={service.title}
-                width={64}
-                height={64}
-                className="mx-auto"
-              />
-            ) : null
-          }
+          iconUrl={service.featureImage}
+          featureImage={service.featureImage}
           slug={service.slug}
           technologiesUsed={service.technologiesUsed}
         />
@@ -52,7 +45,6 @@ async function ServicesList() {
   )
 }
 
-// 🔹 main page with streaming
 export default function Services() {
   return (
     <section id="services" className="relative py-10 px-6">

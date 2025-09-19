@@ -19,7 +19,6 @@ const getService = cache(async (slug: string) => {
   return res.docs[0] || null
 })
 
-// ✅ Metadata must await params
 export async function generateMetadata(props: { params: { slug: string } }) {
   const { params } = await props
   const service = await getService(params.slug)
@@ -46,7 +45,6 @@ export default async function SingleService(props: SingleServiceProps) {
 
   return (
     <div className="min-h-screen mx-auto max-w-screen-lg">
-      {/* Hero Section */}
       <div className="relative overflow-hidden mt-4">
         <div className="relative max-w-6xl mx-auto px-4 py-16 text-center">
           {service.icon?.url && (
@@ -64,12 +62,13 @@ export default async function SingleService(props: SingleServiceProps) {
           )}
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">{service.title}</h1>
           {service.shortDescription && (
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{service.shortDescription}</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {service.shortDescription}
+            </p>
           )}
         </div>
       </div>
 
-      {/* Feature Image */}
       {service.featureImage && (
         <div className="max-w-6xl mx-auto px-6 mb-20">
           <div className="relative overflow-hidden rounded-3xl border border-border/50 shadow-2xl">
@@ -85,11 +84,8 @@ export default async function SingleService(props: SingleServiceProps) {
         </div>
       )}
 
-      {/* Content Grid */}
       <div className="max-w-6xl mx-auto px-4 pb-20 grid lg:grid-cols-3 gap-12">
-        {/* Main Content */}
         <div className="lg:col-span-2 space-y-16">
-          {/* Key Features */}
           {service.keyFeatures?.length > 0 && (
             <section>
               <div className="flex items-center gap-3 mb-8">
@@ -98,7 +94,10 @@ export default async function SingleService(props: SingleServiceProps) {
               </div>
               <div className="grid gap-4">
                 {service.keyFeatures.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50"
+                  >
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground font-medium">{feature.feature}</span>
                   </div>
@@ -107,7 +106,6 @@ export default async function SingleService(props: SingleServiceProps) {
             </section>
           )}
 
-          {/* Deliverables */}
           {service.deliverables?.length > 0 && (
             <section>
               <div className="flex items-center gap-3 mb-8">
@@ -116,7 +114,10 @@ export default async function SingleService(props: SingleServiceProps) {
               </div>
               <div className="space-y-3">
                 {service.deliverables.map((d, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/30 transition-colors">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/30 transition-colors"
+                  >
                     <div className="w-2 h-2 rounded-full bg-primary" />
                     <span className="text-foreground">{d.item}</span>
                   </div>
@@ -125,7 +126,6 @@ export default async function SingleService(props: SingleServiceProps) {
             </section>
           )}
 
-          {/* Case Studies */}
           {service.caseStudies?.length > 0 && (
             <section>
               <div className="flex items-center gap-3 mb-8">
@@ -134,7 +134,10 @@ export default async function SingleService(props: SingleServiceProps) {
               </div>
               <div className="grid gap-4">
                 {service.caseStudies.map((c, idx) => (
-                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300 border-border/50">
+                  <Card
+                    key={idx}
+                    className="group hover:shadow-lg transition-all duration-300 border-border/50"
+                  >
                     <CardContent className="p-6">
                       <a
                         href={c.link}
@@ -152,7 +155,6 @@ export default async function SingleService(props: SingleServiceProps) {
             </section>
           )}
 
-          {/* Full Description */}
           {service.fullDescription && (
             <section>
               <h2 className="text-3xl font-bold text-foreground mb-8">Detailed Overview</h2>
@@ -163,7 +165,6 @@ export default async function SingleService(props: SingleServiceProps) {
           )}
         </div>
 
-        {/* Sidebar */}
         <div className="space-y-8">
           {service.estimatedTimeline && (
             <Card className="border-border/50">
@@ -183,7 +184,9 @@ export default async function SingleService(props: SingleServiceProps) {
                 <h3 className="font-semibold text-foreground mb-4">Technologies</h3>
                 <div className="flex flex-wrap gap-2">
                   {service.technologiesUsed.map((tech, idx) => (
-                    <Badge key={idx} variant="secondary" className="text-xs">{tech.technology}</Badge>
+                    <Badge key={idx} variant="secondary" className="text-xs">
+                      {tech.technology}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>

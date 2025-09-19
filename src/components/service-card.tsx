@@ -1,14 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ServiceCardProps {
-  title: string
-  description: string
-  iconUrl: string
-  slug: string
-  technologiesUsed?: { technology: string }[]
-}
-
 export default function ServiceCard({
   title,
   description,
