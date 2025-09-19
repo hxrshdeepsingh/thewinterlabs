@@ -19,22 +19,37 @@ const getService = cache(async (slug: string) => {
   return res.docs[0] || null
 })
 
-export async function generateMetadata(props: { params: { slug: string } }) {
-  const { params } = await props
-  const service = await getService(params.slug)
-
-  if (!service) return { title: 'Service Not Found', description: 'This service does not exist.' }
-
-  return { title: service.title, description: service.shortDescription || '' }
+export async function generateViewport() {
+  return {
+    themeColor: '#ffffff',
+  }
 }
 
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params
+  const service = await getService(slug)
+
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+      description: 'This service does not exist.',
+    }
+  }
+
+  return {
+    title: service.title,
+    description: service.description,
+  }
+}
+
+// ✅ Fix starts here
 interface SingleServiceProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export default async function SingleService(props: SingleServiceProps) {
-  const { params } = props
-  const service = await getService(params.slug)
+export default async function SingleService({ params }: SingleServiceProps) {
+  const { slug } = await params
+  const service = await getService(slug)
 
   if (!service)
     return (
