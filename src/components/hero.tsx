@@ -10,20 +10,7 @@ import { SparklesText } from './ui/sparkles-text'
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 pt-6 overflow-hidden">
-      <div style={{ width: '100%', height: '100vh', position: 'absolute' }}>
-        {/* <Prism
-          animationType="rotate"
-          timeScale={0.5}
-          height={3.5}
-          baseWidth={3.5}
-          scale={2.6}
-          hueShift={0}
-          colorFrequency={1}
-          noise={0.5}
-          glow={1}
-        /> */}
-      </div>
+    <div className="relative min-h-[calc(100vh-10rem)] flex items-center justify-center px-6 pt-6 overflow-hidden">
       <div className="relative z-[1] text-center max-w-screen-lg">
         <div className="z-10 flex items-center justify-center">
           <div
@@ -39,8 +26,10 @@ const Hero = () => {
         </div>
         {/* <Gummies /> */}
         <SparklesText>
-          <h1 className="mt-6 text-4xl sm:text-5xl md:text-[72px] font-semibold !leading-[1] tracking-tight">
-            {`Bold ideas. Powerful experiences.`}
+          <h1 className="mt-6 text-h1 font-medium !leading-[1] tracking-tight">
+            {`Bold ideas.`}
+            <br />
+            {`Powerful experiences.`}
           </h1>
         </SparklesText>
         <p className="mt-6 text-[17px] md:text-lg">

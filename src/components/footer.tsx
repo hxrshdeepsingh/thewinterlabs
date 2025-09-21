@@ -30,7 +30,7 @@ const Footer = () => {
                 <h3 className="mb-4 font-bold">{section.title}</h3>
                 <ul className="space-y-4 text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
-                    <li key={linkIdx} className="font-medium hover:text-primary">
+                    <li key={linkIdx} className="text-small font-medium hover:text-primary">
                       <Link href={link.url}>{link.text}</Link>
                     </li>
                   ))}
