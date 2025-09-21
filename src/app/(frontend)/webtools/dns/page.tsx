@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -51,7 +50,6 @@ export default function DnsPage() {
     <TooltipProvider>
       <section className="py-10 px-4">
         <div className="container mx-auto max-w-screen-lg">
-          <BreadcrumbDemo/>
           <div className="mb-10 grid gap-4 text-center md:text-left md:grid-cols-2">
             <h1 className="text-h1">DNS Lookup</h1>
             <p className="text-body text-muted-foreground">
@@ -59,6 +57,7 @@ export default function DnsPage() {
               records.
             </p>
           </div>
+
           <div className="flex flex-col md:flex-row items-center gap-4 p-6 bg-accent rounded-lg mb-8">
             <Input
               placeholder="Enter domain e.g. example.com"

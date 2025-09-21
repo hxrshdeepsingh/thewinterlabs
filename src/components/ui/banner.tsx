@@ -4,15 +4,11 @@ export default function Banner() {
   return (
     <div className="group relative top-0 bg-primary py-3 text-white transition-all duration-300 md:py-0">
       <div className="m-auto container px-4 flex flex-col items-center justify-center gap-4 md:h-12 md:flex-row">
-        <Link
-          target="_blank"
-          href="/webtools"
-          className="inline-flex text-xs leading-normal md:text-sm"
-        >
+        <Link href="/webtools" className="inline-flex text-xs leading-normal md:text-sm">
           ✨
           <span className="ml-1 font-semibold">
-            Introducing TheWinterLabs WebTool – our latest tool to help you build powerful, modern
-            websites faster than ever.
+            Introducing WebTools - our latest tool to help you build powerful, modern websites
+            faster than ever.
           </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -50,7 +50,6 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-              {/* <ThemeToggle /> */}
             </div>
           </div>
         </footer>
