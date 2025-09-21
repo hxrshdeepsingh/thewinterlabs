@@ -6,7 +6,6 @@ import { Cta } from '@/components/cta'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import TopProgressBar from '@/components/ui/TopLoader'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import PageTransition from '@/components/PageTransition'
 import CookieProvider from '@/components/ui/CookieProvider'
@@ -57,7 +56,6 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body className={`${inter.className} antialiased`}>
         <SmoothScrollProvider>
           <PageTransition>
-            <TopProgressBar />
             <Navbar />
             <main>{children}</main>
             <Cta />

@@ -13,7 +13,7 @@ export default async function Home() {
       <ScrollBasedVelocityDemo />
       <AboutFeatures />
       <Features />
-      <Projects />
+      {/* <Projects /> */}
       <Testimonials />
     </div>
   )
