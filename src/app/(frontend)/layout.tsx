@@ -10,6 +10,7 @@ import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 import PageTransition from '@/components/PageTransition'
 import CookieProvider from '@/components/ui/CookieProvider'
 import { Navbar } from '@/components/navbar/navbar'
+
 const inter = Geist({
   subsets: ['latin'],
   display: 'swap',
