@@ -31,6 +31,7 @@ import Logo from '@/components/navbar/logo'
 import menus from '@data/menus.json'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 import Banner from '../ui/banner'
+import { Separator } from "@/components/ui/separator"
 export const Navbar = () => {
   return (
     // <section className="fixed z-10 top-6 inset-x-4">
@@ -65,7 +66,9 @@ export const Navbar = () => {
                                 className="text-small rounded-md p-3 transition-colors hover:bg-muted/70"
                               >
                                 <Link href={child.path}>
-                                  <p className="mb-1 text-small text-foreground">{child.name}</p>
+                                  <p className="mb-1 text-small font-semibold text-foreground">
+                                    {child.name}
+                                  </p>
                                   <span className="text-small text-muted-foreground">
                                     {child.description}
                                   </span>
@@ -89,7 +92,8 @@ export const Navbar = () => {
 
             {/* Buttons */}
             <div className="hidden items-center gap-4 lg:flex">
-              <AnimatedThemeToggler />
+              {/* <AnimatedThemeToggler /> */}
+              {/* <Separator orientation="vertical" className="h-8 w-px border-amber-100" /> */}
               <Button>Contact us</Button>
             </div>
 
