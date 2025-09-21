@@ -37,7 +37,7 @@ const Hero = () => {
           {`, we turn bold ideas into seamless web solutions. Clean code, thoughtful design, and future-ready technology come together to build products that truly stand out.`}
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
-          <Link href={'/projects'}>
+          <Link href={'/services'}>
             <Button size="lg" className="text-base">
               See What We Do <ArrowRightIcon className="ml-2 !h-5.5 !w-5.5" />
             </Button>

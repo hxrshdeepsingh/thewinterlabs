@@ -37,7 +37,7 @@ export const Navbar = () => {
     // <section className="fixed z-10 top-6 inset-x-4">
     <>
       <Banner />
-      <section className="py-2 px-4 sticky top-0 bg-background/80 backdrop-blur-md z-20">
+      <section className="py-2 px-4 sticky top-0 bg-white z-20 border-b-2">
         <div className="container max-w-screen-lg m-auto ">
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
