@@ -31,10 +31,11 @@ import Logo from '@/components/navbar/logo'
 import menus from '@data/menus.json'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 import Banner from '../ui/banner'
-import { Separator } from "@/components/ui/separator"
+import { Separator } from '@/components/ui/separator'
+import Image from 'next/image'
+
 export const Navbar = () => {
   return (
-    // <section className="fixed z-10 top-6 inset-x-4">
     <>
       <Banner />
       <section className="py-2 px-4 sticky top-0 bg-white z-20 border-b-2">
@@ -158,6 +159,13 @@ export const Navbar = () => {
           </nav>
         </div>
       </section>
+      <Image
+        src="/assets/cat.gif"
+        width={50}
+        height={50}
+        alt="A cute cat"
+        className="rotate-90 absolute left-[-5px]"
+      />
     </>
   )
 }

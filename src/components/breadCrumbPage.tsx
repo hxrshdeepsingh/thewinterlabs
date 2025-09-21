@@ -23,7 +23,9 @@ export function BreadcrumbDemo() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link className='text-small' href="/">Home</Link>
+            <Link className="text-small" href="/">
+              Home
+            </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -32,7 +34,9 @@ export function BreadcrumbDemo() {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link className='text-small' href={buildPath(i)}>{segment.replace(/-/g, ' ')}</Link>
+                <Link className="text-small" href={buildPath(i)}>
+                  {segment.replace(/-/g, ' ')}
+                </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
           </>

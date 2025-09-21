@@ -5,41 +5,53 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { getPageSEO } from '@/lib/getPageSeo'
+import { CheckCircle, MailOpen } from 'lucide-react'
 
 export default function Contact({
   title = 'Contact Us',
   description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
   email = 'thewinterlabs@gmail.com',
-  web = { label: 'thewinterlabs.in', url: 'https://thewinterlabs.in' },
 }) {
   return (
     <section className="py-10 px-4">
       <div className="container mx-auto max-w-screen-lg">
         <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
-          <h1 className="text-5xl font-semibold">{title}</h1>
-          <p className="text-muted-foreground">{description}</p>
+          <h1 className="text-h1 font-semibold">{title}</h1>
+          <p className="text-body text-muted-foreground">{description}</p>
         </div>
 
         <div className="mx-auto flex w-full flex-col justify-between gap-10 lg:flex-row lg:gap-20">
-          <div className="flex max-w-sm flex-col gap-10">
-            <div className="mx-auto w-fit lg:mx-0">
-              <ul className="ml-4 list-disc">
-                <li>
-                  <span className="font-bold">Email: </span>
-                  <a href={`mailto:${email}`} className="underline">
+          <div className="flex w-full flex-col gap-10">
+            <div className="mx-auto w-full lg:mx-0">
+              <div className="flex mb-4 items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
+                <MailOpen className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-foreground font-medium">
+                  <a target="_blank" href={`mailto:${email}`} className="underline">
                     {email}
                   </a>
-                </li>
-                <li>
-                  <span className="font-bold">Web: </span>
-                  <a href={web.url} target="_blank" rel="noopener noreferrer" className="underline">
-                    {web.label}
+                </span>
+              </div>
+
+              <div className="flex mb-4 items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
+                <MailOpen className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-foreground font-medium">
+                  <a target="_blank" href={`mailto:${email}`} className="underline">
+                    {email}
                   </a>
-                </li>
-              </ul>
+                </span>
+              </div>
+
+              <div className="flex mb-4 items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
+                <MailOpen className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-foreground font-medium">
+                  <a target="_blank" href={`mailto:${email}`} className="underline">
+                    {email}
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
-          <div className="flex max-w-screen-md flex-col gap-6 rounded-lg border p-10 m-0">
+          <div className="flex w-full flex-col gap-6 rounded-lg border p-10 m-0">
             <div className="flex gap-4">
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="firstname">First Name</Label>
