@@ -72,16 +72,19 @@ export const Services: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'caseStudies',
+      name: 'faq',
       type: 'array',
+      label: 'FAQs',
       fields: [
         {
-          name: 'title',
+          name: 'question',
           type: 'text',
+          required: true,
         },
         {
-          name: 'link',
-          type: 'text',
+          name: 'answer',
+          type: 'richText',
+          required: true,
         },
       ],
     },
