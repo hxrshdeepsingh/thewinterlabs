@@ -8,16 +8,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const payload = await getPayload({ config })
   const url = getServerSideURL()
 
-  // Fetch posts
-  const posts = await payload.find<Post>({
-    collection: 'posts',
-    limit: 1000,
-    where: {},
-  })
-
   // Fetch projects
-  const projects = await payload.find<Project>({
-    collection: 'projects',
+  const services = await payload.find<Service>({
+    collection: 'services',
     limit: 1000,
     where: {},
   })
@@ -27,19 +20,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${url}/`, lastModified: new Date() },
     { url: `${url}/about`, lastModified: new Date() },
     { url: `${url}/contact`, lastModified: new Date() },
+    { url: `${url}/services`, lastModified: new Date() },
   ]
 
-  // Dynamic posts
-  const postPages: MetadataRoute.Sitemap = posts.docs.map((post) => ({
-    url: `${url}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt),
-  }))
-
   // Dynamic projects
-  const projectPages: MetadataRoute.Sitemap = projects.docs.map((project) => ({
-    url: `${url}/projects/${project.slug}`,
-    lastModified: new Date(project.updatedAt),
+  const servicePages: MetadataRoute.Sitemap = services.docs.map((service) => ({
+    url: `${url}/services/${service.slug}`,
+    lastModified: new Date(service.updatedAt),
   }))
 
-  return [...staticPages, ...postPages, ...projectPages]
+  return [...staticPages, ...servicePages]
 }
