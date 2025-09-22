@@ -25,7 +25,7 @@ export default function DnsPage() {
     setRecords([])
 
     try {
-      const res = await fetch(`https://thewinterlabs-webtools.onrender.com/dns/${domain}`)
+      const res = await fetch(`https://thewinterlabs-webtools.onrender.com/dns/?payload=${domain}`)
       const data = await res.json()
       if (data.success) setRecords(data.records)
     } catch (error) {
