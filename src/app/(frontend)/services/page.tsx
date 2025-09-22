@@ -3,7 +3,6 @@ import { Badge } from '@/components/ui/badge'
 import { getPayloadClient } from '@/lib/payloadClient'
 import { getPageSEO } from '@/lib/getPageSeo'
 import { Suspense, cache } from 'react'
-// import ServiceCard from '@/components/service-card'
 import { ServiceCard } from '@/components/card'
 
 export const revalidate = 60
@@ -82,5 +81,5 @@ export default function Services() {
 }
 
 export async function generateMetadata() {
-  return await getPageSEO(5, 'pages')
+  return await getPageSEO('/services', 'pages')
 }

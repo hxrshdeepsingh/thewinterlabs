@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     description: 'Engineering Next-Gen Digital Brilliance',
     images: ['/og-image.png'],
   },
+  alternates: {
+    canonical: 'https://thewinterlabs.in',
+  },
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

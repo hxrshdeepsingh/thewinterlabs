@@ -12,7 +12,7 @@ export default function Contact({
   description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
   email = 'thewinterlabs@gmail.com',
   cal = 'Cal.com',
-  calurl = 'https://cal.com/thewinterlabs/30min'
+  calurl = 'https://cal.com/thewinterlabs/30min',
 }) {
   return (
     <section className="py-10 px-4">
@@ -25,7 +25,6 @@ export default function Contact({
         <div className="mx-auto flex w-full flex-col justify-between gap-10 lg:flex-row lg:gap-20">
           <div className="flex w-full flex-col gap-10">
             <div className="mx-auto w-full lg:mx-0">
-
               <div className="flex mb-4 items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
                 <MailOpen className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-foreground font-medium">
@@ -43,7 +42,6 @@ export default function Contact({
                   </a>
                 </span>
               </div>
-
             </div>
           </div>
           <div className="flex w-full flex-col gap-6 rounded-lg border p-10 m-0">
@@ -78,5 +76,5 @@ export default function Contact({
 }
 
 export async function generateMetadata() {
-  return await getPageSEO(3, 'pages')
+  return await getPageSEO('/contact', 'pages')
 }

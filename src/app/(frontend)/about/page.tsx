@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Data from '@/data/about.json'
+import { getPageSEO } from '@/lib/getPageSeo'
 
 export default function AboutPage() {
   return (
@@ -92,4 +93,8 @@ export default function AboutPage() {
       </div>
     </section>
   )
+}
+
+export async function generateMetadata() {
+  return await getPageSEO('/about', 'pages')
 }
