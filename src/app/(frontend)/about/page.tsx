@@ -8,8 +8,8 @@ export default function AboutPage() {
       <div className="container mx-auto max-w-screen-lg">
         {/* Title and description */}
         <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
-          <h1 className="text-5xl font-semibold">{Data.title}</h1>
-          <p className="text-muted-foreground">{Data.description}</p>
+          <h1 className="text-h1 font-semibold">{Data.title}</h1>
+          <p className="text-body text-muted-foreground">{Data.description}</p>
         </div>
 
         {/* Main images and breakout card */}
