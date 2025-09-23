@@ -1,4 +1,4 @@
-import React from 'react'
+import Link from 'next/link'
 import { getPayloadClient } from '@/lib/payloadClient'
 
 const getServices = async () => {
@@ -111,6 +111,39 @@ export default async function ServiceHomepage() {
                             </span>
                           ),
                         )}
+                      </div>
+                    </div>
+
+                    <div class="border-border mt-8 border-t pt-6">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <div class="text-lg font-semibold">Starting at $99</div>
+                          <div class="text-muted-foreground text-xs">Custom quotes available</div>
+                        </div>
+                        <Link href="/services/web-development">
+                          <button
+                            data-slot="button"
+                            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 transition-all group-hover:shadow-md"
+                          >
+                            Get Started
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-arrow-right ml-1 h-3 w-3 transition-transform group-hover:translate-x-1"
+                              aria-hidden="true"
+                            >
+                              <path d="M5 12h14"></path>
+                              <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
