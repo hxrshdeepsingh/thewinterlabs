@@ -5,6 +5,7 @@ import { Features } from '@/components/features'
 import { AboutFeatures } from '@/components/about-features'
 import { getPageSEO } from '@/lib/getPageSeo'
 import { ScrollBasedVelocityDemo } from '@/components/velocityText'
+import ServiceHomepage from '@/components/service-homepage'
 
 export default async function Home() {
   return (
@@ -12,16 +13,13 @@ export default async function Home() {
       <Hero />
       <ScrollBasedVelocityDemo />
       <AboutFeatures />
+      <ServiceHomepage />
       <Features />
-      {/* <Projects /> */}
       <Testimonials />
     </div>
   )
 }
 
-// export async function generateMetadata() {
-//   return await getPageSEO(1, 'pages')
-// }
 export async function generateMetadata() {
   return await getPageSEO('/', 'pages')
 }
