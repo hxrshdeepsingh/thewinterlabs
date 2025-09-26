@@ -72,6 +72,14 @@ export const Services: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'estimatedTimelineText',
+      type: 'text',
+    },
+    {
+      name: 'startingPrice',
+      type: 'text',
+    },
+    {
       name: 'faq',
       type: 'array',
       label: 'FAQs',

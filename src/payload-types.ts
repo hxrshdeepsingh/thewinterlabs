@@ -331,6 +331,8 @@ export interface Service {
       }[]
     | null;
   estimatedTimeline?: string | null;
+  estimatedTimelineText?: string | null;
+  startingPrice?: string | null;
   faq?:
     | {
         question: string;
@@ -575,6 +577,8 @@ export interface ServicesSelect<T extends boolean = true> {
         id?: T;
       };
   estimatedTimeline?: T;
+  estimatedTimelineText?: T;
+  startingPrice?: T;
   faq?:
     | T
     | {

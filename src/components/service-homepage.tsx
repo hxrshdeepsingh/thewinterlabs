@@ -7,6 +7,7 @@ const getServices = async () => {
   const data = await payload.find({
     collection: 'services',
   })
+  console.log(data)
   return data.docs.map((s) => ({
     id: s.id,
     title: s.title,
@@ -17,6 +18,8 @@ const getServices = async () => {
     technologiesUsed: s.technologiesUsed || [],
     keyFeatures: s.keyFeatures,
     deliverables: s.deliverables,
+    startingPrice: s.startingPrice,
+    estimatedTimeline: s.estimatedTimeline
   }))
 }
 
@@ -45,7 +48,7 @@ export default async function ServiceHomepage() {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold">{service.title}</h3>
-                        <div className="mt-1 text-sm text-muted-foreground">2-4 weeks</div>
+                        <div className="mt-1 text-sm text-muted-foreground">{service.estimatedTimeline}</div>
                       </div>
                     </div>
                   </div>
@@ -76,7 +79,7 @@ export default async function ServiceHomepage() {
                     <div class="border-border mt-8 border-t pt-6">
                       <div class="flex items-center justify-between">
                         <div>
-                          <div class="text-lg font-semibold">Starting at $99</div>
+                          <div class="text-lg font-semibold">Starting at {service.startingPrice}</div>
                           <div class="text-muted-foreground text-xs">Custom quotes available</div>
                         </div>
                         <Link href="/services/web-development">
