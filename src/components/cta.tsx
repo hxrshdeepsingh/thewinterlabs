@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-export const Cta = ({ title = 'Want a professional, extraordinary website tailored to your needs?', subtitle = 'Get in touch', description = `We've helped <span class="text-primary">founders and teams</span> build their products and apps from scratch, and we can help you too.`, buttonText = 'Talk to us', buttonUrl = '/contact', items = defaultItems }: Cta4Props) => {
+export const Cta = ({ title = 'Want a professional, extraordinary website tailored to your needs?', subtitle = 'Get in touch', description = `We've helped <span class="text-primary">founders and teams</span> build their products and apps from scratch, and we can help you too.`, buttonText = 'Talk to us', buttonUrl = '/contact' }) => {
   return (
     <section className="px-4">
       <div className="relative rounded-md shadow-sm border mx-auto my-20 container max-w-screen-lg grid-cols-1 justify-start bg-gradient-to-br from-gray-100 to-white md:my-20 md:grid-cols-3 dark:from-neutral-900 dark:to-neutral-950">
