@@ -7,7 +7,6 @@ const getServices = async () => {
   const data = await payload.find({
     collection: 'services',
   })
-  console.log(data)
   return data.docs.map((s) => ({
     id: s.id,
     title: s.title,
@@ -19,7 +18,7 @@ const getServices = async () => {
     keyFeatures: s.keyFeatures,
     deliverables: s.deliverables,
     startingPrice: s.startingPrice,
-    estimatedTimeline: s.estimatedTimeline
+    estimatedTimeline: s.estimatedTimeline,
   }))
 }
 
@@ -68,7 +67,7 @@ export default async function ServiceHomepage() {
                     <div className="bg-muted/50 rounded-lg p-4">
                       <h4 className="mb-2 text-sm font-medium">Deliverables:</h4>
                       <div className="flex flex-wrap gap-2">
-                        {service.deliverables?.map((deliverable: { id; feature }, index: number) => (
+                        {service.deliverables?.map((deliverable: { id; feature }, index) => (
                           <span key={index} className="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium bg-secondary text-secondary-foreground">
                             {deliverable.item}
                           </span>
@@ -82,7 +81,7 @@ export default async function ServiceHomepage() {
                           <div class="text-lg font-semibold">Starting at {service.startingPrice}</div>
                           <div class="text-muted-foreground text-xs">Custom quotes available</div>
                         </div>
-                        <Link href="/services/web-development">
+                        <Link href={`/services/${service.slug}`}>
                           <button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 transition-all group-hover:shadow-md">
                             Get Started
                             <ArrowRight />
