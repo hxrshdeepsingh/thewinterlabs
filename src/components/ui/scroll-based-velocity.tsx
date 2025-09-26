@@ -1,14 +1,6 @@
 'use client'
 
-import {
-  motion,
-  useAnimationFrame,
-  useMotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
-} from 'framer-motion'
+import { motion, useAnimationFrame, useMotionValue, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion'
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import type { MotionValue } from 'motion/react'
 
@@ -27,11 +19,7 @@ export const wrap = (min: number, max: number, v: number) => {
 
 const ScrollVelocityContext = React.createContext<MotionValue<number> | null>(null)
 
-export function ScrollVelocityContainer({
-  children,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+export function ScrollVelocityContainer({ children, className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -65,14 +53,7 @@ interface ScrollVelocityRowImplProps extends ScrollVelocityRowProps {
   velocityFactor: MotionValue<number>
 }
 
-function ScrollVelocityRowImpl({
-  children,
-  baseVelocity = 5,
-  direction = 1,
-  className,
-  velocityFactor,
-  ...props
-}: ScrollVelocityRowImplProps) {
+function ScrollVelocityRowImpl({ children, baseVelocity = 5, direction = 1, className, velocityFactor, ...props }: ScrollVelocityRowImplProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const blockRef = useRef<HTMLDivElement>(null)
   const [numCopies, setNumCopies] = useState(1)
@@ -159,22 +140,10 @@ function ScrollVelocityRowImpl({
   })
 
   return (
-    <div
-      ref={containerRef}
-      className={cn('w-full overflow-hidden whitespace-nowrap', className)}
-      {...props}
-    >
-      <motion.div
-        className="inline-flex items-center will-change-transform transform-gpu select-none"
-        style={{ x }}
-      >
+    <div ref={containerRef} className={cn('w-full overflow-hidden whitespace-nowrap', className)} {...props}>
+      <motion.div className="inline-flex items-center will-change-transform transform-gpu select-none" style={{ x }}>
         {Array.from({ length: numCopies }).map((_, i) => (
-          <div
-            key={i}
-            ref={i === 0 ? blockRef : null}
-            aria-hidden={i !== 0}
-            className="inline-flex shrink-0 items-center"
-          >
+          <div key={i} ref={i === 0 ? blockRef : null} aria-hidden={i !== 0} className="inline-flex shrink-0 items-center">
             {children}
           </div>
         ))}

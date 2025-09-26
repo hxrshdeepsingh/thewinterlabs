@@ -65,36 +65,19 @@ export default async function SingleService({ params }: SingleServiceProps) {
           {service.icon?.url && (
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center border border-border/50">
-                <Image
-                  src={service.icon.url}
-                  alt={service.title}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12"
-                />
+                <Image src={service.icon.url} alt={service.title} width={48} height={48} className="w-12 h-12" />
               </div>
             </div>
           )}
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">{service.title}</h1>
-          {service.shortDescription && (
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              {service.shortDescription}
-            </p>
-          )}
+          {service.shortDescription && <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{service.shortDescription}</p>}
         </div>
       </div>
 
       {service.featureImage && (
         <div className="max-w-6xl mx-auto px-6 mb-20">
           <div className="relative overflow-hidden rounded-3xl border border-border/50 shadow-2xl">
-            <Image
-              src={service.featureImage}
-              alt={service.title}
-              width={1200}
-              height={600}
-              className="w-full h-auto object-cover"
-              priority
-            />
+            <Image src={service.featureImage} alt={service.title} width={1200} height={600} className="w-full h-auto object-cover" priority />
           </div>
         </div>
       )}
@@ -109,10 +92,7 @@ export default async function SingleService({ params }: SingleServiceProps) {
               </div>
               <div className="grid gap-4">
                 {service.keyFeatures.map((feature, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50"
-                  >
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground font-medium">{feature.feature}</span>
                   </div>
@@ -129,10 +109,7 @@ export default async function SingleService({ params }: SingleServiceProps) {
               </div>
               <div className="space-y-3">
                 {service.deliverables.map((d, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/30 transition-colors"
-                  >
+                  <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/30 transition-colors">
                     <div className="w-2 h-2 rounded-full bg-primary" />
                     <span className="text-foreground">{d.item}</span>
                   </div>
@@ -149,17 +126,9 @@ export default async function SingleService({ params }: SingleServiceProps) {
               </div>
               <div className="grid gap-4">
                 {service.caseStudies.map((c, idx) => (
-                  <Card
-                    key={idx}
-                    className="group hover:shadow-lg transition-all duration-300 border-border/50"
-                  >
+                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300 border-border/50">
                     <CardContent className="p-6">
-                      <a
-                        href={c.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between group-hover:text-primary transition-colors"
-                      >
+                      <a href={c.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group-hover:text-primary transition-colors">
                         <span className="font-medium text-foreground">{c.title}</span>
                         <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>

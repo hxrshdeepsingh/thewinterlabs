@@ -7,13 +7,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { getPageSEO } from '@/lib/getPageSeo'
 import { CheckCircle, MailOpen, Phone } from 'lucide-react'
 
-export default function Contact({
-  title = 'Contact Us',
-  description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!',
-  email = 'thewinterlabs@gmail.com',
-  cal = 'Cal.com',
-  calurl = 'https://cal.com/thewinterlabs/30min',
-}) {
+export default function Contact({ title = 'Contact Us', description = 'We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!', email = 'thewinterlabs@gmail.com', cal = 'Cal.com', calurl = 'https://cal.com/thewinterlabs/30min' }) {
   return (
     <section className="py-10 px-4">
       <div className="container mx-auto max-w-screen-lg">

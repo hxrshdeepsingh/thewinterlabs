@@ -15,23 +15,11 @@ export default function AboutPage() {
 
         {/* Main images and breakout card */}
         <div className="grid gap-7 lg:grid-cols-3">
-          <Image
-            src={Data.mainImage.src}
-            alt={Data.mainImage.alt}
-            width={800}
-            height={620}
-            className="size-full rounded-xl object-cover lg:col-span-2"
-          />
+          <Image src={Data.mainImage.src} alt={Data.mainImage.alt} width={800} height={620} className="size-full rounded-xl object-cover lg:col-span-2" />
           <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
             {/* Breakout card */}
             <div className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-7 md:w-1/2 lg:w-auto">
-              <Image
-                src={Data.breakout.src}
-                alt={Data.breakout.alt}
-                width={48}
-                height={48}
-                className="mr-auto h-12"
-              />
+              <Image src={Data.breakout.src} alt={Data.breakout.alt} width={48} height={48} className="mr-auto h-12" />
               <div>
                 <p className="mb-2 text-lg font-semibold">{Data.breakout.title}</p>
                 <p className="text-muted-foreground">{Data.breakout.description}</p>
@@ -44,13 +32,7 @@ export default function AboutPage() {
             </div>
 
             {/* Secondary Image */}
-            <Image
-              src={Data.secondaryImage.src}
-              alt={Data.secondaryImage.alt}
-              width={400}
-              height={400}
-              className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto"
-            />
+            <Image src={Data.secondaryImage.src} alt={Data.secondaryImage.alt} width={400} height={400} className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto" />
           </div>
         </div>
 
@@ -60,13 +42,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-8">
             {Data.companies.map((company, idx) => (
               <div className="flex items-center gap-3" key={company.src + idx}>
-                <Image
-                  src={company.src}
-                  alt={company.alt}
-                  width={100}
-                  height={32}
-                  className="h-6 w-auto md:h-8"
-                />
+                <Image src={company.src} alt={company.alt} width={100} height={32} className="h-6 w-auto md:h-8" />
               </div>
             ))}
           </div>

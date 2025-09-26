@@ -2,7 +2,6 @@
 import * as React from 'react'
 import Logo from './navbar/logo'
 import Link from 'next/link'
-// import ThemeToggle from './ui/themeToggle'
 import menus from '@/data/footer-menus.json'
 
 const Footer = () => {

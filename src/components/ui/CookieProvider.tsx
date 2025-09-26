@@ -34,10 +34,7 @@ export default function CookieConsent() {
           <X className="w-4 h-4" />
         </button>
         <CardContent className="p-4 text-sm">
-          <p className="mb-3 pr-6">
-            We use cookies to improve your experience. By continuing, you agree to our cookie
-            policy.
-          </p>
+          <p className="mb-3 pr-6">We use cookies to improve your experience. By continuing, you agree to our cookie policy.</p>
           <Button size="sm" onClick={acceptCookies}>
             Accept
           </Button>

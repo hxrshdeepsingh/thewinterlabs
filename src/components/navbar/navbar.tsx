@@ -2,30 +2,10 @@
 
 import { MenuIcon } from 'lucide-react'
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu'
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetClose,
-} from '@/components/ui/sheet'
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'
 import Link from 'next/link'
 import Logo from '@/components/navbar/logo'
 import menus from '@data/menus.json'
@@ -53,26 +33,14 @@ export const Navbar = () => {
                   <NavigationMenuItem key={menu.id}>
                     {menu.children ? (
                       <>
-                        <NavigationMenuTrigger
-                          className={`${navigationMenuTriggerStyle()} text-small`}
-                        >
-                          {menu.name}
-                        </NavigationMenuTrigger>
+                        <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} text-small`}>{menu.name}</NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <div className="grid w-[600px] grid-cols-2 p-3">
                             {menu.children.map((child) => (
-                              <NavigationMenuLink
-                                asChild
-                                key={child.id}
-                                className="text-small rounded-md p-3 transition-colors hover:bg-muted/70"
-                              >
+                              <NavigationMenuLink asChild key={child.id} className="text-small rounded-md p-3 transition-colors hover:bg-muted/70">
                                 <Link href={child.path}>
-                                  <p className="mb-1 text-small font-semibold text-foreground">
-                                    {child.name}
-                                  </p>
-                                  <span className="text-small text-muted-foreground">
-                                    {child.description}
-                                  </span>
+                                  <p className="mb-1 text-small font-semibold text-foreground">{child.name}</p>
+                                  <span className="text-small text-muted-foreground">{child.description}</span>
                                 </Link>
                               </NavigationMenuLink>
                             ))}
@@ -113,39 +81,25 @@ export const Navbar = () => {
                       <span className="text-lg font-semibold tracking-tighter">Thewinterlabs</span>
                     </Link>
                   </SheetTitle>
-                  <SheetClose
-                    asChild
-                    className="w-12 h-12 p-3 text-2xl bg-gray-200 rounded-full hover:bg-gray-300"
-                  ></SheetClose>
+                  <SheetClose asChild className="w-12 h-12 p-3 text-2xl bg-gray-200 rounded-full hover:bg-gray-300"></SheetClose>
                 </SheetHeader>
                 <div className="flex flex-col p-4">
                   <div className="flex flex-col gap-6">
                     {menus.map((menu) => (
-                      <Link
-                        id={`menu-${menu.id}`}
-                        key={menu.id}
-                        href={menu.path}
-                        className="font-medium"
-                      >
+                      <Link id={`menu-${menu.id}`} key={menu.id} href={menu.path} className="font-medium">
                         {menu.name}
                       </Link>
                     ))}
                   </div>
                   <Accordion type="single" collapsible className="mt-4 mb-2">
                     <AccordionItem value="solutions" className="border-none">
-                      <AccordionTrigger className="text-base hover:no-underline">
-                        Our Tools
-                      </AccordionTrigger>
+                      <AccordionTrigger className="text-base hover:no-underline">Our Tools</AccordionTrigger>
                       <AccordionContent>
                         <div className="grid md:grid-cols-2">
                           {menus
                             .find((menu) => menu.name === 'Our Tools')
                             ?.children?.map((child) => (
-                              <Link
-                                href={child.path}
-                                key={child.id}
-                                className="rounded-md p-3 transition-colors hover:bg-muted/70"
-                              >
+                              <Link href={child.path} key={child.id} className="rounded-md p-3 transition-colors hover:bg-muted/70">
                                 <p className="mb-1 font-semibold text-foreground">{child.name}</p>
                               </Link>
                             ))}
@@ -159,13 +113,7 @@ export const Navbar = () => {
           </nav>
         </div>
       </section>
-      <Image
-        src="/assets/cat.gif"
-        width={50}
-        height={50}
-        alt="A cute cat"
-        className="rotate-90 absolute left-[-5px]"
-      />
+      <Image src="/assets/cat.gif" width={50} height={50} alt="A cute cat" className="rotate-90 absolute left-[-5px]" />
     </>
   )
 }

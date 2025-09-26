@@ -75,14 +75,14 @@ export default async function ServiceHomepage() {
                       </div>
                     </div>
 
-                    <div class="border-border mt-8 border-t pt-6">
-                      <div class="flex items-center justify-between">
+                    <div className="border-border mt-8 border-t pt-6">
+                      <div className="flex items-center justify-between">
                         <div>
-                          <div class="text-lg font-semibold">Starting at {service.startingPrice}</div>
-                          <div class="text-muted-foreground text-xs">Custom quotes available</div>
+                          <div className="text-lg font-semibold">Starting at {service.startingPrice}</div>
+                          <div className="text-muted-foreground text-xs">Custom quotes available</div>
                         </div>
                         <Link href={`/services/${service.slug}`}>
-                          <button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 transition-all group-hover:shadow-md">
+                          <button data-slot="button" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 transition-all group-hover:shadow-md">
                             Get Started
                             <ArrowRight />
                           </button>

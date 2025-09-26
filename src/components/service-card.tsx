@@ -1,13 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ServiceCard({
-  title,
-  description,
-  iconUrl,
-  slug,
-  technologiesUsed = [],
-}: ServiceCardProps) {
+export default function ServiceCard({ title, description, iconUrl, slug, technologiesUsed = [] }: ServiceCardProps) {
   return (
     <div className="border rounded-xl p-6 hover:shadow-lg transition-shadow bg-white">
       <div className="flex items-center mb-4">
@@ -26,10 +20,7 @@ export default function ServiceCard({
         </div>
       )}
 
-      <Link
-        href={`/services/${slug}`}
-        className="inline-block mt-4 text-blue-600 font-medium hover:underline"
-      >
+      <Link href={`/services/${slug}`} className="inline-block mt-4 text-blue-600 font-medium hover:underline">
         Learn More →
       </Link>
     </div>

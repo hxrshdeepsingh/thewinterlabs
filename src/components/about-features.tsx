@@ -17,8 +17,7 @@ const AboutFeatures = ({
       content: {
         badge: 'Modern Tactics',
         title: 'Make your site a true standout.',
-        description:
-          'Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.',
+        description: 'Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.',
         buttonText: 'See Plans',
         imageSrc: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1757539158/1_ra6qep.webp',
         imageAlt: 'placeholder',
@@ -31,8 +30,7 @@ const AboutFeatures = ({
       content: {
         badge: 'Expert Features',
         title: 'Boost your site with top-tier design.',
-        description:
-          'Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.',
+        description: 'Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.',
         buttonText: 'See Tools',
         imageSrc: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1757539158/3_q29xix.webp',
         imageAlt: 'placeholder',
@@ -45,8 +43,7 @@ const AboutFeatures = ({
       content: {
         badge: 'Elite Solutions',
         title: 'Build an advanced web experience.',
-        description:
-          'Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.',
+        description: 'Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.',
         buttonText: 'See Options',
         imageSrc: 'https://res.cloudinary.com/dcnq9bzcz/image/upload/v1757539158/2_cduv94.webp',
         imageAlt: 'placeholder',
@@ -65,22 +62,14 @@ const AboutFeatures = ({
         <Tabs defaultValue={tabs[0].value} className="mt-8">
           <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
             {tabs.map((tab) => (
-              <TabsTrigger
-                key={tab.value}
-                value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
-              >
+              <TabsTrigger key={tab.value} value={tab.value} className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary">
                 {tab.icon} {tab.label}
               </TabsTrigger>
             ))}
           </TabsList>
           <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-[var(--orange-light-color)] p-6 lg:p-16">
             {tabs.map((tab) => (
-              <TabsContent
-                key={tab.value}
-                value={tab.value}
-                className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
-              >
+              <TabsContent key={tab.value} value={tab.value} className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10">
                 <div className="flex flex-col gap-5">
                   <Badge variant="outline" className="w-fit bg-background">
                     {tab.content.badge}
@@ -91,13 +80,7 @@ const AboutFeatures = ({
                     {tab.content.buttonText}
                   </Button>
                 </div>
-                <img
-                  src={tab.content.imageSrc}
-                  width={500}
-                  height={500}
-                  alt={tab.content.imageAlt}
-                  className="rounded-xl"
-                />
+                <img src={tab.content.imageSrc} width={500} height={500} alt={tab.content.imageAlt} className="rounded-xl" />
               </TabsContent>
             ))}
           </div>

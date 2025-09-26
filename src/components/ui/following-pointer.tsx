@@ -4,15 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
-export const FollowerPointerCard = ({
-  children,
-  className,
-  title,
-}: {
-  children: React.ReactNode
-  className?: string
-  title?: string | React.ReactNode
-}) => {
+export const FollowerPointerCard = ({ children, className, title }: { children: React.ReactNode; className?: string; title?: string | React.ReactNode }) => {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const ref = React.useRef<HTMLDivElement>(null)
@@ -59,15 +51,7 @@ export const FollowerPointerCard = ({
   )
 }
 
-export const FollowPointer = ({
-  x,
-  y,
-  title,
-}: {
-  x: any
-  y: any
-  title?: string | React.ReactNode
-}) => {
+export const FollowPointer = ({ x, y, title }: { x: any; y: any; title?: string | React.ReactNode }) => {
   // Using RGB values instead of CSS variables
   const colors = [
     'rgb(14 165 233)', // sky-500
@@ -100,16 +84,7 @@ export const FollowPointer = ({
         opacity: 0,
       }}
     >
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        strokeWidth="1"
-        viewBox="0 0 16 16"
-        className="h-6 w-6 text-sky-500 transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-sky-600"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="1" viewBox="0 0 16 16" className="h-6 w-6 text-sky-500 transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-sky-600" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
         <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
       </svg>
       <motion.div

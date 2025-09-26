@@ -26,23 +26,12 @@ export default async function Projects() {
             Projects
           </Badge>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{`Featured Projects`}</h2>
-          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            {`Showcasing our most impactful projects and technical achievements.`}
-          </p>
+          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">{`Showcasing our most impactful projects and technical achievements.`}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectsData.map((data, index) => (
-            <ProjectCard
-              key={index}
-              slug={data.slug}
-              title={data.title}
-              description={data.description.split(' ').slice(0, 20).join(' ') + '...'}
-              image={data.image}
-              liveUrl={data.slug}
-              projectURL={data.projectURL}
-              technologiesUsed={data.technologiesUsed}
-            />
+            <ProjectCard key={index} slug={data.slug} title={data.title} description={data.description.split(' ').slice(0, 20).join(' ') + '...'} image={data.image} liveUrl={data.slug} projectURL={data.projectURL} technologiesUsed={data.technologiesUsed} />
           ))}
         </div>
       </div>

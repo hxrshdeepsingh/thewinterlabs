@@ -6,26 +6,13 @@ import { ExternalLink } from 'lucide-react'
 import { GithubLogo } from './icons'
 import Link from 'next/link'
 
-export default function ProjectCard({
-  title,
-  slug,
-  description,
-  image,
-  liveUrl,
-  projectURL,
-  technologiesUsed,
-}) {
+export default function ProjectCard({ title, slug, description, image, liveUrl, projectURL, technologiesUsed }) {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-xl border border-accent transition-all hover:border-primary/50">
       {/* Project Image */}
       <Link href={`/projects/${slug}`}>
         <div className="relative h-64 overflow-hidden bg-accent">
-          <Image
-            src={image}
-            alt={title}
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            fill
-          />
+          <Image src={image} alt={title} className="object-cover transition-transform duration-300 group-hover:scale-105" fill />
         </div>
       </Link>
 

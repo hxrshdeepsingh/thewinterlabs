@@ -48,20 +48,12 @@ export default async function SinglePage({ params }: { params: { slug: string } 
     <div className="bg-[#f9f9f9] text-black min-h-screen px-6 pt-[150px] pb-20">
       <div className="max-w-4xl mx-auto">
         {/* Title */}
-        <h1 className="text-5xl font-bold leading-tight tracking-tight text-center mb-12">
-          {project.title}
-        </h1>
+        <h1 className="text-5xl font-bold leading-tight tracking-tight text-center mb-12">{project.title}</h1>
 
         {/* Featured Image */}
         {project.featuredImage?.url && (
           <div className="mb-16 overflow-hidden rounded-3xl shadow-xl">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}${project.featuredImage.url}`}
-              alt={project.title}
-              width={1200}
-              height={600}
-              className="w-full h-auto object-cover"
-            />
+            <Image src={`${process.env.NEXT_PUBLIC_API_URL}${project.featuredImage.url}`} alt={project.title} width={1200} height={600} className="w-full h-auto object-cover" />
           </div>
         )}
 
@@ -102,11 +94,7 @@ export default async function SinglePage({ params }: { params: { slug: string } 
             {project.projectURL && (
               <p>
                 <strong>Live Link:</strong>{' '}
-                <a
-                  href={project.projectURL}
-                  className="text-blue-600 underline hover:text-blue-800"
-                  target="_blank"
-                >
+                <a href={project.projectURL} className="text-blue-600 underline hover:text-blue-800" target="_blank">
                   {project.projectURL}
                 </a>
               </p>

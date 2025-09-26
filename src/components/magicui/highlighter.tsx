@@ -6,14 +6,7 @@ import { annotate } from 'rough-notation'
 import type React from 'react'
 import { type RoughAnnotation } from 'rough-notation/lib/model'
 
-type AnnotationAction =
-  | 'highlight'
-  | 'underline'
-  | 'box'
-  | 'circle'
-  | 'strike-through'
-  | 'crossed-off'
-  | 'bracket'
+type AnnotationAction = 'highlight' | 'underline' | 'box' | 'circle' | 'strike-through' | 'crossed-off' | 'bracket'
 
 interface HighlighterProps {
   children: React.ReactNode
@@ -27,17 +20,7 @@ interface HighlighterProps {
   isView?: boolean
 }
 
-export function Highlighter({
-  children,
-  action = 'highlight',
-  color = '#ffd1dc',
-  strokeWidth = 1.5,
-  animationDuration = 600,
-  iterations = 2,
-  padding = 2,
-  multiline = true,
-  isView = false,
-}: HighlighterProps) {
+export function Highlighter({ children, action = 'highlight', color = '#ffd1dc', strokeWidth = 1.5, animationDuration = 600, iterations = 2, padding = 2, multiline = true, isView = false }: HighlighterProps) {
   const elementRef = useRef<HTMLSpanElement>(null)
   const annotationRef = useRef<RoughAnnotation | null>(null)
 

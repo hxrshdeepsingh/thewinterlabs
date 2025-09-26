@@ -30,15 +30,7 @@ async function ServicesList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {servicesData.map((service) => (
-        <ServiceCard
-          key={service.id}
-          title={service.title}
-          description={service.description}
-          iconUrl={service.featureImage}
-          featureImage={service.featureImage}
-          slug={service.slug}
-          technologiesUsed={service.technologiesUsed}
-        />
+        <ServiceCard key={service.id} title={service.title} description={service.description} iconUrl={service.featureImage} featureImage={service.featureImage} slug={service.slug} technologiesUsed={service.technologiesUsed} />
       ))}
     </div>
   )
@@ -53,9 +45,7 @@ export default function Services() {
             Services
           </Badge>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Our Services</h2>
-          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            Explore the services we offer to help your business grow
-          </p>
+          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">Explore the services we offer to help your business grow</p>
         </div>
 
         {/* Suspense for streaming */}
@@ -63,10 +53,7 @@ export default function Services() {
           fallback={
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 animate-pulse">
               {[...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="h-[50vh] rounded-xl bg-muted flex items-center justify-center"
-                >
+                <div key={i} className="h-[50vh] rounded-xl bg-muted flex items-center justify-center">
                   Loading...
                 </div>
               ))}

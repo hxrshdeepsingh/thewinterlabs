@@ -2,14 +2,7 @@
 import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Copy } from 'lucide-react'
 import { BreadcrumbDemo } from '@/components/breadCrumbPage'
@@ -52,19 +45,11 @@ export default function DnsPage() {
         <div className="container mx-auto max-w-screen-lg">
           <div className="mb-10 grid gap-4 text-center md:text-left md:grid-cols-2">
             <h1 className="text-h1">DNS Lookup</h1>
-            <p className="text-body text-muted-foreground">
-              Quickly retrieve DNS records for any domain. Supports A, AAAA, MX, TXT, CNAME, and NS
-              records.
-            </p>
+            <p className="text-body text-muted-foreground">Quickly retrieve DNS records for any domain. Supports A, AAAA, MX, TXT, CNAME, and NS records.</p>
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-4 p-6 bg-accent rounded-lg mb-8">
-            <Input
-              placeholder="Enter domain e.g. example.com"
-              value={domain}
-              onChange={(e) => setDomain(e.target.value)}
-              className="flex-1 bg-white"
-            />
+            <Input placeholder="Enter domain e.g. example.com" value={domain} onChange={(e) => setDomain(e.target.value)} className="flex-1 bg-white" />
             <Button onClick={handleLookup} disabled={loading}>
               {loading ? 'Looking up...' : 'Lookup'}
             </Button>
@@ -84,34 +69,18 @@ export default function DnsPage() {
                   {records.map((record, idx) => {
                     const value = record.address || record.value || record.exchange
                     return (
-                      <TableRow
-                        key={idx}
-                        className={
-                          idx % 2 === 0
-                            ? 'bg-white dark:bg-gray-900'
-                            : 'bg-gray-50 dark:bg-gray-800'
-                        }
-                      >
+                      <TableRow key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'}>
                         <TableCell>
                           <Tooltip>
                             <TooltipTrigger>
-                              <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold cursor-help">
-                                {record.type}
-                              </span>
+                              <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold cursor-help">{record.type}</span>
                             </TooltipTrigger>
-                            <TooltipContent>
-                              {dnsTypeDescription[record.type] || 'DNS record'}
-                            </TooltipContent>
+                            <TooltipContent>{dnsTypeDescription[record.type] || 'DNS record'}</TooltipContent>
                           </Tooltip>
                         </TableCell>
                         <TableCell className="flex items-center gap-2">
                           <span>{value}</span>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="p-1"
-                            onClick={() => copyToClipboard(value)}
-                          >
+                          <Button variant="outline" size="sm" className="p-1" onClick={() => copyToClipboard(value)}>
                             <Copy className="w-3 h-3" />
                           </Button>
                         </TableCell>

@@ -1,6 +1,6 @@
 import { getPayloadClient } from './payloadClient'
 
-export async function getPageSEO(slug, postType) {
+export async function getPageSEO(slug: string, postType: string) {
   const payload = await getPayloadClient()
 
   const data = await payload.find({
@@ -14,8 +14,9 @@ export async function getPageSEO(slug, postType) {
   })
 
   const page = data?.docs?.[0]
-  const pageCanonical = `https://thewinterlabs.in${page.slug}`
-  console.log(pageCanonical)
+
+  const pagePath = page?.slug?.startsWith('/') ? page.slug : `/${page?.slug || ''}`
+  const pageCanonical = `https://thewinterlabs.in${pagePath}`
 
   return {
     title: page?.meta?.title || page?.title || 'Default Title',

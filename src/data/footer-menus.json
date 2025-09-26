@@ -24,10 +24,7 @@
     },
     {
       "title": "Tools",
-      "links": [
-        { "text": "Dns Checker", "url": "/webtools/dns" },
-        { "text": "IP Checker", "url": "/webtools/ip-checker" }
-      ]
+      "links": [{ "text": "Dns Checker", "url": "/webtools/dns" }]
     },
     {
       "title": "Services",
