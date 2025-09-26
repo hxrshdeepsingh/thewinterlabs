@@ -1,60 +1,32 @@
-'use client'
-import { ArrowRight, Check } from 'lucide-react'
-// import { Waves } from "./wave";
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { ArrowRight, Check } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
-interface Cta4Props {
-  title?: string
-  description?: string
-  buttonText?: string
-  buttonUrl?: string
-  items?: string[]
-}
-
-const defaultItems = [
-  'Blazing Fast & Secure',
-  '24/7 Support',
-  'Customizable Design',
-  'Scalable Performance',
-  'Hundreds of Blocks',
-  'Global-Ready',
-  'Future-Ready Tech',
-]
-
-export const Cta = ({
-  title = 'Let’s Build Something Extraordinary',
-  description = 'Partner with The Winter Labs to create powerful, scalable, and beautifully designed digital experiences tailored to your vision.',
-  buttonText = 'Get Started',
-  buttonUrl = '/contact',
-  items = defaultItems,
-}: Cta4Props) => {
+export const Cta = ({ title = 'Want a professional, extraordinary website tailored to your needs?', subtitle = 'Get in touch', description = `We've helped <span class="text-primary">founders and teams</span> build their products and apps from scratch, and we can help you too.`, buttonText = 'Talk to us', buttonUrl = '/contact', items = defaultItems }: Cta4Props) => {
   return (
-    <section className="p-4">
-      <div className="container relative max-w-screen-lg mx-auto">
-        <div className="flex justify-center">
-          <div className="max-w-5xl">
-            <div className="flex flex-col items-start justify-between gap-8 bg-accent rounded-lg px-6 py-10 md:flex-row lg:px-20 lg:py-16">
-              <div className="md:w-1/2">
-                <h4 className="mb-1 text-2xl font-bold md:text-3xl">{title}</h4>
-                <p className="text-body text-muted-foreground">{description}</p>
-                <Button className="mt-6" asChild>
-                  <Link href={buttonUrl}>
-                    {buttonText} <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-              </div>
-              <div className="md:w-1/3">
-                <ul className="flex flex-col space-y-2 text-small font-semibold">
-                  {items.map((item, idx) => (
-                    <li className="flex items-center font-semibold" key={idx}>
-                      <Check className="mr-4 size-4 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+    <section className="px-4">
+      <div className="relative rounded-md shadow-sm border mx-auto my-20 container max-w-screen-lg grid-cols-1 justify-start bg-gradient-to-br from-gray-100 to-white md:my-20 md:grid-cols-3 dark:from-neutral-900 dark:to-neutral-950">
+        <div className="p-8 md:col-span-2 md:p-14">
+          <h2 className="text-left text-xl font-medium tracking-tight text-neutral-500 md:text-3xl dark:text-neutral-200">
+            {title}
+            <span className="font-bold text-black dark:text-white">{subtitle}</span>
+          </h2>
+
+          <p className="mt-4 max-w-lg text-left text-base font-medium tracking-tight text-neutral-500 md:text-base dark:text-neutral-200" dangerouslySetInnerHTML={{ __html: description }} />
+
+          <div className="flex flex-col items-start sm:flex-row sm:items-center sm:gap-4">
+            <div className="mt-6 flex justify-center">
+              <Button>
+                <Link href={'/contact'}>{buttonText}</Link>
+              </Button>
             </div>
+          </div>
+        </div>
+        <div className="border-t border-dashed p-8 md:border-t-0 md:border-l md:p-14">
+          <p className="text-base text-neutral-700 dark:text-neutral-200">Manu literally took our requirements and quite literally ran with them. To anyone reading this - I can't recommend Manu enough, your job will be done exceptionally well, and you will be delighted with the end result.</p>
+          <div className="mt-4 flex flex-col items-start gap-1 text-sm">
+            <p className="font-bold text-neutral-800 dark:text-neutral-200">John Shahawy</p>
+            <p className="text-neutral-500 dark:text-neutral-400">Founder - Moonbeam, Rogue.</p>
           </div>
         </div>
       </div>
