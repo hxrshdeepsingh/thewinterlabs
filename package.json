@@ -12,7 +12,8 @@
     "lint": "next lint",
     "payload": "payload",
     "start": "next start",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "push": "git add . && git commit -m 'production' && git push"
   },
   "dependencies": {
     "@next/third-parties": "^15.4.6",

@@ -10,13 +10,14 @@ import { seoPlugin } from '@payloadcms/plugin-seo'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import { Pages } from './collections/Pages'
-import { Posts } from './collections/Posts'
+import { Pages } from './collections/Posts'
+import { Posts } from './collections/Pages'
 import { Projects } from './collections/Projects'
 import { Services } from './collections/Services'
 import { Technologies } from './collections/Technologies'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
 
 export default buildConfig({
   admin: {
@@ -35,6 +36,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.POSTGRES_URL || '',
     },
+    migrationDir: path.resolve(dirname, 'migrations'),
   }),
   sharp,
   plugins: [

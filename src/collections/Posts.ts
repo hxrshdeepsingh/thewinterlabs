@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-export const Posts: CollectionConfig = {
-  slug: 'pages',
+export const Pages: CollectionConfig = {
+  slug: 'posts',
   admin: {
     useAsTitle: 'title',
   },
@@ -20,6 +20,12 @@ export const Posts: CollectionConfig = {
       required: true,
       unique: true,
     },
+    // {
+    //   name: 'canonical',
+    //   type: 'text',
+    //   required: false,
+    //   unique: false,
+    // },
     {
       name: 'featuredImage',
       type: 'upload',
@@ -37,6 +43,22 @@ export const Posts: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
+    },
+    {
+      name: 'ogTitle',
+      type: 'text',
+    },
+    {
+      name: 'ogDescription',
+      type: 'textarea',
+    },
+    {
+      name: 'ogUrl',
+      type: 'text',
+    },
+    {
+      name: 'ogImage',
+      type: 'text',
     },
   ],
 }
