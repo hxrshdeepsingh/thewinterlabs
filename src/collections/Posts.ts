@@ -20,12 +20,6 @@ export const Pages: CollectionConfig = {
       required: true,
       unique: true,
     },
-    // {
-    //   name: 'canonical',
-    //   type: 'text',
-    //   required: false,
-    //   unique: false,
-    // },
     {
       name: 'featuredImage',
       type: 'upload',
@@ -43,6 +37,12 @@ export const Pages: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
+    },
+    {
+      name: 'canonical',
+      type: 'text',
+      required: false,
+      unique: false,
     },
     {
       name: 'ogTitle',

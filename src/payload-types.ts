@@ -192,6 +192,7 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
+  canonical?: string | null;
   ogTitle?: string | null;
   ogDescription?: string | null;
   ogUrl?: string | null;
@@ -211,7 +212,6 @@ export interface Page {
   id: number;
   title: string;
   slug: string;
-  canonical?: string | null;
   featuredImage?: (number | null) | Media;
   published?: boolean | null;
   publishDate?: string | null;
@@ -230,6 +230,7 @@ export interface Page {
     };
     [k: string]: unknown;
   } | null;
+  canonical?: string | null;
   ogTitle?: string | null;
   ogDescription?: string | null;
   ogUrl?: string | null;
@@ -281,6 +282,11 @@ export interface Project {
     };
     [k: string]: unknown;
   } | null;
+  canonical?: string | null;
+  ogTitle?: string | null;
+  ogDescription?: string | null;
+  ogUrl?: string | null;
+  ogImage?: string | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -363,6 +369,11 @@ export interface Service {
         id?: string | null;
       }[]
     | null;
+  canonical?: string | null;
+  ogTitle?: string | null;
+  ogDescription?: string | null;
+  ogUrl?: string | null;
+  ogImage?: string | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -498,6 +509,7 @@ export interface PostsSelect<T extends boolean = true> {
   published?: T;
   publishDate?: T;
   content?: T;
+  canonical?: T;
   ogTitle?: T;
   ogDescription?: T;
   ogUrl?: T;
@@ -518,11 +530,11 @@ export interface PostsSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  canonical?: T;
   featuredImage?: T;
   published?: T;
   publishDate?: T;
   content?: T;
+  canonical?: T;
   ogTitle?: T;
   ogDescription?: T;
   ogUrl?: T;
@@ -561,6 +573,11 @@ export interface ProjectsSelect<T extends boolean = true> {
   location?: T;
   projectDuration?: T;
   content?: T;
+  canonical?: T;
+  ogTitle?: T;
+  ogDescription?: T;
+  ogUrl?: T;
+  ogImage?: T;
   meta?:
     | T
     | {
@@ -604,6 +621,11 @@ export interface ServicesSelect<T extends boolean = true> {
         answer?: T;
         id?: T;
       };
+  canonical?: T;
+  ogTitle?: T;
+  ogDescription?: T;
+  ogUrl?: T;
+  ogImage?: T;
   meta?:
     | T
     | {

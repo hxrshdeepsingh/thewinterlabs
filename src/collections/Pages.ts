@@ -21,12 +21,6 @@ export const Posts: CollectionConfig = {
       unique: true,
     },
     {
-      name: 'canonical',
-      type: 'text',
-      required: false,
-      unique: false,
-    },
-    {
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media',
@@ -43,6 +37,12 @@ export const Posts: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
+    },
+    {
+      name: 'canonical',
+      type: 'text',
+      required: false,
+      unique: false,
     },
     {
       name: 'ogTitle',

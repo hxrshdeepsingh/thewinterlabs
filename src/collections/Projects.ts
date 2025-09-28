@@ -82,5 +82,27 @@ export const Projects: CollectionConfig = {
       name: 'content',
       type: 'richText',
     },
+    {
+      name: 'canonical',
+      type: 'text',
+      required: false,
+      unique: false,
+    },
+    {
+      name: 'ogTitle',
+      type: 'text',
+    },
+    {
+      name: 'ogDescription',
+      type: 'textarea',
+    },
+    {
+      name: 'ogUrl',
+      type: 'text',
+    },
+    {
+      name: 'ogImage',
+      type: 'text',
+    },
   ],
 }
