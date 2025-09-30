@@ -32,10 +32,10 @@ export default async function ServiceHomepage() {
         <div className="mx-auto max-w-screen-lg space-y-16">
           <div className="space-y-4 text-center">
             <span data-slot="badge" className="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 border-border bg-background text-foreground">
-              Our Services
+              {`Our Services`}
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">Comprehensive Digital Solutions</h2>
-            <p className="mx-auto max-w-2xl text-lg tracking-tight text-muted-foreground md:text-xl">Transparent pricing for world-class digital solutions tailored to your specific business needs and growth objectives.</p>
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">{`Smart Solutions for Modern Businesses`}</h2>
+            <p className="mx-auto max-w-2xl text-lg tracking-tight text-muted-foreground md:text-xl">{`From concept to execution, we deliver transparent, results-driven digital services crafted to meet your unique business goals.`}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
