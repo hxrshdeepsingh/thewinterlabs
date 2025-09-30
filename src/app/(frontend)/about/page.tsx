@@ -19,7 +19,7 @@ export default function AboutPage() {
         <aside className="w-full md:w-1/3 md:pr-4">
           <div className="sticky top-20 space-y-8">
             <div className="flex items-center gap-4 mb-6">
-              <Image src="https://library.shadcnblocks.com/images/block/lummi/bw12.jpeg" alt="SaaS Startup Team" width={64} height={64} className="h-16 w-16 rounded-lg object-cover" />
+              <Image src="/assets/about-two.png" alt="SaaS Startup Team" width={64} height={64} className="h-16 w-16 rounded-lg object-cover" />
               <div>
                 <h3 className="font-semibold">{`SaaS Startup`}</h3>
                 <p className="text-muted-foreground text-sm">{`Building the future of productivity`}</p>
@@ -47,7 +47,7 @@ export default function AboutPage() {
               <p className="leading-relaxed">{`We believe in the perfect blend of creativity and technology. Our mission is to deliver solutions that are not only cutting-edge but also intuitive, scalable, and tailored to our clients’ unique goals. Every project we take on reflects our commitment to quality, performance, and digital brilliance.`}</p>
             </div>
 
-            <Image src="https://library.shadcnblocks.com/images/block/lummi/bw12.jpeg" alt="SaaS startup office" width={800} height={500} className="rounded-2xl object-cover my-12" />
+            <Image src="/assets/about-three.png" alt="SaaS startup office" width={800} height={500} className="rounded-2xl object-cover my-12 shadow-sm" />
 
             <section>
               <h2 className="mb-8 text-2xl font-medium">{`Our Team`}</h2>

@@ -42,7 +42,7 @@ export default function AboutHomepage() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-xl bg-muted p-10 md:p-16">
+        <div className="relative overflow-hidden rounded-xl p-10 md:p-16 bg-white">
           <div className="flex flex-col gap-4 text-center md:text-left">
             <h2 className="text-h2 font-semibold">{Data.achievementsTitle}</h2>
             <p className="max-w-screen-sm text-muted-foreground">{Data.achievementsDescription}</p>

@@ -2,15 +2,15 @@
   "title": "About Us",
   "description": "At The Winter Labs, we believe that great products aren’t just built — they’re engineered with vision, precision, and creativity. We take bold ideas and transform them into powerful digital experiences that inspire, engage, and endure.",
   "mainImage": {
-    "src": "https://shadcnblocks.com/images/block/placeholder-1.svg",
-    "alt": "placeholder"
+    "src": "http://localhost:3000/assets/about-one.png",
+    "alt": "about-one"
   },
   "secondaryImage": {
-    "src": "https://shadcnblocks.com/images/block/placeholder-2.svg",
-    "alt": "placeholder"
+    "src": "http://localhost:3000/assets/about-two.png",
+    "alt": "about-two"
   },
   "breakout": {
-    "src": "https://shadcnblocks.com/images/block/block-1.svg",
+    "src": "http://localhost:3000/assets/cat.svg",
     "alt": "logo",
     "title": "Hundreds of blocks at Shadcnblocks.com",
     "description": "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
