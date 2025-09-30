@@ -25,7 +25,7 @@ const getServices = async () => {
 export default async function ServiceHomepage() {
   const servicesData = await getServices()
   return (
-    <section className="bg-muted/30 py-32">
+    <section className="bg-muted py-20">
       <div className="container px-4">
         <div className="mx-auto max-w-screen-lg space-y-16">
           <div className="space-y-4 text-center">

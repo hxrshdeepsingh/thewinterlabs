@@ -3,10 +3,10 @@ import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost', 'images.unsplash.com', 'res.cloudinary.com'], // 👈 add this line
+    domains: ['localhost', 'images.unsplash.com', 'res.cloudinary.com', 'library.shadcnblocks.com', 'deifkwefumgah.cloudfront.net'],
   },
   typescript: {
-    ignoreBuildErrors: true, // 👈 this disables type-checking during build
+    ignoreBuildErrors: true,
   },
 }
 

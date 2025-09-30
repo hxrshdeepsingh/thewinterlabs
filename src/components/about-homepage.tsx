@@ -1,65 +1,65 @@
-import React from 'react'
+import Image from 'next/image'
+import Data from '@/data/about.json'
+import { Button } from '@/components/ui/button'
 
-function AboutHomepage() {
+export default function AboutHomepage() {
   return (
-    <>
-      <section className="dark:bg-mint-[#2F332E] py-32 bg-amber-200">
-        <div className="container bg-accent">
-          <div className="max-w-lg m-auto lg:translate-x-32">
-            <h2 className="mb-4 text-2xl font-semibold text-muted-foreground md:text-3xl">About Us</h2>
-            <h1 className="max-w-[600px] flex-1 text-3xl leading-tight font-semibold tracking-tight text-balance md:text-4xl lg:text-5xl">We're Streamline. We're a different kind of planning tool that enables builders to create the future now.</h1>
-          </div>
+    <section className="px-4 py-20 m-0">
+      <div className="container mx-auto max-w-screen-lg">
+        <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">{Data.title}</h1>
+          <p className="text-body text-muted-foreground">{Data.description}</p>
+        </div>
 
-          <div className="relative mt-12 flex gap-4">
-            <div className="max-lg:-translate-x-20">
-              <img src="/assets/f1.jpg" alt="Modern workspace with an iMac displaying 'DO MORE'" width="800" height="500" />
-            </div>
-            <div className="border-mint-50 -right-10 bottom-0 aspect-[1.5/1.4] w-[max(30vw,220px)] translate-y-20 max-lg:absolute max-lg:border-[16px] lg:-translate-y-20">
-              <img src="/assets/f1.jpg" alt="Person working on a laptop" className="object-cover" />
-            </div>
-          </div>
-
-          <div className="mt-28 max-w-xl lg:mt-10 lg:translate-x-32">
-            <p className="text-lg">Tasks have changed, are changing, and will continue to change — for the better. Now is the time for productivity to be user-first and internet-first. But in order to do this — it needs a new foundation.</p>
-          </div>
-
-          <div className="mt-6 space-y-6 md:mt-8 md:space-y-8 lg:mt-10 lg:space-y-10">
-            <h2 className="max-w-xl text-2xl font-semibold md:text-3xl lg:translate-x-32">We were always told that to-do apps can't be dynamic systems.</h2>
-            <p className="max-w-xl text-lg lg:translate-x-32">Everyone tried fixing the problem by adding features, integrations, and layers of complexity. We have spent our careers using, designing, and rethinking tools like Trello, Notion, and Asana, encountering this problem firsthand. The existing solutions don't work. We believe a to-do app needs to be a dynamic system. But we had to start from ground zero.</p>
-
-            <div className="grid gap-6 py-6 md:grid-cols-2 lg:py-10">
-              <img src="/assets/f1.jpg" alt="Team members collaborating" width="600" height="400" className="rounded-lg" />
-              <img src="/assets/f1.jpg" alt="Team meeting in a conference room" width="600" height="400" className="rounded-lg" />
-            </div>
-
-            <p className="ml-auto max-w-xl text-lg lg:-translate-x-32">We started building Streamline in 2019 and launched in 2022. Every single feature has been built from scratch — with no unnecessary complexity or outdated tools. We are purpose-built to redefine productivity for the next hundred years.</p>
-
-            <h2 className="ml-auto max-w-xl text-2xl font-semibold md:text-3xl lg:-translate-x-32">We are a bit of an unusual team — not your standard tech startup.</h2>
-
-            <div className="ml-auto max-w-xl text-lg lg:-translate-x-32">
-              <p>
-                We are 100% founder and team-owned, sustainable, and we keep our team small. Over time, we'll make this page more polished, but right now we're focused on delivering for our users. If you'd
-                <br />
-                like to collaborate, check out our open roles:
-              </p>
-
-              <button data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&>svg]:px-4 mt-6 md:mt-8 lg:mt-10">
-                <a href="#" className="">
-                  <span className="flex items-center gap-2 text-start whitespace-pre-wrap">
-                    View Open roles
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right size-4" aria-hidden="true">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </span>
+        <div className="grid gap-7 lg:grid-cols-3">
+          <Image src={Data.mainImage.src} alt={Data.mainImage.alt} width={800} height={620} className="size-full rounded-xl object-cover lg:col-span-2" />
+          <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
+            <div className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-7 md:w-1/2 lg:w-auto">
+              <Image src={Data.breakout.src} alt={Data.breakout.alt} width={48} height={48} className="mr-auto h-12" />
+              <div>
+                <p className="mb-2 text-lg font-semibold">{Data.breakout.title}</p>
+                <p className="text-muted-foreground">{Data.breakout.description}</p>
+              </div>
+              <Button variant="outline" className="mr-auto" asChild>
+                <a href={Data.breakout.buttonUrl} target="_blank">
+                  {Data.breakout.buttonText}
                 </a>
-              </button>
+              </Button>
             </div>
+
+            <Image src={Data.secondaryImage.src} alt={Data.secondaryImage.alt} width={400} height={400} className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto" />
           </div>
         </div>
-      </section>
-    </>
+
+        <div className="py-32">
+          <p className="text-center">{Data.companiesTitle}</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-8">
+            {Data.companies.map((company, idx) => (
+              <div className="flex items-center gap-3" key={company.src + idx}>
+                <Image src={company.src} alt={company.alt} width={100} height={32} className="h-6 w-auto md:h-8" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden rounded-xl bg-muted p-10 md:p-16">
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <h2 className="text-h2 font-semibold">{Data.achievementsTitle}</h2>
+            <p className="max-w-screen-sm text-muted-foreground">{Data.achievementsDescription}</p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center sm:justify-between gap-10 text-center ">
+            {Data.achievements.map((item, idx) => (
+              <div className="flex flex-col gap-4" key={item.label + idx}>
+                <p>{item.label}</p>
+                <span className="text-4xl font-semibold md:text-5xl">{item.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
+        </div>
+      </div>
+    </section>
   )
 }
-
-export default AboutHomepage

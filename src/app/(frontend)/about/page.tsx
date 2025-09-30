@@ -1,71 +1,74 @@
-import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import Image from 'next/image'
-import Data from '@/data/about.json'
+import { Button } from '@/components/ui/button'
 import { getPageSEO } from '@/lib/getPageSeo'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function AboutPage() {
-  return (
-    <section className="py-10 px-4">
-      <div className="container mx-auto max-w-screen-lg">
-        {/* Title and description */}
-        <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
-          <h1 className="text-h1 font-semibold">{Data.title}</h1>
-          <p className="text-body text-muted-foreground">{Data.description}</p>
-        </div>
+  const teamMembers = [
+    { id: '01', name: 'Sarah Chen', role: 'CEO & Co-founder' },
+    { id: '02', name: 'Marcus Rodriguez', role: 'CTO & Co-founder' },
+    { id: '03', name: 'Emily Watson', role: 'Head of Product' },
+    { id: '04', name: 'David Kim', role: 'Lead Engineer' },
+    { id: '05', name: 'Lisa Thompson', role: 'Head of Design' },
+    { id: '06', name: 'Alex Johnson', role: 'Head of Marketing' },
+    { id: '07', name: 'Rachel Green', role: 'Head of Sales' },
+  ]
 
-        {/* Main images and breakout card */}
-        <div className="grid gap-7 lg:grid-cols-3">
-          <Image src={Data.mainImage.src} alt={Data.mainImage.alt} width={800} height={620} className="size-full rounded-xl object-cover lg:col-span-2" />
-          <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
-            {/* Breakout card */}
-            <div className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-7 md:w-1/2 lg:w-auto">
-              <Image src={Data.breakout.src} alt={Data.breakout.alt} width={48} height={48} className="mr-auto h-12" />
+  return (
+    <section className="py-20 px-4">
+      <div className="container max-w-screen-lg mx-auto flex flex-col-reverse gap-5 md:flex-row md:gap-12">
+        <aside className="w-full md:w-1/3 md:pr-4">
+          <div className="sticky top-20 space-y-8">
+            <div className="flex items-center gap-4 mb-6">
+              <Image src="https://library.shadcnblocks.com/images/block/lummi/bw12.jpeg" alt="SaaS Startup Team" width={64} height={64} className="h-16 w-16 rounded-lg object-cover" />
               <div>
-                <p className="mb-2 text-lg font-semibold">{Data.breakout.title}</p>
-                <p className="text-muted-foreground">{Data.breakout.description}</p>
+                <h3 className="font-semibold">SaaS Startup</h3>
+                <p className="text-muted-foreground text-sm">Building the future of productivity</p>
               </div>
-              <Button variant="outline" className="mr-auto" asChild>
-                <a href={Data.breakout.buttonUrl} target="_blank">
-                  {Data.breakout.buttonText}
-                </a>
-              </Button>
             </div>
 
-            {/* Secondary Image */}
-            <Image src={Data.secondaryImage.src} alt={Data.secondaryImage.alt} width={400} height={400} className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto" />
+            <nav>
+              <Link href={'/contact'}>
+                <Button variant="link" className="flex items-center gap-2 text-xl sm:text-2xl p-0">
+                  Contact Us <ArrowUpRight className="h-6 w-6" />
+                </Button>
+              </Link>
+            </nav>
           </div>
-        </div>
+        </aside>
 
-        {/* Companies */}
-        <div className="py-32">
-          <p className="text-center">{Data.companiesTitle}</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-8">
-            {Data.companies.map((company, idx) => (
-              <div className="flex items-center gap-3" key={company.src + idx}>
-                <Image src={company.src} alt={company.alt} width={100} height={32} className="h-6 w-auto md:h-8" />
+        <main className="w-full md:w-2/3">
+          <div className="max-w-4xl space-y-12">
+            <h1 className="mb-12 text-4xl tracking-tight md:text-5xl lg:text-h1 font-semibold">About Us</h1>
+
+            <p className="w-full text-2xl font-medium leading-[36px] md:max-w-2xl">We're a team of passionate innovators building cutting-edge SaaS solutions that help businesses streamline their operations and boost productivity. Our mission is to create software that not only solves today's problems but anticipates tomorrow's challenges.</p>
+
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+              <h2 className="text-2xl font-medium">Core Philosophy</h2>
+              <p className="leading-relaxed">We believe in the power of technology to transform how businesses operate. Our goal is to build intuitive, scalable solutions that grow with our customers and adapt to their evolving needs.</p>
+            </div>
+
+            <Image src="https://library.shadcnblocks.com/images/block/lummi/bw12.jpeg" alt="SaaS startup office" width={800} height={500} className="rounded-2xl object-cover my-12" />
+
+            <section>
+              <h2 className="mb-8 text-2xl font-medium">Our Team</h2>
+              <div className="space-y-6">
+                {teamMembers.map((member) => (
+                  <div key={member.id} className="flex items-center justify-between border-b py-4">
+                    <div className="flex items-center gap-4">
+                      <span className="text-muted-foreground font-mono text-sm">{member.id}</span>
+                      <span className="text-base">{member.name}</span>
+                    </div>
+                    <span className="text-muted-foreground text-sm">{member.role}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </section>
 
-        {/* Achievements */}
-        <div className="relative overflow-hidden rounded-xl bg-muted p-10 md:p-16">
-          <div className="flex flex-col gap-4 text-center md:text-left">
-            <h2 className="text-4xl font-semibold">{Data.achievementsTitle}</h2>
-            <p className="max-w-screen-sm text-muted-foreground">{Data.achievementsDescription}</p>
+            <p className="mt-16 leading-relaxed">Join thousands of businesses that trust our platform to power their success. Let's build something amazing together.</p>
           </div>
-
-          <div className="mt-10 flex flex-wrap justify-between gap-10 text-center">
-            {Data.achievements.map((item, idx) => (
-              <div className="flex flex-col gap-4" key={item.label + idx}>
-                <p>{item.label}</p>
-                <span className="text-4xl font-semibold md:text-5xl">{item.value}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
-        </div>
+        </main>
       </div>
     </section>
   )

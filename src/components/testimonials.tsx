@@ -66,14 +66,14 @@ const thirdColumn = testimonials.slice(6, 9)
 
 export default function Testimonials() {
   return (
-    <section className="bg-background my-20 relative">
+    <section className="py-20 m-0 relative">
       <div className="container z-10 mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }} className="flex flex-col items-center justify-center max-w-[540px] mx-auto">
           <Badge variant="secondary" className="mb-2">
             Testimonials
           </Badge>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter">What our users say</h2>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">What our users say</h2>
           <p className="text-center mt-5 opacity-75">See what our customers have to say about us.</p>
         </motion.div>
 

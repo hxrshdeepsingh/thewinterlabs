@@ -52,11 +52,11 @@ const AboutFeatures = ({
   ],
 }: Feature108Props) => {
   return (
-    <section className="pb-32 m-0">
+    <section className="pb-20 m-0">
       <div className="max-w-screen-lg mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="secondary">{badge}</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{heading}</h2>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">{heading}</h2>
           <p className="text-muted-foreground">{description}</p>
         </div>
         <Tabs defaultValue={tabs[0].value} className="mt-8">
