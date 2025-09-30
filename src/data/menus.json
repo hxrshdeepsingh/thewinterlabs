@@ -6,12 +6,12 @@
   },
   {
     "id": 3,
-    "name": "Our Services",
+    "name": "Services",
     "path": "/services"
   },
   {
     "id": 4,
-    "name": "Our Tools",
+    "name": "Tools",
     "path": "/our-tools",
     "children": [
       {

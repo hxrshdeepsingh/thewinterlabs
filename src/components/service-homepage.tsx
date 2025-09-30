@@ -22,11 +22,13 @@ const getServices = async () => {
   }))
 }
 
+export const revalidate = false
+
 export default async function ServiceHomepage() {
   const servicesData = await getServices()
   return (
-    <section className="bg-muted py-20">
-      <div className="container px-4">
+    <section className="py-20 px-4 m-0">
+      <div className="container m-auto">
         <div className="mx-auto max-w-screen-lg space-y-16">
           <div className="space-y-4 text-center">
             <span data-slot="badge" className="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 border-border bg-background text-foreground">

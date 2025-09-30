@@ -113,7 +113,7 @@ export const Navbar = () => {
           </nav>
         </div>
       </section>
-      <Image src="/assets/cat.gif" width={50} height={50} alt="A cute cat" className="rotate-90 absolute left-[-5px]" />
+      <Image src="/assets/cat.gif" width={50} height={50} alt="A cute cat" className="rotate-90 absolute left-[-5px] z-50" />
     </>
   )
 }

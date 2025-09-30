@@ -23,10 +23,10 @@ export const Cta = ({ title = 'Want a professional, extraordinary website tailor
           </div>
         </div>
         <div className="border-t border-dashed p-8 md:border-t-0 md:border-l md:p-14">
-          <p className="text-base text-neutral-700 dark:text-neutral-200">Manu literally took our requirements and quite literally ran with them. To anyone reading this - I can't recommend Manu enough, your job will be done exceptionally well, and you will be delighted with the end result.</p>
+          <p className="text-base text-neutral-700 dark:text-neutral-200">{`From concept to launch, Thewinterlabs handled everything seamlessly. Highly recommend for anyone looking for top-notch digital solutions.`}</p>
           <div className="mt-4 flex flex-col items-start gap-1 text-sm">
-            <p className="font-bold text-neutral-800 dark:text-neutral-200">John Shahawy</p>
-            <p className="text-neutral-500 dark:text-neutral-400">Founder - Moonbeam, Rogue.</p>
+            <p className="font-bold text-neutral-800 dark:text-neutral-200">{`Priya Kapoor`}</p>
+            <p className="text-neutral-500 dark:text-neutral-400">{`Founder - BrightLeaf, Delhi`}</p>
           </div>
         </div>
       </div>

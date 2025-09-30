@@ -18,18 +18,18 @@ export default function Contact() {
     {
       id: 2,
       icon: <MessageSquare className="h-6 w-6 text-primary" />,
-      title: 'Live Chat',
+      title: 'Book an quick call',
       subtitle: 'Instant support available now',
-      link: '#',
-      linkText: 'Start chatting',
+      link: 'https://cal.com/thewinterlabs/15min',
+      linkText: 'Start meeeting',
     },
     {
       id: 3,
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: 'Phone',
-      subtitle: 'Mon-Fri, 9AM-6PM EST',
-      link: 'tel:+15551234567',
-      linkText: '+1 (555) 123-4567',
+      subtitle: 'Mon-Sat, 10AM-6PM EST',
+      link: 'tel:7357194599',
+      linkText: '+91 73571-94599',
     },
   ]
 

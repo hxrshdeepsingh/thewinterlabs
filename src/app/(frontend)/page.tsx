@@ -1,7 +1,6 @@
 import Projects from '@/components/projects'
 import Testimonials from '@/components/testimonials'
 import { Features } from '@/components/features-homepage'
-import { AboutFeatures } from '@/components/about-features'
 import { getPageSEO } from '@/lib/getPageSeo'
 import { ScrollBasedVelocityDemo } from '@/components/velocityText'
 import ServiceHomepage from '@/components/service-homepage'
@@ -14,7 +13,6 @@ export default async function Home() {
       <HeroHomepage />
       <AboutHomepage />
       <ServiceHomepage />
-      <AboutFeatures />
       <Features />
       <Testimonials />
     </div>

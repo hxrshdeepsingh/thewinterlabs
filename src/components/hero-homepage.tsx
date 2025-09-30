@@ -10,12 +10,14 @@ export default function HeroHomepage() {
     <section className="relative p-0">
       <div className="absolute h-full w-full bg-[url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/patterns/grid1.svg')] bg-contain bg-repeat opacity-100 [mask-image:linear-gradient(to_right,theme(colors.border),transparent,transparent,theme(colors.border))] lg:block"></div>
 
-      <div className="container py-12 md:py-16 px-4">
+      <div className="container py-12 md:py-16 px-4 m-auto">
         <div className="mx-auto flex max-w-5xl flex-col items-center">
           <div className="z-10 mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
             <div className={cn('group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800')}>
               <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                <span>⚡ Introducing TheWinterLabs</span>
+                <Link href={'/webtools'}>
+                  <span className="text-small">⚡Introducing Our Webtools</span>
+                </Link>
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
               </AnimatedShinyText>
             </div>
