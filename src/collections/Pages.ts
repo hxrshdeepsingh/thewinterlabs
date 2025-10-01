@@ -20,11 +20,11 @@ export const Posts: CollectionConfig = {
       required: true,
       unique: true,
     },
-    {
-      name: 'featuredImage',
-      type: 'upload',
-      relationTo: 'media',
-    },
+    // {
+    //   name: 'featuredImage',
+    //   type: 'upload',
+    //   relationTo: 'media',
+    // },
     {
       name: 'published',
       type: 'checkbox',
@@ -34,10 +34,10 @@ export const Posts: CollectionConfig = {
       name: 'publishDate',
       type: 'date',
     },
-    {
-      name: 'content',
-      type: 'richText',
-    },
+    // {
+    //   name: 'content',
+    //   type: 'richText',
+    // },
     {
       name: 'canonical',
       type: 'text',

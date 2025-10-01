@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 export default function AboutHomepage() {
   return (
-    <section className="px-4 py-20 m-0 bg-muted">
+    <section id="about-homepage" className="px-4 py-20 m-0 bg-muted">
       <div className="container mx-auto max-w-screen-lg">
         <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">{Data.title}</h1>

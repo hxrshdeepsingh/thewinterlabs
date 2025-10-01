@@ -1,6 +1,6 @@
 {
   "title": "About Us",
-  "description": "At The Winter Labs, we believe that great products aren’t just built — they’re engineered with vision, precision, and creativity. We take bold ideas and transform them into powerful digital experiences that inspire, engage, and endure.",
+  "description": "At The Winter Labs, we believe that great products aren't just built — they're engineered with vision, precision, and creativity. We take bold ideas and turn them into powerful digital experiences that inspire, engage, and last. From web and mobile applications to cutting-edge digital solutions, our focus is on delivering products that truly make an impact.",
   "mainImage": {
     "src": "/assets/about-one.png",
     "alt": "about-one"
@@ -12,10 +12,10 @@
   "breakout": {
     "src": "/assets/cat.svg",
     "alt": "logo",
-    "title": "Hundreds of blocks at Shadcnblocks.com",
-    "description": "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-    "buttonText": "Discover more",
-    "buttonUrl": "https://shadcnblocks.com"
+    "title": "Our Webtoools",
+    "description": "We provide businesses with innovative solutions and powerful web tools to simplify workflows, boost efficiency, and create engaging digital experiences.",
+    "buttonText": "Check this out",
+    "buttonUrl": "/webtools"
   },
   "companiesTitle": "Valued by clients worldwide",
   "companies": [
@@ -45,7 +45,7 @@
     }
   ],
   "achievementsTitle": "Our Achievements in Numbers",
-  "achievementsDescription": "Providing businesses with effective digital solutions that drive growth and efficiency.",
+  "achievementsDescription": "We take pride in delivering digital solutions that drive measurable growth and efficiency. Here's a snapshot of what we've accomplished:",
   "achievements": [
     { "label": "Expert Team", "value": "10+" },
     { "label": "Industries Served", "value": "5+" },

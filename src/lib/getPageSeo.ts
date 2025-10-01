@@ -15,14 +15,11 @@ export async function getPageSEO(slug: string, postType: string) {
 
   const page = data?.docs?.[0]
 
-  const pagePath = page?.slug?.startsWith('/') ? page.slug : `/${page?.slug || ''}`
-  const pageCanonical = `https://thewinterlabs.in${pagePath}`
-
   return {
     title: page?.meta?.title || page?.title || 'Default Title',
     description: page?.meta?.description || 'Default description for SEO.',
     alternates: {
-      canonical: pageCanonical,
+      canonical: page.canonical,
     },
   }
 }

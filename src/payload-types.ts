@@ -212,24 +212,8 @@ export interface Page {
   id: number;
   title: string;
   slug: string;
-  featuredImage?: (number | null) | Media;
   published?: boolean | null;
   publishDate?: string | null;
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
   canonical?: string | null;
   ogTitle?: string | null;
   ogDescription?: string | null;
@@ -530,10 +514,8 @@ export interface PostsSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  featuredImage?: T;
   published?: T;
   publishDate?: T;
-  content?: T;
   canonical?: T;
   ogTitle?: T;
   ogDescription?: T;

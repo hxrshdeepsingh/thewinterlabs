@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { SparklesText } from './ui/sparkles-text'
 import { Highlighter } from './magicui/highlighter'
@@ -28,22 +29,26 @@ export default function HeroHomepage() {
             </div>
 
             <div className="mt-6 flex items-center gap-4">
-              <button data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3">
-                Get Started
-              </button>
-              <button data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3">
-                Learn More
-              </button>
+              <Link href={'/contact'}>
+                <button data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3">
+                  Contact us
+                </button>
+              </Link>
+              <Link href={'/about'}>
+                <button data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3">
+                  About us
+                </button>
+              </Link>
             </div>
 
             <div className="mt-12 flex flex-col items-center gap-4 lg:mt-16">
-              <p className="text-muted-foreground text-center text-sm">Powering the next generation of digital products</p>
+              <p className="text-muted-foreground text-center text-sm">Technologies we work with</p>
 
               <div className="grid grid-cols-2 place-items-center items-center justify-center gap-6 opacity-80 sm:grid-cols-4 sm:gap-4">
-                <img src="https://library.shadcnblocks.com/images/block/logos/shadcn-ui-wordmark.svg" alt="ShadCN UI" className="h-6 dark:invert" />
-                <img src="https://library.shadcnblocks.com/images/block/logos/vercel-wordmark.svg" alt="Vercel" className="h-5 dark:invert" />
-                <img src="https://library.shadcnblocks.com/images/block/logos/supabase-wordmark.svg" alt="Supabase" className=" h-6 dark:block" />
-                <img src="https://library.shadcnblocks.com/images/block/logos/tailwind-wordmark-light.svg" alt="Tailwind CSS" className="h-5 dark:hidden" />
+                <Image width={172} height={24} src="https://library.shadcnblocks.com/images/block/logos/shadcn-ui-wordmark.svg" alt="ShadCN UI" className="h-6 dark:invert" />
+                <Image width={172} height={24} src="https://library.shadcnblocks.com/images/block/logos/vercel-wordmark.svg" alt="Vercel" className="h-5 dark:invert" />
+                <Image width={172} height={24} src="https://library.shadcnblocks.com/images/block/logos/supabase-wordmark.svg" alt="Supabase" className=" h-6 dark:block" />
+                <Image width={172} height={24} src="https://library.shadcnblocks.com/images/block/logos/tailwind-wordmark-light.svg" alt="Tailwind CSS" className="h-5 dark:hidden" />
               </div>
             </div>
           </div>
