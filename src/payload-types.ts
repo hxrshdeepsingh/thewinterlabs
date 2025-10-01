@@ -136,7 +136,6 @@ export interface Page {
     ogDescription?: string | null
     ogUrl?: string | null
     ogImage?: string | null
-    jsonLd?: string | null
   }
   meta?: {
     title?: string | null
@@ -178,7 +177,6 @@ export interface Post {
     ogDescription?: string | null
     ogUrl?: string | null
     ogImage?: string | null
-    jsonLd?: string | null
   }
   meta?: {
     title?: string | null
@@ -234,7 +232,6 @@ export interface Project {
     ogDescription?: string | null
     ogUrl?: string | null
     ogImage?: string | null
-    jsonLd?: string | null
   }
   meta?: {
     title?: string | null
@@ -325,7 +322,6 @@ export interface Service {
     ogDescription?: string | null
     ogUrl?: string | null
     ogImage?: string | null
-    jsonLd?: string | null
   }
   meta?: {
     title?: string | null
@@ -469,7 +465,6 @@ export interface PagesSelect<T extends boolean = true> {
         ogDescription?: T
         ogUrl?: T
         ogImage?: T
-        jsonLd?: T
       }
   meta?:
     | T
@@ -500,7 +495,6 @@ export interface PostsSelect<T extends boolean = true> {
         ogDescription?: T
         ogUrl?: T
         ogImage?: T
-        jsonLd?: T
       }
   meta?:
     | T
@@ -545,7 +539,6 @@ export interface ProjectsSelect<T extends boolean = true> {
         ogDescription?: T
         ogUrl?: T
         ogImage?: T
-        jsonLd?: T
       }
   meta?:
     | T
@@ -599,7 +592,6 @@ export interface ServicesSelect<T extends boolean = true> {
         ogDescription?: T
         ogUrl?: T
         ogImage?: T
-        jsonLd?: T
       }
   meta?:
     | T

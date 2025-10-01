@@ -75,14 +75,14 @@ export const Posts: CollectionConfig = {
           type: 'text',
           label: 'Open Graph Image',
         },
-        {
-          name: 'jsonLd',
-          type: 'code',
-          label: 'Structured Data (JSON-LD)',
-          options: {
-            language: 'json',
-          },
-        },
+        // {
+        //   name: 'jsonLd',
+        //   type: 'code',
+        //   label: 'Structured Data (JSON-LD)',
+        //   options: {
+        //     language: 'json',
+        //   },
+        // },
       ],
     },
   ],

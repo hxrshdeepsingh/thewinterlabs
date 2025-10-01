@@ -33,7 +33,7 @@ export const Services: CollectionConfig = {
     {
       name: 'icon',
       type: 'text',
-      label: 'Icon URL',
+      label: 'Icon Code',
       required: true,
     },
     {
@@ -131,14 +131,6 @@ export const Services: CollectionConfig = {
           name: 'ogImage',
           type: 'text',
           label: 'Open Graph Image',
-        },
-        {
-          name: 'jsonLd',
-          type: 'code',
-          label: 'Structured Data (JSON-LD)',
-          options: {
-            language: 'json',
-          },
         },
       ],
     },
