@@ -69,8 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    posts: Post;
     pages: Page;
+    posts: Post;
     projects: Project;
     services: Service;
     technologies: Technology;
@@ -82,8 +82,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    posts: PostsSelect<false> | PostsSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
     technologies: TechnologiesSelect<false> | TechnologiesSelect<true>;
@@ -168,6 +168,32 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: number;
+  title: string;
+  slug: string;
+  published?: boolean | null;
+  publishDate?: string | null;
+  seo?: {
+    canonical?: string | null;
+    metaDescription?: string | null;
+    ogTitle?: string | null;
+    ogDescription?: string | null;
+    ogUrl?: string | null;
+    ogImage?: string | null;
+    jsonLd?: string | null;
+  };
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
@@ -192,28 +218,6 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
-  canonical?: string | null;
-  ogTitle?: string | null;
-  ogDescription?: string | null;
-  ogUrl?: string | null;
-  ogImage?: string | null;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages".
- */
-export interface Page {
-  id: number;
-  title: string;
-  slug: string;
-  published?: boolean | null;
-  publishDate?: string | null;
   canonical?: string | null;
   ogTitle?: string | null;
   ogDescription?: string | null;
@@ -381,12 +385,12 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'posts';
-        value: number | Post;
-      } | null)
-    | ({
         relationTo: 'pages';
         value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: number | Post;
       } | null)
     | ({
         relationTo: 'projects';
@@ -484,20 +488,24 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts_select".
+ * via the `definition` "pages_select".
  */
-export interface PostsSelect<T extends boolean = true> {
+export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  featuredImage?: T;
   published?: T;
   publishDate?: T;
-  content?: T;
-  canonical?: T;
-  ogTitle?: T;
-  ogDescription?: T;
-  ogUrl?: T;
-  ogImage?: T;
+  seo?:
+    | T
+    | {
+        canonical?: T;
+        metaDescription?: T;
+        ogTitle?: T;
+        ogDescription?: T;
+        ogUrl?: T;
+        ogImage?: T;
+        jsonLd?: T;
+      };
   meta?:
     | T
     | {
@@ -509,13 +517,15 @@ export interface PostsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages_select".
+ * via the `definition` "posts_select".
  */
-export interface PagesSelect<T extends boolean = true> {
+export interface PostsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  featuredImage?: T;
   published?: T;
   publishDate?: T;
+  content?: T;
   canonical?: T;
   ogTitle?: T;
   ogDescription?: T;
