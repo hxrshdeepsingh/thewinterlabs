@@ -12,672 +12,654 @@
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "supportedTimezones".
  */
-export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+export type SupportedTimezones = 'Pacific/Midway' | 'Pacific/Niue' | 'Pacific/Honolulu' | 'Pacific/Rarotonga' | 'America/Anchorage' | 'Pacific/Gambier' | 'America/Los_Angeles' | 'America/Tijuana' | 'America/Denver' | 'America/Phoenix' | 'America/Chicago' | 'America/Guatemala' | 'America/New_York' | 'America/Bogota' | 'America/Caracas' | 'America/Santiago' | 'America/Buenos_Aires' | 'America/Sao_Paulo' | 'Atlantic/South_Georgia' | 'Atlantic/Azores' | 'Atlantic/Cape_Verde' | 'Europe/London' | 'Europe/Berlin' | 'Africa/Lagos' | 'Europe/Athens' | 'Africa/Cairo' | 'Europe/Moscow' | 'Asia/Riyadh' | 'Asia/Dubai' | 'Asia/Baku' | 'Asia/Karachi' | 'Asia/Tashkent' | 'Asia/Calcutta' | 'Asia/Dhaka' | 'Asia/Almaty' | 'Asia/Jakarta' | 'Asia/Bangkok' | 'Asia/Shanghai' | 'Asia/Singapore' | 'Asia/Tokyo' | 'Asia/Seoul' | 'Australia/Brisbane' | 'Australia/Sydney' | 'Pacific/Guam' | 'Pacific/Noumea' | 'Pacific/Auckland' | 'Pacific/Fiji'
 
 export interface Config {
   auth: {
-    users: UserAuthOperations;
-  };
-  blocks: {};
+    users: UserAuthOperations
+  }
+  blocks: {}
   collections: {
-    users: User;
-    media: Media;
-    pages: Page;
-    posts: Post;
-    projects: Project;
-    services: Service;
-    technologies: Technology;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  collectionsJoins: {};
+    users: User
+    media: Media
+    pages: Page
+    posts: Post
+    projects: Project
+    services: Service
+    technologies: Technology
+    'payload-locked-documents': PayloadLockedDocument
+    'payload-preferences': PayloadPreference
+    'payload-migrations': PayloadMigration
+  }
+  collectionsJoins: {}
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    pages: PagesSelect<false> | PagesSelect<true>;
-    posts: PostsSelect<false> | PostsSelect<true>;
-    projects: ProjectsSelect<false> | ProjectsSelect<true>;
-    services: ServicesSelect<false> | ServicesSelect<true>;
-    technologies: TechnologiesSelect<false> | TechnologiesSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
-  };
+    users: UsersSelect<false> | UsersSelect<true>
+    media: MediaSelect<false> | MediaSelect<true>
+    pages: PagesSelect<false> | PagesSelect<true>
+    posts: PostsSelect<false> | PostsSelect<true>
+    projects: ProjectsSelect<false> | ProjectsSelect<true>
+    services: ServicesSelect<false> | ServicesSelect<true>
+    technologies: TechnologiesSelect<false> | TechnologiesSelect<true>
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>
+  }
   db: {
-    defaultIDType: number;
-  };
-  globals: {};
-  globalsSelect: {};
-  locale: null;
+    defaultIDType: number
+  }
+  globals: {}
+  globalsSelect: {}
+  locale: null
   user: User & {
-    collection: 'users';
-  };
+    collection: 'users'
+  }
   jobs: {
-    tasks: unknown;
-    workflows: unknown;
-  };
+    tasks: unknown
+    workflows: unknown
+  }
 }
 export interface UserAuthOperations {
   forgotPassword: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   login: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   registerFirstUser: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   unlock: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
+  id: number
+  updatedAt: string
+  createdAt: string
+  email: string
+  resetPasswordToken?: string | null
+  resetPasswordExpiration?: string | null
+  salt?: string | null
+  hash?: string | null
+  loginAttempts?: number | null
+  lockUntil?: string | null
   sessions?:
     | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
+        id: string
+        createdAt?: string | null
+        expiresAt: string
       }[]
-    | null;
-  password?: string | null;
+    | null
+  password?: string | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
-  alt: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+  id: number
+  alt: string
+  updatedAt: string
+  createdAt: string
+  url?: string | null
+  thumbnailURL?: string | null
+  filename?: string | null
+  mimeType?: string | null
+  filesize?: number | null
+  width?: number | null
+  height?: number | null
+  focalX?: number | null
+  focalY?: number | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
-  id: number;
-  title: string;
-  slug: string;
-  published?: boolean | null;
-  publishDate?: string | null;
+  id: number
+  title: string
+  slug: string
+  published?: boolean | null
+  publishDate?: string | null
   seo?: {
-    canonical?: string | null;
-    metaDescription?: string | null;
-    ogTitle?: string | null;
-    ogDescription?: string | null;
-    ogUrl?: string | null;
-    ogImage?: string | null;
-    jsonLd?: string | null;
-  };
+    canonical?: string | null
+    metaDescription?: string | null
+    ogTitle?: string | null
+    ogDescription?: string | null
+    ogUrl?: string | null
+    ogImage?: string | null
+    jsonLd?: string | null
+  }
   meta?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
+    title?: string | null
+    description?: string | null
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
-  id: number;
-  title: string;
-  slug: string;
-  featuredImage?: (number | null) | Media;
-  published?: boolean | null;
-  publishDate?: string | null;
+  id: number
+  title: string
+  slug: string
+  featuredImage?: (number | null) | Media
+  published?: boolean | null
+  publishDate?: string | null
   content?: {
     root: {
-      type: string;
+      type: string
       children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  canonical?: string | null;
-  ogTitle?: string | null;
-  ogDescription?: string | null;
-  ogUrl?: string | null;
-  ogImage?: string | null;
+        type: any
+        version: number
+        [k: string]: unknown
+      }[]
+      direction: ('ltr' | 'rtl') | null
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+      indent: number
+      version: number
+    }
+    [k: string]: unknown
+  } | null
+  seo?: {
+    canonical?: string | null
+    metaDescription?: string | null
+    ogTitle?: string | null
+    ogDescription?: string | null
+    ogUrl?: string | null
+    ogImage?: string | null
+    jsonLd?: string | null
+  }
   meta?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
+    title?: string | null
+    description?: string | null
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects".
  */
 export interface Project {
-  id: number;
-  title: string;
-  slug: string;
-  featuredImage?: string | null;
-  published?: boolean | null;
-  publishDate?: string | null;
-  clientName?: string | null;
-  projectName?: string | null;
-  projectDate?: string | null;
+  id: number
+  title: string
+  slug: string
+  featuredImage?: string | null
+  published?: boolean | null
+  publishDate?: string | null
+  clientName?: string | null
+  projectName?: string | null
+  projectDate?: string | null
   servicesProvided?:
     | {
-        service?: string | null;
-        id?: string | null;
+        service?: string | null
+        id?: string | null
       }[]
-    | null;
-  projectURL?: string | null;
-  technologies?: (number | Technology)[] | null;
-  testimonial?: string | null;
-  location?: string | null;
-  projectDuration?: string | null;
+    | null
+  projectURL?: string | null
+  technologies?: (number | Technology)[] | null
+  testimonial?: string | null
+  location?: string | null
+  projectDuration?: string | null
   content?: {
     root: {
-      type: string;
+      type: string
       children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  canonical?: string | null;
-  ogTitle?: string | null;
-  ogDescription?: string | null;
-  ogUrl?: string | null;
-  ogImage?: string | null;
+        type: any
+        version: number
+        [k: string]: unknown
+      }[]
+      direction: ('ltr' | 'rtl') | null
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+      indent: number
+      version: number
+    }
+    [k: string]: unknown
+  } | null
+  seo?: {
+    canonical?: string | null
+    metaDescription?: string | null
+    ogTitle?: string | null
+    ogDescription?: string | null
+    ogUrl?: string | null
+    ogImage?: string | null
+    jsonLd?: string | null
+  }
   meta?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
+    title?: string | null
+    description?: string | null
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "technologies".
  */
 export interface Technology {
-  id: number;
-  title: string;
-  slug: string;
-  logo?: string | null;
-  updatedAt: string;
-  createdAt: string;
+  id: number
+  title: string
+  slug: string
+  logo?: string | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services".
  */
 export interface Service {
-  id: number;
-  title: string;
-  slug: string;
-  shortDescription: string;
+  id: number
+  title: string
+  slug: string
+  shortDescription: string
   fullDescription: {
     root: {
-      type: string;
+      type: string
       children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  icon: string;
-  featureImage?: string | null;
+        type: any
+        version: number
+        [k: string]: unknown
+      }[]
+      direction: ('ltr' | 'rtl') | null
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+      indent: number
+      version: number
+    }
+    [k: string]: unknown
+  }
+  icon: string
+  featureImage?: string | null
   keyFeatures?:
     | {
-        feature?: string | null;
-        id?: string | null;
+        feature?: string | null
+        id?: string | null
       }[]
-    | null;
-  technologies?: (number | Technology)[] | null;
+    | null
+  technologies?: (number | Technology)[] | null
   deliverables?:
     | {
-        item?: string | null;
-        id?: string | null;
+        item?: string | null
+        id?: string | null
       }[]
-    | null;
-  estimatedTimeline?: string | null;
-  estimatedTimelineText?: string | null;
-  startingPrice?: string | null;
+    | null
+  estimatedTimeline?: string | null
+  estimatedTimelineText?: string | null
+  startingPrice?: string | null
   faq?:
     | {
-        question: string;
+        question: string
         answer: {
           root: {
-            type: string;
+            type: string
             children: {
-              type: any;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        };
-        id?: string | null;
+              type: any
+              version: number
+              [k: string]: unknown
+            }[]
+            direction: ('ltr' | 'rtl') | null
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | ''
+            indent: number
+            version: number
+          }
+          [k: string]: unknown
+        }
+        id?: string | null
       }[]
-    | null;
-  canonical?: string | null;
-  ogTitle?: string | null;
-  ogDescription?: string | null;
-  ogUrl?: string | null;
-  ogImage?: string | null;
+    | null
+  seo?: {
+    canonical?: string | null
+    metaDescription?: string | null
+    ogTitle?: string | null
+    ogDescription?: string | null
+    ogUrl?: string | null
+    ogImage?: string | null
+    jsonLd?: string | null
+  }
   meta?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
+    title?: string | null
+    description?: string | null
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: number
   document?:
     | ({
-        relationTo: 'users';
-        value: number | User;
+        relationTo: 'users'
+        value: number | User
       } | null)
     | ({
-        relationTo: 'media';
-        value: number | Media;
+        relationTo: 'media'
+        value: number | Media
       } | null)
     | ({
-        relationTo: 'pages';
-        value: number | Page;
+        relationTo: 'pages'
+        value: number | Page
       } | null)
     | ({
-        relationTo: 'posts';
-        value: number | Post;
+        relationTo: 'posts'
+        value: number | Post
       } | null)
     | ({
-        relationTo: 'projects';
-        value: number | Project;
+        relationTo: 'projects'
+        value: number | Project
       } | null)
     | ({
-        relationTo: 'services';
-        value: number | Service;
+        relationTo: 'services'
+        value: number | Service
       } | null)
     | ({
-        relationTo: 'technologies';
-        value: number | Technology;
-      } | null);
-  globalSlug?: string | null;
+        relationTo: 'technologies'
+        value: number | Technology
+      } | null)
+  globalSlug?: string | null
   user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  updatedAt: string;
-  createdAt: string;
+    relationTo: 'users'
+    value: number | User
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: number
   user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  key?: string | null;
+    relationTo: 'users'
+    value: number | User
+  }
+  key?: string | null
   value?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+  id: number
+  name?: string | null
+  batch?: number | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
+  updatedAt?: T
+  createdAt?: T
+  email?: T
+  resetPasswordToken?: T
+  resetPasswordExpiration?: T
+  salt?: T
+  hash?: T
+  loginAttempts?: T
+  lockUntil?: T
   sessions?:
     | T
     | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
+        id?: T
+        createdAt?: T
+        expiresAt?: T
+      }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+  alt?: T
+  updatedAt?: T
+  createdAt?: T
+  url?: T
+  thumbnailURL?: T
+  filename?: T
+  mimeType?: T
+  filesize?: T
+  width?: T
+  height?: T
+  focalX?: T
+  focalY?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages_select".
  */
 export interface PagesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  published?: T;
-  publishDate?: T;
+  title?: T
+  slug?: T
+  published?: T
+  publishDate?: T
   seo?:
     | T
     | {
-        canonical?: T;
-        metaDescription?: T;
-        ogTitle?: T;
-        ogDescription?: T;
-        ogUrl?: T;
-        ogImage?: T;
-        jsonLd?: T;
-      };
+        canonical?: T
+        metaDescription?: T
+        ogTitle?: T
+        ogDescription?: T
+        ogUrl?: T
+        ogImage?: T
+        jsonLd?: T
+      }
   meta?:
     | T
     | {
-        title?: T;
-        description?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+        title?: T
+        description?: T
+      }
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts_select".
  */
 export interface PostsSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  featuredImage?: T;
-  published?: T;
-  publishDate?: T;
-  content?: T;
-  canonical?: T;
-  ogTitle?: T;
-  ogDescription?: T;
-  ogUrl?: T;
-  ogImage?: T;
+  title?: T
+  slug?: T
+  featuredImage?: T
+  published?: T
+  publishDate?: T
+  content?: T
+  seo?:
+    | T
+    | {
+        canonical?: T
+        metaDescription?: T
+        ogTitle?: T
+        ogDescription?: T
+        ogUrl?: T
+        ogImage?: T
+        jsonLd?: T
+      }
   meta?:
     | T
     | {
-        title?: T;
-        description?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+        title?: T
+        description?: T
+      }
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  featuredImage?: T;
-  published?: T;
-  publishDate?: T;
-  clientName?: T;
-  projectName?: T;
-  projectDate?: T;
+  title?: T
+  slug?: T
+  featuredImage?: T
+  published?: T
+  publishDate?: T
+  clientName?: T
+  projectName?: T
+  projectDate?: T
   servicesProvided?:
     | T
     | {
-        service?: T;
-        id?: T;
-      };
-  projectURL?: T;
-  technologies?: T;
-  testimonial?: T;
-  location?: T;
-  projectDuration?: T;
-  content?: T;
-  canonical?: T;
-  ogTitle?: T;
-  ogDescription?: T;
-  ogUrl?: T;
-  ogImage?: T;
+        service?: T
+        id?: T
+      }
+  projectURL?: T
+  technologies?: T
+  testimonial?: T
+  location?: T
+  projectDuration?: T
+  content?: T
+  seo?:
+    | T
+    | {
+        canonical?: T
+        metaDescription?: T
+        ogTitle?: T
+        ogDescription?: T
+        ogUrl?: T
+        ogImage?: T
+        jsonLd?: T
+      }
   meta?:
     | T
     | {
-        title?: T;
-        description?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+        title?: T
+        description?: T
+      }
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services_select".
  */
 export interface ServicesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  shortDescription?: T;
-  fullDescription?: T;
-  icon?: T;
-  featureImage?: T;
+  title?: T
+  slug?: T
+  shortDescription?: T
+  fullDescription?: T
+  icon?: T
+  featureImage?: T
   keyFeatures?:
     | T
     | {
-        feature?: T;
-        id?: T;
-      };
-  technologies?: T;
+        feature?: T
+        id?: T
+      }
+  technologies?: T
   deliverables?:
     | T
     | {
-        item?: T;
-        id?: T;
-      };
-  estimatedTimeline?: T;
-  estimatedTimelineText?: T;
-  startingPrice?: T;
+        item?: T
+        id?: T
+      }
+  estimatedTimeline?: T
+  estimatedTimelineText?: T
+  startingPrice?: T
   faq?:
     | T
     | {
-        question?: T;
-        answer?: T;
-        id?: T;
-      };
-  canonical?: T;
-  ogTitle?: T;
-  ogDescription?: T;
-  ogUrl?: T;
-  ogImage?: T;
+        question?: T
+        answer?: T
+        id?: T
+      }
+  seo?:
+    | T
+    | {
+        canonical?: T
+        metaDescription?: T
+        ogTitle?: T
+        ogDescription?: T
+        ogUrl?: T
+        ogImage?: T
+        jsonLd?: T
+      }
   meta?:
     | T
     | {
-        title?: T;
-        description?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
+        title?: T
+        description?: T
+      }
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "technologies_select".
  */
 export interface TechnologiesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  logo?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  title?: T
+  slug?: T
+  logo?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  document?: T
+  globalSlug?: T
+  user?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences_select".
  */
 export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  user?: T
+  key?: T
+  value?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations_select".
  */
 export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  name?: T
+  batch?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-  [k: string]: unknown;
+  [k: string]: unknown
 }
-
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}

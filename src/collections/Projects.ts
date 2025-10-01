@@ -83,26 +83,50 @@ export const Projects: CollectionConfig = {
       type: 'richText',
     },
     {
-      name: 'canonical',
-      type: 'text',
-      required: false,
-      unique: false,
-    },
-    {
-      name: 'ogTitle',
-      type: 'text',
-    },
-    {
-      name: 'ogDescription',
-      type: 'textarea',
-    },
-    {
-      name: 'ogUrl',
-      type: 'text',
-    },
-    {
-      name: 'ogImage',
-      type: 'text',
+      name: 'seo',
+      label: 'SEO & Open Graph',
+      type: 'group',
+      fields: [
+        {
+          name: 'canonical',
+          type: 'text',
+          label: 'Canonical URL',
+          required: false,
+        },
+        {
+          name: 'metaDescription',
+          type: 'textarea',
+          label: 'Meta Description',
+        },
+        {
+          name: 'ogTitle',
+          type: 'text',
+          label: 'Open Graph Title',
+        },
+        {
+          name: 'ogDescription',
+          type: 'textarea',
+          label: 'Open Graph Description',
+        },
+        {
+          name: 'ogUrl',
+          type: 'text',
+          label: 'Open Graph URL',
+        },
+        {
+          name: 'ogImage',
+          type: 'text',
+          label: 'Open Graph Image',
+        },
+        {
+          name: 'jsonLd',
+          type: 'code',
+          label: 'Structured Data (JSON-LD)',
+          options: {
+            language: 'json',
+          },
+        },
+      ],
     },
   ],
 }
