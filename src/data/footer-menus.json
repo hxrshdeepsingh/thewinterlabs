@@ -29,9 +29,8 @@
     {
       "title": "Services",
       "links": [
-        { "text": "Web development", "url": "#" },
-        { "text": "App development", "url": "#" },
-        { "text": "Ai integration", "url": "#" }
+        { "text": "Web development", "url": "services/web-development" },
+        { "text": "App development", "url": "services/app-development" }
       ]
     }
   ],
