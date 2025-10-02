@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
   },
-  themeColor: '#171717',
   manifest: '/site.webmanifest',
   openGraph: {
     title: 'TheWinterLabs',
@@ -52,6 +51,9 @@ export const metadata: Metadata = {
     canonical: 'https://thewinterlabs.in',
   },
 }
+// export const generateViewport = () => ({
+//   themeColor: "#171717",
+// });
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
