@@ -9,6 +9,7 @@
         { "text": "About", "url": "/about" },
         { "text": "Projects", "url": "/projects" },
         { "text": "Services", "url": "/services" },
+        { "text": "Webtools", "url": "/webtools" },
         { "text": "Contact", "url": "/contact" }
       ]
     },
@@ -23,7 +24,7 @@
       ]
     },
     {
-      "title": "Tools",
+      "title": "Webtools",
       "links": [{ "text": "Dns Checker", "url": "/webtools/dns" }]
     },
     {
@@ -36,7 +37,7 @@
   ],
   "copyright": "© 2025 Thewinterlabs Copyright. All rights reserved.",
   "bottomLinks": [
-    { "text": "Terms and Conditions", "url": "#" },
-    { "text": "Privacy Policy", "url": "#" }
+    { "text": "Terms and Conditions", "url": "/terms" },
+    { "text": "Privacy Policy", "url": "/privacy" }
   ]
 }

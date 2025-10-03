@@ -1,0 +1,64 @@
+{
+  "terms": {
+    "title": "Terms & Conditions",
+    "sections": [
+      {
+        "heading": "Introduction",
+        "text": "Welcome to Thewinterlabs. These Terms and Conditions govern your use of our software development, security, and artificial intelligence services. By accessing or using our website, products, or services, you agree to comply with these terms."
+      },
+      {
+        "heading": "Use of Services",
+        "text": "You agree to use Thewinterlabs' services solely for lawful purposes. You may not attempt to disrupt, gain unauthorized access to, or misuse any systems, networks, or services provided by Thewinterlabs."
+      },
+      {
+        "heading": "Intellectual Property",
+        "text": "All content, trademarks, and intellectual property available through Thewinterlabs remain the exclusive property of Thewinterlabs. You may not copy, distribute, or use our intellectual property without prior written consent."
+      },
+      {
+        "heading": "Payment & Subscriptions",
+        "text": "Clients agree to pay all fees associated with the services provided by Thewinterlabs in accordance with the agreed terms. Failure to make timely payments may result in suspension of services."
+      },
+      {
+        "heading": "Liability Limitations",
+        "text": "While we strive to provide secure and reliable services, Thewinterlabs will not be held responsible for indirect, incidental, or consequential damages arising from the use of our services."
+      },
+      {
+        "heading": "Changes to Terms",
+        "text": "Thewinterlabs reserves the right to update or modify these Terms and Conditions at any time. Continued use of our services after changes constitutes acceptance of the revised terms."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": [
+      {
+        "heading": "Information We Collect",
+        "text": "Thewinterlabs may collect personal information such as your name, email address, phone number, company name, and billing details when you interact with our services. We also collect technical information such as IP addresses, device data, and analytics to improve performance."
+      },
+      {
+        "heading": "How We Use Information",
+        "text": "We use collected information to provide and improve our software solutions, ensure security, customize user experiences, and communicate updates or offers related to Thewinterlabs services."
+      },
+      {
+        "heading": "Data Security",
+        "text": "Protecting your data is a priority at Thewinterlabs. We implement strict security measures, including encryption, access control, and monitoring, to safeguard your information against unauthorized access or misuse."
+      },
+      {
+        "heading": "Third-Party Services",
+        "text": "In some cases, we may use trusted third-party tools (such as payment gateways, analytics platforms, or hosting providers). These third parties have their own privacy policies, and we encourage users to review them."
+      },
+      {
+        "heading": "Cookies & Tracking",
+        "text": "Our website uses cookies and similar technologies to track user behavior, enhance functionality, and improve services. You can manage or disable cookies through your browser settings."
+      },
+      {
+        "heading": "Your Rights",
+        "text": "You have the right to access, correct, or request deletion of your personal information. For any inquiries, contact us at privacy@thewinterlabs.com."
+      },
+      {
+        "heading": "Policy Updates",
+        "text": "Thewinterlabs may update this Privacy Policy from time to time. Any significant changes will be communicated on our website, and your continued use of our services constitutes agreement to the revised policy."
+      }
+    ]
+  }
+}
