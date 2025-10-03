@@ -5,14 +5,14 @@ import { usePathname } from 'next/navigation'
 import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import { useRouter } from 'next/router'
 
-export function BreadcrumbDemo() {
+export function BreadCrumbForPage() {
   const pathname = usePathname() || '/'
   const pathSegments = pathname.split('/').filter(Boolean)
   const buildPath = (index: number) => '/' + pathSegments.slice(0, index + 1).join('/')
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
+    <Breadcrumb className="m-0 justify-center">
+      <BreadcrumbList className="m-0 justify-center">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link className="text-small" href="/">
@@ -22,7 +22,7 @@ export function BreadcrumbDemo() {
         </BreadcrumbItem>
 
         {pathSegments.map((segment, i) => (
-          <>
+          <span key={i} className="flex items-center">
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
@@ -31,7 +31,7 @@ export function BreadcrumbDemo() {
                 </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-          </>
+          </span>
         ))}
       </BreadcrumbList>
     </Breadcrumb>

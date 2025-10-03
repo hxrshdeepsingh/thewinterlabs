@@ -1,100 +1,82 @@
 'use client'
+
 import { useState } from 'react'
+import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { Copy } from 'lucide-react'
-import { BreadcrumbDemo } from '@/components/breadCrumbPage'
+import { Card } from '@/components/ui/card'
+import { Download, Search, Settings, Lightbulb } from 'lucide-react'
+import { ChartAreaLinear } from '@/components/webtools/charts'
+import { Hero } from '@/components/webtools/hero'
+import { Cards } from '@/components/webtools/cards'
+import { ResultTable } from '@/components/webtools/table'
+import { useServices } from '@/lib/useServices'
+import { Export } from '@/components/webtools/export'
 
-export default function DnsPage() {
-  const [domain, setDomain] = useState('')
-  const [records, setRecords] = useState<any[]>([])
+export default function Page() {
+  const [domain, setDomain] = useState('google.com')
+  const [DnsData, setDnsData] = useState({
+    headers: ['Type', 'Value', 'TTL', 'Priority'],
+    records: [],
+    chartData: [],
+  })
   const [loading, setLoading] = useState(false)
 
-  const handleLookup = async () => {
-    if (!domain) return
+  const fetchData = async () => {
     setLoading(true)
-    setRecords([])
+    const result = await useServices('dns', domain)
 
-    try {
-      const res = await fetch(`https://thewinterlabs-webtools.onrender.com/dns/?payload=${domain}`)
-      const data = await res.json()
-      if (data.success) setRecords(data.records)
-    } catch (error) {
-      console.error('Error fetching DNS records:', error)
-    } finally {
-      setLoading(false)
+    if (result?.success && result.records) {
+      const formattedRecords = result.records.map((r) => ({
+        type: r.type,
+        value: r.address || r.value || r.exchange || r.nsname || '-',
+        ttl: r.ttl ?? '-',
+        priority: r.priority ?? '-',
+      }))
+
+      const countMap: Record<string, number> = {}
+      formattedRecords.forEach((r) => {
+        countMap[r.type] = (countMap[r.type] || 0) + 1
+      })
+      const chartData = Object.entries(countMap).map(([type, count]) => ({ type, count }))
+
+      setDnsData({ headers: ['Type', 'Value', 'TTL', 'Priority'], records: formattedRecords, chartData })
+    } else {
+      setDnsData((prev) => ({ ...prev, records: [], chartData: [] }))
     }
-  }
 
-  const copyToClipboard = (value: string) => navigator.clipboard.writeText(value)
-
-  const dnsTypeDescription: Record<string, string> = {
-    A: 'Maps a domain to an IPv4 address',
-    AAAA: 'Maps a domain to an IPv6 address',
-    MX: 'Mail exchange server for the domain',
-    TXT: 'Text information for various purposes',
-    CNAME: 'Canonical name alias of the domain',
-    NS: 'Nameserver for the domain',
+    setLoading(false)
   }
 
   return (
-    <TooltipProvider>
-      <section className="py-10 px-4">
-        <div className="container mx-auto max-w-screen-lg">
-          <div className="mb-10 grid gap-4 text-center md:text-left md:grid-cols-2">
-            <h1 className="text-h1">DNS Lookup</h1>
-            <p className="text-body text-muted-foreground">Quickly retrieve DNS records for any domain. Supports A, AAAA, MX, TXT, CNAME, and NS records.</p>
+    <section className="py-12 px-4 sm:px-6 md:px-8 lg:px-16">
+      <div className="container mx-auto max-w-screen-lg space-y-10">
+        <Hero title="DNS Lookup" description="Look up DNS records for any domain, including A, MX, TXT, CNAME, and NS." badge="All services are live" />
+
+        <Card className="flex flex-col sm:flex-row sm:items-center gap-4 p-4">
+          <Input placeholder="Enter domain e.g. example.com" value={domain} onChange={(e) => setDomain(e.target.value)} icon={<Search className="w-4 h-4 text-muted-foreground" />} className="flex-1 bg-white" />
+          <div className="flex flex-col sm:flex-row sm:gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+            <Button variant="default" className="w-full sm:w-auto" onClick={fetchData} disabled={loading}>
+              {loading ? 'Loading...' : 'Search'}
+            </Button>
+            <Export data={DnsData} />
+          </div>
+        </Card>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-secondary/30 shadow p-4 rounded-lg">
+          <div className="space-y-6 lg:col-span-1">
+            <Cards title="How It Works" description="Enter your domain name and click 'Lookup'. The tool fetches DNS records and displays them in an easy-to-read table." icon={<Settings className="w-10 h-10 text-primary mt-1" />} />
+            <Cards title="Tips" description="You can copy any record value by clicking the copy icon. Useful for email servers, verifying domains, and checking website configurations." icon={<Lightbulb className="w-10 h-10 text-yellow-500 mt-1" />} />
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-4 p-6 bg-accent rounded-lg mb-8">
-            <Input placeholder="Enter domain e.g. example.com" value={domain} onChange={(e) => setDomain(e.target.value)} className="flex-1 bg-white" />
-            <Button onClick={handleLookup} disabled={loading}>
-              {loading ? 'Looking up...' : 'Lookup'}
-            </Button>
-          </div>
-          {records.length > 0 && (
-            <div className="overflow-x-auto rounded-lg shadow">
-              <Table className="min-w-full">
-                <TableHeader>
-                  <TableRow className="bg-gray-100 dark:bg-gray-800">
-                    <TableHead>Type</TableHead>
-                    <TableHead>Value</TableHead>
-                    <TableHead>TTL</TableHead>
-                    <TableHead>Priority</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {records.map((record, idx) => {
-                    const value = record.address || record.value || record.exchange
-                    return (
-                      <TableRow key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'}>
-                        <TableCell>
-                          <Tooltip>
-                            <TooltipTrigger>
-                              <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold cursor-help">{record.type}</span>
-                            </TooltipTrigger>
-                            <TooltipContent>{dnsTypeDescription[record.type] || 'DNS record'}</TooltipContent>
-                          </Tooltip>
-                        </TableCell>
-                        <TableCell className="flex items-center gap-2">
-                          <span>{value}</span>
-                          <Button variant="outline" size="sm" className="p-1" onClick={() => copyToClipboard(value)}>
-                            <Copy className="w-3 h-3" />
-                          </Button>
-                        </TableCell>
-                        <TableCell>{record.ttl ?? '-'}</TableCell>
-                        <TableCell>{record.priority ?? '-'}</TableCell>
-                      </TableRow>
-                    )
-                  })}
-                </TableBody>
-              </Table>
+          <div className="lg:col-span-2 space-y-6 flex flex-col items-center justify-center min-h-[300px]">
+            <ResultTable title="DNS Records" domain={domain} tableData={DnsData} />
+            <div className="w-full">
+              <ChartAreaLinear chartData={DnsData.chartData} />
             </div>
-          )}
+          </div>
         </div>
-      </section>
-    </TooltipProvider>
+      </div>
+    </section>
   )
 }

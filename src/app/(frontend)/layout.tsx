@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 import { Footer } from '@/components/footer'
 import { Cta } from '@/components/cta'
-import { Analytics } from '@vercel/analytics/next'
+// import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import SmoothScrollProvider from '@/components/SmoothScrollProvider'
@@ -66,7 +66,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             <main>{children}</main>
             <Cta />
             <Footer />
-            <Analytics />
+            {/* <Analytics /> */}
           </PageTransition>
         </SmoothScrollProvider>
         <CookieProvider />

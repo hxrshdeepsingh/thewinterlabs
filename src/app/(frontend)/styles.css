@@ -440,13 +440,13 @@
 
   /* Body */
   .text-body {
-    font-size: 1rem; /* 16px */
-    line-height: 1.6;
+    font-size: 0.8rem; /* 16px */
+    line-height: 1.4;
   }
 
   @media (min-width: 1024px) {
     .text-body {
-      font-size: 1.125rem; /* 18px */
+      font-size: 1rem; /* 18px */
     }
   }
 
