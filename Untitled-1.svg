@@ -1,0 +1,29 @@
+<svg
+  width="300"
+  height="300"
+  viewBox="0 0 200 100"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <rect
+    id="box"
+    x="20"
+    y="20"
+    width="300"
+    height="600"
+    fill="blue"
+    onclick="changeColor()"
+  />
+
+  <script type="application/ecmascript">
+    <![CDATA[
+      console.log('SVG loaded');
+      function changeColor() {
+        console.log('Color changed to red');
+        const box = document.getElementById('box');
+        box.setAttribute('fill', 'red');
+      }
+    ]]>
+  </script>
+
+</svg>
